@@ -28,6 +28,19 @@ add_action( 'after_setup_theme', function() {
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 
+	/**
+	 * Filter page title to not show 'Homepage' h1 element
+	 */
+	add_filter( 'the_title', function( $title, $id = null ) {
+
+		//Check if in the loop also to avoid menu items being filtered
+	    if ( is_front_page() && in_the_loop() ) {
+	        return '';
+	    }
+
+	    return $title;
+	}, 10, 2 );
+
 });
 
 

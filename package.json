@@ -1,0 +1,44 @@
+{
+  "name": "heisenberg-child",
+  "description": "Heisenberg's Child ===",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp serve",
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/australiansteve/wp-theme-austeve-heisenberg-child"
+  },
+  "author": "AustralianSteve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/australiansteve/wp-theme-austeve-heisenberg-child/issues"
+  },
+  "homepage": "https://github.com/australiansteve/wp-theme-austeve-heisenberg-child",
+  "dependencies": {
+    "foundation-sites": "^6.4.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.11",
+    "del": "^2.2.1",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-size": "^2.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-svg-sprite": "^1.2.19",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}

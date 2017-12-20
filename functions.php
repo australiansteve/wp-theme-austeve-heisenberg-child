@@ -44,4 +44,26 @@ add_action( 'after_setup_theme', function() {
 });
 
 
+/**
+ * Add categories and tags to Pages too
+ *
+ */
+add_action( 'init', function () {
+	register_taxonomy_for_object_type( 'post_tag', 'page' );
+	register_taxonomy_for_object_type( 'category', 'page' );
+} );
+	
+add_action( 'pre_get_posts', function ( $wp_query ) {
+	if ( ! is_admin() ) {
+		$my_post_array = array('post','page');
+
+		if ( $wp_query->get( 'category_name' ) || $wp_query->get( 'cat' ) )
+			$wp_query->set( 'post_type', $my_post_array );
+
+		if ( $wp_query->get( 'tag' ) )
+			$wp_query->set( 'post_type', $my_post_array );
+	} 
+});
+
+
 ?>

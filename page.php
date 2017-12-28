@@ -3,7 +3,7 @@ get_header(); ?>
 
 	<div class="grid-x">
 
-		<main class="medium-12 cell page">
+		<main class="cell medium-12 page">
 			<?php
 			if ( have_posts() ) :
 

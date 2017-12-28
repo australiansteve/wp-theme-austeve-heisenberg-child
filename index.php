@@ -1,9 +1,9 @@
 <?php
 get_header(); ?>
 
-	<div class="row">
+	<div class="grid-x">
 
-		<main class="medium-12 columns">
+		<main class="cell medium-12">
 			<?php
 			if ( have_posts() ) :
 

@@ -15,3 +15,26 @@
 		text-align: left;			
 	}
 }
+
+.resource {
+
+	margin-bottom: 2rem;
+
+	.logo {
+	    margin-bottom: 1rem;
+	}
+
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+	.resource {
+
+		.info {
+			padding-left: 1rem;
+		}
+
+	}
+
+}

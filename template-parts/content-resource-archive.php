@@ -3,7 +3,7 @@
 ?>
 <div class="grid-x">
 
-	<div class="cell medium-4 logo">
+	<div class="cell medium-4 logo align-self-middle" data-equalizer-watch>
 		<?php
 		$image = get_field('logo');
 
@@ -25,11 +25,17 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="cell medium-8"> 
+	<div class="cell medium-8 info"> 
 	<?php
 		the_title( '<h2>', '</h2>' );
 
 		the_content();
+
+		$url = get_field('url');
+		if (!empty($url))
+		{
+			echo "<p class='resource-website'><a href='".$url."' target='blank'><i class='fa fa-external-link' aria-hidden='true'></i> View website</a></p>";
+		}
 	?>
 	</div>
 

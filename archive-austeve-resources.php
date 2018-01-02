@@ -7,7 +7,7 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) :
 			?>
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
+			<div class="grid-x grid-padding-x small-up-2 medium-up-2 large-up-3" data-equalizer data-equalize-on="medium">
 
 				<?php 
 

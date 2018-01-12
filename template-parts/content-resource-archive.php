@@ -34,7 +34,7 @@
 		$url = get_field('url');
 		if (!empty($url))
 		{
-			echo "<p class='resource-website'><a href='".$url."' target='blank'><i class='fa fa-external-link' aria-hidden='true'></i> View website</a></p>";
+			echo "<p class='resource-website'><a href='".$url."' target='blank'>View website</a></p>";
 		}
 	?>
 	</div>

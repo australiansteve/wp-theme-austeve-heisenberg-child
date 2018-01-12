@@ -2,3 +2,33 @@
     max-width: 95%;
     margin: 2rem auto;
 }
+
+div[role=form] {
+    max-width: 90%;
+    margin: auto;
+}
+
+a:hover {
+	color: $logo-blue;
+}
+
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+	border-color: $logo-blue transparent;
+}
+
+button, .button, input[type=submit], .button:focus {
+	background-color: $logo-green;
+}
+
+button:hover, .button:hover, input[type=submit]:hover, button:active, .button:active, input[type=submit]:active {
+	background-color:  transparentize($logo-green, 0.2);
+}
+
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+		
+	div[role=form] {
+	    max-width: 50%;
+	}
+}

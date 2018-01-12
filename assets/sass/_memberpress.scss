@@ -1,0 +1,41 @@
+.mepr-price-menu {
+	margin-top: 2rem;
+}
+
+.mepr-price-boxes {
+	margin-top: 3rem;
+}
+
+.mepr-price-menu.fixed .mepr-price-box-title {
+	font-size: 1.25rem;
+}
+
+.mepr-price-menu.fixed .mepr-price-box-price {
+	font-size: 1.5rem;
+}
+
+.mp_wrapper {
+    max-width: 90%;
+    margin: auto;
+}
+
+.mepr-price-menu.fixed .mepr-price-box-button a {
+	background-color: $logo-green;
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+	.mepr-price-box {
+		max-width: 15em;
+	}
+
+	.mepr-price-menu.fixed .mepr-price-boxes {
+		display: inline-table;
+	}
+
+	.mp_wrapper {
+	    max-width: 50%;
+	    margin: auto;
+	}
+}

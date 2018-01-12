@@ -1,3 +1,33 @@
 header {
 	text-align: center;
+
+	.custom-logo-link img {
+	    margin: 1.5rem;
+	    max-width: 180px;
+	}
+
+	ul.menu {
+		font-size: 1.25rem;
+		font-weight: 700;
+
+		a {
+			color: black;
+		}
+
+		a:hover {
+			color: $logo-blue;
+		}
+	}
+
+	ul.submenu {
+		text-align: left;
+	}
+}
+
+.dropdown.menu .is-active>a {
+	color: $logo-blue;
+}
+
+.menu.vertical.submenu.is-dropdown-submenu {
+	font-size: 0.75em;	
 }

@@ -1,0 +1,15 @@
+
+$logo-green: #bad239;
+$logo-blue: #b2d6f1;
+
+button, .button, input[type=submit] {
+	background-color: $logo-green;
+}
+
+a:hover {
+	color: $logo-blue;
+}
+
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+	border-color: $logo-blue;
+}

@@ -1,18 +1,11 @@
 .page-resources {
 
+	margin: 2rem 0;
+
 	.resource-link
 	{
-		text-align: center;		
-	}
-
-	.resource-link:nth-of-type(1)
-	{
-		text-align: right;			
-	}
-
-	.resource-link:nth-last-of-type(1)
-	{
-		text-align: left;			
+		text-align: center;
+		margin-bottom: 0.5rem;	
 	}
 }
 
@@ -24,11 +17,34 @@
 	    margin-bottom: 1rem;
 	}
 
+	h2 {
+		font-size: 1.1rem;
+	}
+
+	.resource-website {
+	    font-size: 0.8rem;
+	    margin-top: 0.5rem;
+	    text-decoration: underline;
+	}
+
 }
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
 	
+	.page-resources {
+
+		.resource-link:nth-of-type(1)
+		{
+			text-align: right;			
+		}
+
+		.resource-link:nth-last-of-type(1)
+		{
+			text-align: left;			
+		}
+	}
+
 	.resource {
 
 		.info {

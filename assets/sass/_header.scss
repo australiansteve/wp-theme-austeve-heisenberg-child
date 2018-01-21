@@ -1,3 +1,42 @@
 header {
-	text-align: center;
+	text-align: left;
+	background-color: #fff;
+	font-size: 0.85rem;
+    line-height: 1.25;
+    padding-top: 2rem;
+
+    ul {
+		list-style: none;
+    	line-height: 1.5;
+    }
+
+	ul.info-label {
+		color: #88d1d1;
+		text-align: right;
+		display: inherit;
+	}
+
+	ul.info {
+		color: #000;
+		margin-left: 0;
+	}
+
+	a {
+		color: #000;
+	}
+
+	.custom-logo {
+		max-width: 350px;
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	header {
+		padding-left: 2rem;
+	}
+
+	.logo-overlap {
+	    max-height: 147px;
+	}
 }

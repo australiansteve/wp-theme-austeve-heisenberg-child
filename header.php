@@ -71,7 +71,9 @@ else
 ?>
 
 <header id="masthead">
-	<section class="row column">
+	<section class="row">
+
+		<div class="small-12 medium-4 large-6 columns logo-overlap">
 		<?php 
 			if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 				the_custom_logo();
@@ -87,17 +89,13 @@ else
 		<?php 
 			}
 		?>
+		</div>
+		<div class="small-12 medium-8 large-6 columns">
+			<?php
+				get_sidebar( 'sidebar-1' );
+			?>
+		</div>
 	</section>
-
-	<ul class="dropdown menu" data-dropdown-menu>
-		<?php
-		$args = [
-			'theme_location' 	=> 'primary',
-			'container'			=> false,
-			'items_wrap' 		=> '%3$s',
-			'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
-		];
-		wp_nav_menu( $args ); ?>
-	</ul>
+		
 </header>
 <div id="content" class="site-content" role="main">

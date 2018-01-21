@@ -65,7 +65,7 @@ gulp.task('deploy', function() {
     '*.php',
     '*.css'];
 
-  var destPath = '/Applications/MAMP/htdocs/ssj/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/htdocs/tides/wp-content/themes/austeve-heisenberg-child';
 
   return gulp.src(files, {base:"."})
         .pipe(gulp.dest(destPath))

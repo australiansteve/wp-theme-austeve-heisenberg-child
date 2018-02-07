@@ -4,6 +4,8 @@ add_action( 'wp_enqueue_scripts', function() {
 
     $parent_style = 'heisenberg-style';
 
+    wp_enqueue_script( 'font-awesome-cdn', 'https://use.fontawesome.com/8365fd1449.js' );
+    wp_enqueue_style( 'google-web-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400' );
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/_dist/css/app.css' );
     wp_enqueue_style( $parent_style.'-login', get_template_directory_uri() . '/_dist/css/login.min.css' );
     wp_enqueue_style( 'child-style',
@@ -42,6 +44,22 @@ add_action( 'after_setup_theme', function() {
 	}, 10, 2 );
 
 });
+
+
+//Custom feedback after Jetpack form submission
+add_filter( 'grunion_contact_form_success_message', function($message ) {
+ 
+	ob_start();
+
+?>
+	<p class="jetpack-override-sent">Message Sent!<br/>
+	Thanks, you'll hear from us soon</p>
+
+<?php
+
+	return ob_get_clean();// or $message for default notice
+ 
+} );
 
 
 ?>

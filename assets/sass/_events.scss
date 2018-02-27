@@ -8,3 +8,30 @@
 	}
 
 }
+
+.event-block {
+    background-color: #aad69c; 
+    display: block; 
+    color: #fefefe;
+    min-height: 20rem;
+
+    .container {
+    	align-items: center;
+
+    	.title {
+			display: flex;
+			align-items: flex-end;
+		}
+    }
+    
+}
+
+.event-block:hover {
+    background: rgba(80, 184, 72, 0.8);
+}
+
+.event-block-background {
+	background-size: contain;
+    background-position: center center;
+
+}

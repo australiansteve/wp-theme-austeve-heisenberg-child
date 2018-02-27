@@ -7,7 +7,7 @@ header {
 	}
 
 	ul.menu {
-		font-size: 1.25rem;
+		font-size: 0.8rem;
 		font-weight: 700;
 
 		a {
@@ -22,6 +22,26 @@ header {
 	ul.submenu {
 		text-align: left;
 	}
+
+
+	.title-bar {
+	    background: #835a41;
+	    color: #fefefe;
+	    text-align: left;
+
+	    button:hover, .button:hover, input[type=submit]:hover, button:active, .button:active, input[type=submit]:active {
+		    background-color: #835a41;
+		}
+	}
+
+	.top-bar {
+	    padding: 0;
+	}
+
+	.top-bar, .top-bar ul {
+	    background-color: rgba(131, 90, 65, 0.24);;
+	}	
+
 }
 
 .dropdown.menu .is-active>a {
@@ -30,4 +50,24 @@ header {
 
 .menu.vertical.submenu.is-dropdown-submenu {
 	font-size: 0.75em;	
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	header {
+
+		.top-bar, .top-bar ul {
+		    background-color: #ffffff;
+		}
+
+		.top-bar {
+			display: initial;
+		}
+
+		.top-bar ul {
+		    margin: 1rem 0 0 0;
+		}
+	}
+
 }

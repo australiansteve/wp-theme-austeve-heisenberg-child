@@ -13,8 +13,8 @@ get_header(); ?>
 
 					the_title( '<h1>', '</h1>' );
 
-					if (has_category('resources'))
-						get_template_part( 'template-parts/content', 'page-resource-links' );
+					//if (has_category('resources'))
+					//	get_template_part( 'template-parts/content', 'page-resource-links' );
 
 					the_content();
 

@@ -48,7 +48,7 @@ get_header(); ?>
 						<?php endif; ?>
 
 							<div class="event-details">
-								<div class="cell show-for-small-only current-post" id="current-post-<?php echo get_the_ID(); ?>">
+								<div class="cell show-for-small-only current-post" id="current-post-<?php echo get_the_ID(); ?>" data-post='<?php echo get_the_ID(); ?>'>
 
 								</div>
 							</div>
@@ -77,23 +77,58 @@ get_header(); ?>
 		                    _ajax_nonce: '<?php echo $nonce_post; ?>' 
 		                },
 		                beforeSend: function() {
-		                    jQuery("#current-post").html("<i class='fa fa-spinner fa-pulse fa-fw'></i>");
+		                    jQuery("#current-post .container").html("<i class='fa fa-spinner fa-pulse fa-fw'></i>");
 		                    jQuery(".current-post").each(function() {
 		                    	jQuery(this).html("");
 		                    });
 		                    //Delay scrolling to the clicked element by 200ms 
 		                    setTimeout(function() {
-		                    	window.scrollTo(0, jQuery(".event-block[data-post="+postId+"]").offset().top);
+
+		                    	//Viewport in em
+		                    	var vpem = jQuery(window).width() / parseFloat(jQuery("html").css("font-size"));
+
+		                    	if (vpem < 40)
+		                    	{
+		                    		//Mobile
+		                    		window.scrollTo(0, jQuery(".event-block[data-post="+postId+"]").offset().top);
+		                    	}
+		                    	else
+		                    	{
+		                    		//Larger
+									var container = jQuery('main.austeve-event');
+									//console.log("Containertop:" + container[0].getBoundingClientRect().top);
+									if (container[0].getBoundingClientRect().top < 100)
+									{
+			                    		window.scrollTo(0, container.offset().top - 100);	                    		
+			                    	}
+									container.scrollTop(0);
+									var containerTop = jQuery("main.austeve-event").offset().top;
+									var eventTop = jQuery(".event-block[data-post="+postId+"]").offset().top;
+									// console.log(containerTop);
+									// console.log(eventTop);
+									// console.log(eventTop - containerTop);
+									container.scrollTop(eventTop - containerTop);
+		                    	}
+
 		                    }, 200);
+		                    //Remove active class from old post
+		                    jQuery(".event-block.active, .current-post.active").each(function(){
+		                    	if (postId !== jQuery(this).attr('data-post'))
+		                    	{
+		                    		jQuery(this).removeClass("active");
+								}
+							});
 		                },
 		                error: function( jqXHR, textStatus, errorThrown) {
 		                    jQuery("#current-post").html("<h2>Error</h2><p>There was an error retreiving the post, if this error persists please <a href='<?php echo site_url('contact');?>'>contact us</a></p><p>"+errorThrown+"</p>");
 		                },
 		                success: function(html){ //so, if data is retrieved, store it in html
-		                    jQuery("#current-post, #current-post-"+postId).each(function() {
+		                    jQuery("#current-post .container, #current-post-"+postId).each(function() {
 		                    	jQuery(this).html(html)
 		                    });
-		                    //jQuery(document).foundation();
+		                    jQuery(".event-block[data-post='"+postId+"'], #current-post-"+postId).each(function(){
+		                    	jQuery(this).addClass("active");
+		                    });
 		                }
 		            }); //close jQuery.ajax(
         		}
@@ -119,7 +154,8 @@ get_header(); ?>
 
 		<aside class="cell medium-8 show-for-medium" id="current-post">
 
-			#Content
+			<div class="container">
+			</div>
 
 		</aside>
 

@@ -16,37 +16,42 @@ get_header(); ?>
 
 						<div class="cell align-middle">
 
-				<?php			
-					$image = get_field('cover_image');
+						<?php			
+						$image = get_field('cover_image');
 
-					if( !empty($image) ): ?>
+						if( !empty($image) ): ?>
 
-						<div class="event-block-background" style="background-image: url(<?php echo $image['url']; ?>);">
+							<div class="event-block-background" style="background-image: url(<?php echo $image['url']; ?>);">
 
-					<?php endif; ?>
+						<?php endif; ?>
 
 
-				<div class="event-block" data-post='<?php echo get_the_ID(); ?>'>
-				<div class="grid-y container" style="height: 20rem;">
-					<div class="cell small-4 title">
-						<?php the_title( '<h1>', '</h1>' ); ?>
-					</div>
-					<div class="cell small-4 excerpt align-middle">
-						<?php the_content(); ?>
-					</div>
-					<div class="cell small-4 read-more">
-						Read more
-					</div>
-				</div>
-				</div>
+							<div class="event-block" data-post='<?php echo get_the_ID(); ?>'>
+							<div class="grid-y container" style="height: 20rem;">
+								<div class="cell small-4 title">
+									<?php the_title( '<h1>', '</h1>' ); ?>
+								</div>
+								<div class="cell small-4 excerpt align-middle">
+									<?php the_content(); ?>
+								</div>
+								<div class="cell small-4 read-more">
+									Read more
+								</div>
+							</div>
+							</div>
 
-				<?php
-				if( !empty($image) ): ?>
+						<?php
+						if( !empty($image) ): ?>
 
-					</div>
+							</div>
 
-				<?php endif; ?>
+						<?php endif; ?>
 
+							<div class="event-details">
+								<div class="cell show-for-small-only current-post" id="current-post-<?php echo get_the_ID(); ?>">
+
+								</div>
+							</div>
 
 						</div>
 
@@ -73,12 +78,21 @@ get_header(); ?>
 		                },
 		                beforeSend: function() {
 		                    jQuery("#current-post").html("<i class='fa fa-spinner fa-pulse fa-fw'></i>");
+		                    jQuery(".current-post").each(function() {
+		                    	jQuery(this).html("");
+		                    });
+		                    //Delay scrolling to the clicked element by 200ms 
+		                    setTimeout(function() {
+		                    	window.scrollTo(0, jQuery(".event-block[data-post="+postId+"]").offset().top);
+		                    }, 200);
 		                },
 		                error: function( jqXHR, textStatus, errorThrown) {
 		                    jQuery("#current-post").html("<h2>Error</h2><p>There was an error retreiving the post, if this error persists please <a href='<?php echo site_url('contact');?>'>contact us</a></p><p>"+errorThrown+"</p>");
 		                },
 		                success: function(html){ //so, if data is retrieved, store it in html
-		                    jQuery("#current-post").html(html);
+		                    jQuery("#current-post, #current-post-"+postId).each(function() {
+		                    	jQuery(this).html(html)
+		                    });
 		                    //jQuery(document).foundation();
 		                }
 		            }); //close jQuery.ajax(
@@ -103,7 +117,7 @@ get_header(); ?>
 
 		</main>
 
-		<aside class="cell medium-8" id="current-post">
+		<aside class="cell medium-8 show-for-medium" id="current-post">
 
 			#Content
 

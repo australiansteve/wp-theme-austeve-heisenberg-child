@@ -4,14 +4,14 @@
 
 	if( $image ): 
 
-		$large_image_url = wp_get_attachment_image_src( $image, $size );
+		$sized_image_url = wp_get_attachment_image_src( $image, $size );
 ?>
 
 	<div class="grid-x">
 
 		<div class="cell align-middle">
 
-			<img class="cover-image" src="<?php echo $large_image_url[0]; ?>" alt="<? echo get_the_title();?>" title="<? echo get_the_title();?>"/>
+			<img class="cover-image" src="<?php echo $sized_image_url[0]; ?>" alt="<? echo get_the_title();?>" title="<? echo get_the_title();?>"/>
 
 		</div>
 

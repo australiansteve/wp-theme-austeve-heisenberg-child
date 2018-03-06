@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/ajax-actions.php';
+
 add_action( 'wp_enqueue_scripts', function() {
 
     $parent_style = 'heisenberg-style';
@@ -65,6 +67,5 @@ add_action( 'pre_get_posts', function ( $wp_query ) {
 			$wp_query->set( 'post_type', $my_post_array );
 	} 
 });
-
 
 ?>

@@ -59,7 +59,7 @@ get_header(); ?>
 			    $nonce_post = wp_create_nonce( 'austevegetpost' );
 ?>
 <script>
-			    function get_post( postId ) {
+			    function get_post( postId, addWindowState = true ) {
 		            console.log("Get post: " + postId);
 		            jQuery.ajax({
 		                type: "post", 
@@ -122,9 +122,26 @@ get_header(); ?>
 		                    jQuery(".post-block[data-post='"+postId+"'], #current-post-"+postId).each(function(){
 		                    	jQuery(this).addClass("active");
 		                    });
+
+		                    //Update window state
+		                    console.log(addWindowState);
+		                    if (addWindowState)
+		                    {
+			                    console.log("Pushing window sate: " + postId + " <?php echo home_url( $wp->request );?>"+"?post-id="+postId );
+			                    history.pushState(postId, null, "<?php echo home_url( $wp->request );?>"+"?post-id="+postId);
+			                }
 		                }
 		            }); //close jQuery.ajax(
         		}
+
+        		window.addEventListener('popstate', function(e) {
+
+        			var postId = e.state ? e.state : <?php echo $loadFirstPost; ?>;
+					// e.state is equal to the data-attribute of the last image we clicked
+
+					console.log("Post ID: " + postId);
+					get_post(postId, false);
+				});	
 
 
 		        jQuery(".post-block").on('click', function() {
@@ -133,7 +150,32 @@ get_header(); ?>
 		        });
 
 		        //Load first post
-		        get_post( <?php echo $loadFirstPost; ?> );
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+console.log("QS post: " + getUrlParameter('post-id'));
+
+				var postToLoad = getUrlParameter('post-id');
+				console.log(postToLoad);
+				if (postToLoad == undefined)
+				{
+					postToLoad = <?php echo $loadFirstPost; ?>;
+				}
+		        //get_post( , false );
+		        get_post( postToLoad, false );
+
 
     </script>
 

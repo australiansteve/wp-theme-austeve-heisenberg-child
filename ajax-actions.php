@@ -7,20 +7,28 @@ function child_austeve_get_post_ajax() {
 		$postId = $_POST[ 'postId' ];
 		global $post; 
 		$post = get_post($postId); 
-		setup_postdata($post);
 
-		get_template_part( 'template-parts/content', get_post_type().'-header' );
+		if ($post->post_type == 'post' || $post->post_type == 'austeve-events' )
+		{
+			setup_postdata($post);
 
-		echo the_title( '<h1>', '</h1>' );
+			get_template_part( 'template-parts/content', get_post_type().'-header' );
 
-		get_template_part( 'template-parts/content', get_post_type().'-before-content' );
+			echo the_title( '<h1>', '</h1>' );
 
-		echo apply_filters('the_content', get_post_field('post_content'));
+			get_template_part( 'template-parts/content', get_post_type().'-before-content' );
 
-		get_template_part( 'template-parts/content', get_post_type().'-after-content' );
+			echo apply_filters('the_content', get_post_field('post_content'));
 
+			get_template_part( 'template-parts/content', get_post_type().'-after-content' );
 
-		die();
+			die();
+		}
+		else
+		{
+			echo "ERROR: You do not have permission to get that post";
+			die();
+		}
 	}
 	echo "ERROR: There was a problem retrieving the post. Please refresh and try again.";
 	die();

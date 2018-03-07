@@ -150,22 +150,24 @@ get_header(); ?>
 		        });
 
 		        //Load first post
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
+				var getUrlParameter = function getUrlParameter(sParam) {
+				    var sPageURL = decodeURIComponent(window.location.search.substring(1));
+				    if (sPageURL.charAt(sPageURL.length - 1) == "/") sPageURL = sPageURL.substr(0, sPageURL.length - 1); //Remove trailing /
 
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
+				    var sURLVariables = sPageURL.split('&'),
+				        sParameterName,
+				        i;
 
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
-        }
-    }
-};
+				    for (i = 0; i < sURLVariables.length; i++) {
+				        sParameterName = sURLVariables[i].split('=');
 
-console.log("QS post: " + getUrlParameter('post-id'));
+				        if (sParameterName[0] === sParam) {
+				            return sParameterName[1] === undefined ? true : sParameterName[1];
+				        }
+				    }
+				};
+
+				console.log("QS post: " + getUrlParameter('post-id'));
 
 				var postToLoad = getUrlParameter('post-id');
 				console.log(postToLoad);
@@ -173,7 +175,6 @@ console.log("QS post: " + getUrlParameter('post-id'));
 				{
 					postToLoad = <?php echo $loadFirstPost; ?>;
 				}
-		        //get_post( , false );
 		        get_post( postToLoad, false );
 
 

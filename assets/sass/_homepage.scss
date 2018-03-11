@@ -1,0 +1,26 @@
+.row.no-column-padding {
+	> .columns {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+}
+.homepage-news {
+	
+	h2 {
+		color: #fefefe;
+		background-color: $post-brown;
+		margin-bottom: 0;
+		padding: 2rem 0;
+	}
+}
+
+.homepage-events {
+	
+	h2 {
+		color: #fefefe;
+		background-color: $post-green;
+		margin-bottom: 0;
+		padding: 2rem 0;
+	}
+}
+

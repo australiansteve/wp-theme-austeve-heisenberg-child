@@ -10,7 +10,7 @@
 }
 
 .post-block {
-    background-color: #aad69c; 
+    background-color: $post-green; 
     display: block; 
     color: #fefefe;
     min-height: 20rem;
@@ -35,8 +35,16 @@
     
 }
 
+.post .post-block {
+    background-color: $post-brown; 
+}
+
 .post-block:hover, .post-block.active {
     background: rgba(80, 184, 72, 0.8);
+}
+
+.post .post-block:hover, .post .post-block:active {
+    background: rgba(120, 75, 50, 0.8);
 }
 
 .post-block-background {

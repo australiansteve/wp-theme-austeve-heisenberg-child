@@ -4,6 +4,7 @@ require_once __DIR__ . '/ajax-actions.php';
 
 add_action( 'wp_enqueue_scripts', function() {
 
+    $min_ext = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
     $parent_style = 'heisenberg-style';
 
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat');
@@ -14,8 +15,16 @@ add_action( 'wp_enqueue_scripts', function() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
-});
 
+	// Add our child app js file
+	wp_enqueue_script(
+		'heisenbergchild_appjs',
+		get_stylesheet_directory_uri() ."/_dist/js/app{$min_ext}.js",
+		array( 'jquery' ),
+		wp_get_theme()->get('Version')
+	);
+
+});
 
 add_action( 'after_setup_theme', function() {
 

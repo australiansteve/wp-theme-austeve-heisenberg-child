@@ -35,16 +35,24 @@
     
 }
 
+.even .post-block {
+    background-color: $post-green-even; 
+}
+
 .post .post-block {
     background-color: $post-brown; 
 }
 
+.post.even .post-block {
+    background-color: $post-brown-even; 
+}
+
 .post-block:hover, .post-block.active {
-    background: rgba(80, 184, 72, 0.8);
+    background: rgba(80, 184, 72, 0.8) !important; /*IMPORTANT to override JS styling */
 }
 
 .post .post-block:hover, .post .post-block:active {
-    background: rgba(120, 75, 50, 0.8);
+    background: rgba(120, 75, 50, 0.8) !important; /*IMPORTANT to override JS styling */
 }
 
 .post-block-background {

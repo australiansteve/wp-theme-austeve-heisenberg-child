@@ -6,10 +6,8 @@ const autoprefixer = require('gulp-autoprefixer')
 const svgSprite = require('gulp-svg-sprite')
 const svgmin = require('gulp-svgmin')
 const size = require('gulp-size')
-const browserSync = require('browser-sync')
 const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
-const babel = require('gulp-babel')
 const del = require('del')
 const rename = require('gulp-rename')
 
@@ -20,7 +18,7 @@ const rename = require('gulp-rename')
 const paths = {
   sassPath: 'assets/sass/',
   nodePath: 'node_modules/',
-  jsPath: 'assets/js/concat',
+  jsPath: 'assets/js',
   destPath: '_dist/',
   foundationJSpath: 'node_modules/foundation-sites/dist/js/plugins/',
   imgPath: 'assets/img/'
@@ -40,7 +38,6 @@ gulp.task('css', function () {
     .pipe(sourcemaps.write('.'))
     .pipe(size({showFiles: true}))
     .pipe(gulp.dest(paths.destPath + 'css'))
-    .pipe(browserSync.stream({match: '**/*.css'}))
 })
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -48,7 +45,16 @@ gulp.task('css', function () {
 ////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('js', function () {
-  return true
+  return gulp.src([
+    // Our custom JS
+    paths.jsPath + '/**/*.js'
+  ])
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest(paths.destPath + 'js'))
+    .pipe(uglify().on('error', notify.onError(error => `Error: ${error.message}`)))
+    .pipe(rename('app.min.js'))
+    .pipe(gulp.dest(paths.destPath + 'js'))
+    .pipe(size({showFiles: true}))
 })
 
 ////////////////////////////////////////////////////////////////////////////////

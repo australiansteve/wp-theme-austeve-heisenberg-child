@@ -53,6 +53,30 @@ add_action( 'after_setup_theme', function() {
 	    return $title;
 	}, 10, 2 );
 
+	register_sidebar( array(
+	    'id'          => 'left-footer-widget-area',
+	    'name'        => __( 'Left Footer Area', 'heisenberg'),
+	    'description' => __( 'Displays in the left side of the footer', 'heisenberg'),
+	    'before_widget' => '<div class="left-sidebar-box">',
+        'after_widget' => '</div>',
+	) );
+
+	register_sidebar( array(
+	    'id'          => 'center-footer-widget-area',
+	    'name'        => __( 'Center Footer Area', 'heisenberg'),
+	    'description' => __( 'Displays in the center of the footer', 'heisenberg'),
+	    'before_widget' => '<div class="center-sidebar-box">',
+        'after_widget' => '</div>',
+	) );
+
+	register_sidebar( array(
+	    'id'          => 'right-footer-widget-area',
+	    'name'        => __( 'Right Footer Area', 'heisenberg'),
+	    'description' => __( 'DO NOT USE - Edit the \'Social\' menu instead', 'heisenberg'),
+	    'before_widget' => '<div class="right-sidebar-box">',
+        'after_widget' => '</div>',
+	) );
+
 });
 
 

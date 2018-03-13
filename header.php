@@ -70,49 +70,50 @@ else
 }
 ?>
 
-<header id="masthead">
-	<div class="row">
-		<div class="medium-3 columns">
-			<?php 
-				if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-					the_custom_logo();
-				}
-				else {
-			?>
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-						</a>
-					</h1>
-					<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
-			<?php 
-				}
-			?>
-		</div>
-
-		<div class="medium-9 columns">
-
-			<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-				<button class="menu-icon" type="button" data-toggle="main-menu"></button>
-				<div class="title-bar-title">Menu</div>
+<header id="masthead" data-sticky-container>
+	<div data-sticky data-options="marginTop:0;stickyOn:small" style="width:100%">
+		<div class="row">
+			<div class="medium-3 columns">
+				<?php 
+					if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+						the_custom_logo();
+					}
+					else {
+				?>
+						<h1 class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+							</a>
+						</h1>
+						<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
+				<?php 
+					}
+				?>
 			</div>
 
-			<div class="top-bar" id="main-menu">
-				<div class="top-bar-right">
-					<ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
-						<?php
-						$args = [
-							'theme_location' 	=> 'primary',
-							'container'			=> false,
-							'items_wrap' 		=> '%3$s',
-							'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
-						];
-						wp_nav_menu( $args ); ?>
-					</ul>
+			<div class="medium-9 columns" >
+
+				<div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+					<button class="menu-icon" type="button" data-toggle="main-menu"></button>
+					<div class="title-bar-title">Menu</div>
+				</div>
+
+				<div class="top-bar" id="main-menu">
+					<div class="top-bar-right">
+						<ul class="dropdown menu vertical medium-horizontal" data-dropdown-menu>
+							<?php
+							$args = [
+								'theme_location' 	=> 'primary',
+								'container'			=> false,
+								'items_wrap' 		=> '%3$s',
+								'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
+							];
+							wp_nav_menu( $args ); ?>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </header>
 <div id="content" class="site-content" role="main">

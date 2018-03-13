@@ -19,7 +19,7 @@ jQuery.fn.scrollEnd = function(callback, timeout) {
   });
 };
 
-// how to call it (with a 1000ms timeout):
+//Resize logo after scrolling down the page - resizing after moving back to the top of the page is a bit wonky and causes things to jump aroud, so I'm not doing that here
 jQuery(window).scrollEnd(function(){
     if (jQuery(this).scrollTop() > 0)
     {
@@ -31,31 +31,9 @@ jQuery(window).scrollEnd(function(){
 		});
     	
     }
-    else 
-    {
-    	//transition logo bigger
-    	jQuery("header .custom-logo-link img").each(function() {
-			jQuery(this).css("max-width", "180px");
-			jQuery(this).css("-webkit-transition", "max-width .5s ease");
-			jQuery(this).css("transition", "max-width .5s ease");
-		});
-    }
 }, 1000);
 
 jQuery( document ).ready(function() {
-    jQuery(".post .post-block").each(function(){
-	  var angle = diagonalAngle();
-	  var css = diagonalCssString(angle, '#784b32', '#805b0c')
-	  //console.log(css);
-	  //jQuery(this).css('background', css)
-	});
-
-	jQuery(".austeve-events .post-block").each(function(){
-	  var angle = diagonalAngle();
-	  var css = diagonalCssString(angle, '#aad69c', '#50b848')
-	  //console.log(css);
-	  //jQuery(this).css('background', css)
-	});
 
 });
 

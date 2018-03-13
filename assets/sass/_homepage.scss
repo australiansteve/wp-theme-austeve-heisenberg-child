@@ -4,11 +4,16 @@
 		padding-right: 0 !important;
 	}
 }
+
+.row.two-column-row {
+	max-width: 55rem;
+}
+
 .homepage-news {
 	
 	h2 {
 		color: #fefefe;
-		background-color: $post-brown;
+		background-color: $brown-dark;
 		margin-bottom: 0;
 		padding: 2rem 0;
 	}
@@ -18,9 +23,21 @@
 	
 	h2 {
 		color: #fefefe;
-		background-color: $post-green;
+		background-color: $green-dark;
 		margin-bottom: 0;
 		padding: 2rem 0;
+	}
+}
+
+.homepage-resources {
+	padding: 3rem;
+	color: white;
+}
+
+.home {
+	h2 {
+		text-transform: uppercase;
+		border-bottom: 1px solid white;
 	}
 }
 

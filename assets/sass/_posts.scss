@@ -10,7 +10,7 @@
 }
 
 .post-block {
-    background-color: $post-green; 
+    background-color: $green-light; 
     display: block; 
     color: #fefefe;
     min-height: 20rem;
@@ -31,28 +31,29 @@
 		.read-more:hover, .read-more:active {
 			cursor: pointer;
 		}
-    }
-    
+    }    
 }
 
 .even .post-block {
-    background-color: $post-green-even; 
+    background-color: $green-dark; 
 }
 
 .post .post-block {
-    background-color: $post-brown; 
+    background-color: $brown-light; 
 }
 
 .post.even .post-block {
-    background-color: $post-brown-even; 
+    background-color: $brown-dark; 
 }
 
 .post-block:hover, .post-block.active {
-    background: rgba(80, 184, 72, 0.8) !important; /*IMPORTANT to override JS styling */
+    background: $green-dark-extra !important; /*IMPORTANT to override JS styling */
+    opacity: 0.8;
 }
 
-.post .post-block:hover, .post .post-block:active {
-    background: rgba(120, 75, 50, 0.8) !important; /*IMPORTANT to override JS styling */
+.post .post-block:hover, .post .post-block.active {
+    background: $brown-dark-extra !important; /*IMPORTANT to override JS styling */
+    opacity: 0.8;
 }
 
 .post-block-background {
@@ -73,7 +74,11 @@
 		height: 0;
 		border-style: solid;
 		border-width: 50px 50px 0 50px;
-		border-color: #aad69c transparent transparent transparent ;
+		border-color: $brown-dark-extra transparent transparent transparent ;
+	}
+
+	.austeve-events .post-block.active:after:before {
+		border-color: $green-dark-extra transparent transparent transparent ;
 	}
 
 	.current-post.active {
@@ -103,7 +108,11 @@
 		margin-top: 6rem;
 		border-style: solid;
 		border-width: 50px 0 50px 50px;
-		border-color: transparent transparent transparent #aad69c;
+		border-color: transparent transparent transparent $brown-dark-extra;
+	}
+
+	#current-post.austeve-events:before {
+		border-color: transparent transparent transparent $green-dark-extra;
 	}
 
 	#current-post .container {

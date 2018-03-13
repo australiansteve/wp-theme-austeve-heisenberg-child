@@ -1,0 +1,46 @@
+h2 {
+	margin-top: 2rem;
+	font-family: 'Montserrat', sans-serif;
+}
+
+p {
+	margin-bottom: 1.25rem;
+	line-height: 1.25rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 0.95rem;
+}
+
+a {
+	font-weight: 700;
+	color: #88d1d1;
+}
+
+/* JetPack overrides */
+p.contact-submit {
+    
+    text-align: center;
+    width: 80%;
+
+    input[type=submit] {
+	    background: #88d1d1;
+	    text-transform: uppercase;
+	    padding: 0.25rem 1rem;
+	}
+
+}
+
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+	#content {
+
+		margin: 4rem 0 4rem 2rem;
+
+	}
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {}

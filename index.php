@@ -191,7 +191,7 @@ get_header(); ?>
 
 		</main>
 
-		<aside class="cell medium-cell-block-y medium-8 show-for-medium" id="current-post">
+		<aside class="cell medium-cell-block-y medium-8 show-for-medium <?php echo get_post_type();?>" id="current-post">
 
 			<div class="container">
 			</div>

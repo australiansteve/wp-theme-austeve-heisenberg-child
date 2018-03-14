@@ -34,10 +34,54 @@
 	color: white;
 }
 
-.home {
-	h2 {
-		text-transform: uppercase;
-		border-bottom: 1px solid white;
+.homepage .page-id-344 {
+	padding-top: 3rem;
+
+	.tagline {
+	    color: white;
+	    font-size: 1.25rem;
+	    padding-left: 6rem;
+	    padding-right: 6rem;
+	    margin-bottom: 3rem;
 	}
 }
 
+.landing-bg-image {
+	min-height: 75vh;
+	background-size: cover;
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	.homepage .page-id-344 {
+		padding-top: 5rem;
+
+		.tagline {
+		    color: white;
+		    font-size: 1.25rem;
+		    padding-left: 6rem;
+		    padding-right: 6rem;
+		    margin-bottom: 3rem;
+		}
+	}	
+
+	.landing-bg-image {
+		min-height: 80vh;
+		background-position-y: 100%;
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+	.homepage .page-id-344 {
+		padding-top: 8rem;
+
+		.tagline {
+		    color: white;
+		    font-size: 1.25rem;
+		    padding-left: 6rem;
+		    padding-right: 6rem;
+		    margin-bottom: 3rem;
+		}
+	}
+}

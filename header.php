@@ -31,7 +31,6 @@ $fixedBackground = get_theme_mod('austeve_background_fixed', 'fixed');
 $backgrounds = get_theme_mod('austeve_backgrounds', 0);
 $onlyforhome = get_theme_mod('austeve_background_homeonly', false);
 $pageClasses = is_front_page() ? "homepage" : "page-".get_the_ID();
-$pageClasses .= is_archive() ? " archive-".$query->query['post_type'] : "";
 
 if ($fixedBackground == 'fixed') 
 {

@@ -1,5 +1,5 @@
 #content.site-content {
-    margin: 2rem auto;
+    margin: 0rem 2rem 2rem 2rem;
 }
 
 .no-max-width {
@@ -11,12 +11,18 @@ div[role=form] {
     margin: auto;
 }
 
-a {
+a, p, body {
 	color: #fefefe;
 }
 
 a:hover {
 	color: $logo-blue;
+}
+
+h1, h2, h3 {
+	text-transform: uppercase;
+	border-bottom: 1px solid white;
+	margin-top: 2rem;
 }
 
 .dropdown.menu>li.is-dropdown-submenu-parent>a::after {

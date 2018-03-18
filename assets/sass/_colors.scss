@@ -26,3 +26,10 @@ a:hover {
 .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
 	border-color: $logo-blue;
 }
+
+::selection {
+  background: $blue-dark-extra; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $blue-dark-extra; /* Gecko Browsers */
+}

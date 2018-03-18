@@ -10,6 +10,10 @@
 	background: -webkit-linear-gradient(5deg, $green-dark 50%, $green-light 50%);
 }
 
+.page-id-309 #page .content-wrapper { /* What we do page content */
+	background: $green-dark;
+}
+
 .post-type-archive-austeve-resources #page {
 	background: -webkit-linear-gradient(5deg, $blue-dark 50%, $blue-light 50%);
 }
@@ -36,6 +40,10 @@
 
 .page-id-89 #page { /* Contact us page */
 	background: -webkit-linear-gradient(5deg, $blue-dark 50%, $blue-light 50%);
+}
+
+.page-id-89 #page .content-wrapper { /* Contact us page content */
+	background: $blue-dark;
 }
 
 .page-id-332 #page { /* Path to improvement page */

@@ -16,7 +16,14 @@ get_header(); ?>
 					//if (has_category('resources'))
 					//	get_template_part( 'template-parts/content', 'page-resource-links' );
 
+				?>
+					<div class='content-wrapper'>
+				<?php
 					the_content();
+
+				?>
+					</div>
+				<?php
 
 				endwhile;
 

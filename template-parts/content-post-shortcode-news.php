@@ -9,7 +9,8 @@
 		<?php the_excerpt(); ?>
 	</div>
 	<div class="cell shrink read-more">
-		<a href='<?php echo get_permalink();?>' title='Read more'>Read more</a>
+		<?php get_template_part( 'template-parts/content', get_post_type().'-after-content' ); ?>
+		<a class="read-more button" href="<?php the_permalink();?>">Read more</a>
 	</div>
 </div>
 </div>

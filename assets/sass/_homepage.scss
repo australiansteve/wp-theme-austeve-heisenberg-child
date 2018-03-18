@@ -9,23 +9,21 @@
 	max-width: 55rem;
 }
 
-.homepage-news {
+.homepage-news, .homepage-events {
 	
 	h2 {
 		color: #fefefe;
 		background-color: $brown-dark;
 		margin-bottom: 0;
 		padding: 2rem 0;
+		margin-top: 0;
 	}
 }
 
 .homepage-events {
 	
 	h2 {
-		color: #fefefe;
 		background-color: $green-dark;
-		margin-bottom: 0;
-		padding: 2rem 0;
 	}
 }
 
@@ -50,6 +48,16 @@
 	min-height: 75vh;
 	background-size: cover;
 	box-shadow: inset 0 0 0 1000px rgba(10, 10, 10, 0.25);
+
+	.path-to-improvement, .join-us {
+
+		margin-bottom: 3rem;
+		
+		a {
+			text-transform: uppercase;
+			font-size: 1.2rem;
+		}
+	}
 }
 
 /* Medium and up */

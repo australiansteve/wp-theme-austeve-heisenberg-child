@@ -1,10 +1,14 @@
-a, p, body {
+a, p, body, label {
 	color: #fefefe;
 }
 
 p {
 	margin-bottom: .75rem;
 	line-height: 1.25rem;
+}
+
+p:empty { 
+	display:none; 
 }
 
 a {
@@ -14,6 +18,11 @@ a {
 
 a:hover {
 	color: $logo-blue;
+}
+
+.content-wrapper {
+    padding: 1rem;
+    margin-bottom: 5rem;
 }
 
 /* JetPack overrides */

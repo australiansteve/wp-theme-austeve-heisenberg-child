@@ -6,6 +6,11 @@ function austeve_resource_meta_walk($val, $key, &$new_array){
     $new_array[$pair[0]] = $pair[1];
 }
 ?>
+	<div class="grid-x">
+		<?php 
+		echo "<h1 class='page-title'><a href=".home_url('resources').">Resources</a></h1>";
+		?>
+	</div>
 
 	<div class="grid-x">
 
@@ -13,7 +18,7 @@ function austeve_resource_meta_walk($val, $key, &$new_array){
 
 			<?php get_template_part( 'template-parts/archive', 'austeve-resources-categories' ); ?>
 
-
+			<h2><?php echo print_r(get_queried_object()->name, true); ?></h2>
 			<?php
 			if ( have_posts() ) :
 

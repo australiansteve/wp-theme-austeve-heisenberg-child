@@ -1,5 +1,17 @@
 <?php
 get_header(); ?>
+	
+	<div class="grid-x">
+		<?php 
+		if ( is_singular('austeve-events') ) {
+		  // Event page
+			echo "<h1 class='page-title'><a href=".home_url('events').">Events</a></h1>";
+		} elseif ( is_singular('post') ) {
+		  // Blog post page
+			echo "<h1 class='page-title'><a href=".home_url('blog').">Updates</a></h1>";
+		} 
+		?>
+	</div>
 
 	<div class="grid-x">
 

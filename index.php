@@ -2,7 +2,20 @@
 get_header(); ?>
 
 	<div class="grid-x">
-		<?php the_archive_title( '<h1 class="page-title">', '</h1>' );;?>
+		<?php 
+		//https://codex.wordpress.org/Conditional_Tags#The_Blog_Page
+		if ( is_front_page() && is_home() ) {
+		  // Default homepage
+		} elseif ( is_front_page() ) {
+		  // static homepage
+		} elseif ( is_home() ) {
+		  // blog page
+			echo "<h1 class='page-title'>Updates</h1>";
+		} else {
+		  //everything else
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+		}
+		?>
 	</div>
 
 	<div class="grid-x">
@@ -55,6 +68,8 @@ get_header(); ?>
 
 				<?php
 				endwhile;
+
+				get_template_part( 'template-parts/archive', get_post_type().'-after-loop' );
 
 				the_posts_navigation();
 

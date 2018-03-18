@@ -4,8 +4,8 @@
 
 .no-max-width {
 	max-width: none;
-	margin-left: -2rem;
-	margin-right: -2rem;
+	margin-left: -3rem;
+	margin-right: -3rem;
 }
 
 div[role=form] {
@@ -19,13 +19,21 @@ h1, h2, h3 {
 	border-bottom: 1px solid white;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
+	width: 100%;
 }
 
-.post-type-archive h2, .blog h2, .resource-category-archive h2, .single h2 {
+.post-type-archive h2, .blog h2, .resource-category-archive .austeve-resources h2, .single h2 {
 	margin-top: 0rem;
 	font-size: 1.4rem;
 	border-bottom: none;
 	margin-bottom: 1rem;
+}
+
+h3 {
+	font-size: 1.4rem;
+    border: 0;
+    margin-bottom: 1rem;
+    margin-top: 0;
 }
 
 .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
@@ -41,7 +49,11 @@ button:hover, .button:hover, input[type=submit]:hover, button:active, .button:ac
 }
 
 #resource-categories {
-	padding: 5rem 0;	
+	padding: 2rem 0 5rem 0;	
+}
+
+.tax-resource-category #resource-categories {
+	padding: 0 0 2rem 0;	
 }
 
 .resource-category {
@@ -69,6 +81,11 @@ button:hover, .button:hover, input[type=submit]:hover, button:active, .button:ac
 	box-shadow: none;
 }
 
+.see-more {
+	width: 100%;
+	text-align: center;
+	margin: 3rem 0;
+}
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
@@ -85,7 +102,7 @@ button:hover, .button:hover, input[type=submit]:hover, button:active, .button:ac
 		padding-top: 12rem;
 	}
 	
-	.post-type-archive h2, .blog h2, .resource-category-archive h2, .single h2 {
+	.post-type-archive h2, .blog h2, .resource-category-archive .austeve-resources h2, .single h2 {
 		font-size: 1.6rem;
 	}
 

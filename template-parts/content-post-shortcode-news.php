@@ -3,7 +3,7 @@
 <div class="post-block" data-post='<?php echo get_the_ID(); ?>'>
 <div class="grid-y container" style="height: 20rem;">
 	<div class="cell shrink title">
-		 <h1><?php echo get_post()->post_title; ?></h1>
+		 <h3><a href="<?php the_permalink();?>"><?php echo get_post()->post_title; ?></a></h3>
 	</div>
 	<div class="cell auto cell-block-container excerpt">
 		<?php the_excerpt(); ?>

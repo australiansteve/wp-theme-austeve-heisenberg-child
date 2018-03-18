@@ -101,4 +101,13 @@ add_action( 'pre_get_posts', function ( $wp_query ) {
 	} 
 });
 
+
+add_shortcode( 'austeve-resources-categories', function() {
+
+	ob_start();
+	get_template_part( 'template-parts/archive', 'austeve-resources-categories' );
+	return ob_get_clean();
+
+});
+
 ?>

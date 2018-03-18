@@ -2,10 +2,6 @@
 get_header(); ?>
 
 	<div class="grid-x">
-		<?php the_archive_title( '<h1 class="page-title">', '</h1>' );;?>
-	</div>
-
-	<div class="grid-x">
 
 		<main class="cell">
 			<?php
@@ -29,24 +25,18 @@ get_header(); ?>
 								<div class="cell title">
 									<?php the_title( '<h2>', '</h2>' ); ?>
 								</div>
-
 								<div class="cell before-content">
-									<?php 
-									get_template_part( 'template-parts/content', get_post_type().'-before-content' );
-									?>
+									<?php get_template_part( 'template-parts/content', get_post_type().'-before-content' ); ?>
+									
 								</div>
-
 								<div class="cell the-content">
-									<?php get_template_part( 'template-parts/archive', get_post_type().'-preview' ); ?>
+									<?php the_content(); ?>
+									
 								</div>
-
 								<div class="cell after-content">
 									<?php get_template_part( 'template-parts/content', get_post_type().'-after-content' ); ?>
-									<div class="read-more">
-										<a class="read-more button" href="<?php the_permalink();?>">Read more</a>
-									</div>
+									
 								</div>
-
 							</div>
 
 						</div>

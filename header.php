@@ -71,7 +71,7 @@ else
 ?>
 
 <header id="masthead" data-sticky-container>
-	<div data-sticky data-options="marginTop:0;stickyOn:small" style="width:100%">
+	<div class="header-content" data-sticky data-options="marginTop:0;stickyOn:small" style="width:100%">
 		<div class="row">
 			<div class="medium-3 columns">
 				<?php 

@@ -1,19 +1,19 @@
-h2 {
-	margin-top: 2rem;
-	font-family: 'Montserrat', sans-serif;
+a, p, body {
+	color: #fefefe;
 }
 
 p {
-	margin-bottom: 1.25rem;
+	margin-bottom: .75rem;
 	line-height: 1.25rem;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
-	font-size: 0.95rem;
 }
 
 a {
 	font-weight: 700;
-	color: #88d1d1;
+	color: $link-colour;
+}
+
+a:hover {
+	color: $logo-blue;
 }
 
 /* JetPack overrides */
@@ -34,11 +34,6 @@ p.contact-submit {
 /* Medium and up */
 @media screen and (min-width: 40em) {
 	
-	#content {
-
-		margin: 4rem 0 4rem 2rem;
-
-	}
 
 }
 

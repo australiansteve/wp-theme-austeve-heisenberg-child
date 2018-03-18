@@ -1,5 +1,5 @@
 #content.site-content {
-    margin: 0rem 2rem 2rem 2rem;
+    margin: 0rem 1rem 2rem 1rem;
 }
 
 .no-max-width {
@@ -11,18 +11,19 @@ div[role=form] {
     margin: auto;
 }
 
-a, p, body {
-	color: #fefefe;
-}
-
-a:hover {
-	color: $logo-blue;
-}
 
 h1, h2, h3 {
 	text-transform: uppercase;
 	border-bottom: 1px solid white;
 	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.post-type-archive h2, .blog h2, .resource-category-archive h2, .single h2 {
+	margin-top: 0rem;
+	font-size: 1.4rem;
+	border-bottom: none;
+	margin-bottom: 1rem;
 }
 
 .dropdown.menu>li.is-dropdown-submenu-parent>a::after {
@@ -30,18 +31,75 @@ h1, h2, h3 {
 }
 
 button, .button, input[type=submit], .button:focus {
-	background-color: $logo-green;
+	background-color: $green-dark-extra;
 }
 
 button:hover, .button:hover, input[type=submit]:hover, button:active, .button:active, input[type=submit]:active {
-	background-color:  transparentize($logo-green, 0.2);
+	background-color:  transparentize($green-dark-extra, 0.2);
+}
+
+#resource-categories {
+	padding: 5rem 0;	
+}
+
+.resource-category {
+	padding: 5rem 0 3rem 0;
+	text-align: center;
+	box-shadow: inset 0 0 0 1000px rgba(10, 10, 10, 0.5);
+	border: 5px solid $blue-dark;
+    outline-color: $blue-dark;
+    background-position: center top;
+
+	h3 {
+		margin: 2rem 0 0 0;
+		font-size: 1.2rem;
+	    text-transform: initial;
+	    border-bottom: none;
+	}
+
+	.resource-category-icon {
+		width: 50%;
+		max-width: 100px;
+	}
+}
+
+.resource-category:hover, .resource-category.active {
+	box-shadow: none;
 }
 
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
-		
+	
+	#content.site-content {
+	    margin: 0rem 2rem 2rem 2rem;
+	}
+
 	div[role=form] {
 	    max-width: 50%;
+	}
+
+	.resource-category {
+		padding-top: 12rem;
+	}
+	
+	.post-type-archive h2, .blog h2, .resource-category-archive h2, .single h2 {
+		font-size: 1.6rem;
+	}
+
+	.post-type-archive .detail, .blog .detail {
+		padding-left: 1rem;
+	}
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	.resource-category {
+
+		h3 {
+			margin: 2rem 2rem 0 2rem;
+		}
 	}
 }

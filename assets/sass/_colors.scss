@@ -1,15 +1,17 @@
 
 $logo-green: #bad239;
 $logo-blue: #b2d6f1;
+$link-colour: white;
 
-$green-dark-extra: #255019;
-$green-dark: #6bb458;
-$green-light: #7abc68;
-$brown-dark-extra: #3c2815;
-$brown-dark: #776453;
-$brown-light: #857566;
-$blue-dark: #8ccbfa;
-$blue-light: $logo-blue;
+$green-dark-extra: #54b847;
+$green-dark: #7ABB67;
+$green-light: #8FC781;
+$brown-dark-extra: #68543F;
+$brown-dark: #776552;
+$brown-light: #867665;
+$blue-dark-extra: #6FA2C2;
+$blue-dark: #84C1E7;
+$blue-light: #A3D1ED;
 
 button, .button, input[type=submit] {
 	background-color: $green-dark;

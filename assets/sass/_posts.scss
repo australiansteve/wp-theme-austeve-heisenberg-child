@@ -1,3 +1,84 @@
+
+.post:not(.austeve-display-posts), .austeve-events:not(.austeve-display-posts), .austeve-resources:not(.austeve-display-posts) {
+	
+	padding-top: 2rem;
+    padding-bottom: 3rem;
+    min-height: 15rem;
+    border-bottom: 1px solid white;
+
+    .container {
+	    padding: 1rem;
+	    background: $brown-dark;
+    }
+
+    .the-content {
+    	margin-bottom: 1rem;
+    }
+
+	.image 
+	{
+		padding: 0.75rem;
+		max-width: 350px;
+
+		.solid-bg {
+			background: white;
+		}
+
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	.date {
+	    font-weight: 700;
+	    text-transform: uppercase;
+	    font-size: 1.1rem;
+	    margin-bottom: 0.5rem;
+	}
+
+	.excerpt, .info {
+		margin-bottom: 0.75rem;
+	}
+
+	.tickets, .read-more {
+		display: inline-block;		
+	}
+
+	.button {
+		background-color: $brown-dark-extra; 		
+	}
+}
+
+.austeve-events:not(.austeve-display-posts) {
+
+	.container {
+	    background: $green-dark;
+    }
+
+	.button {
+		background-color: $green-dark-extra; 		
+	}
+}
+
+.austeve-resources:not(.austeve-display-posts) {
+
+	.container {
+	    background: $blue-dark;
+    }
+
+	.image 
+	{
+		img {
+			border-radius: 0;
+			border: 20px solid white;
+		}
+	}
+
+	.button {
+		background-color: $blue-dark-extra; 		
+	}
+}
+
 .austeve-post {
 	
 	text-align: center;
@@ -25,6 +106,8 @@
 
 			h1 {
 				font-size: 1.5rem;
+				margin-top: 0;
+    			margin-bottom: 1rem;
 			}
 		}
 

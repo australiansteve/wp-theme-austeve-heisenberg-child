@@ -1,6 +1,10 @@
 header {
 	text-align: center;
 
+	.header-content {
+	    padding-bottom: 0.5rem;
+	}
+
 	.custom-logo-link img {
 	    margin: 1.5rem;
 	    max-width: 180px;
@@ -25,12 +29,12 @@ header {
 
 
 	.title-bar {
-	    background: #835a41;
+	    background: $brown-dark;
 	    color: #fefefe;
 	    text-align: left;
 
 	    button:hover, .button:hover, input[type=submit]:hover, button:active, .button:active, input[type=submit]:active {
-		    background-color: #835a41;
+		    background-color: $brown-light;
 		}
 	}
 
@@ -39,11 +43,15 @@ header {
 	}
 
 	.top-bar, .top-bar ul {
-	    background-color: rgba(131, 90, 65, 0.24);;
+	    background-color: $brown-light;
 	}
 
 	.sticky {
 		background-color: #fff;
+	}
+
+	button.menu-icon {
+	    background-color: $brown-dark;
 	}
 
 }
@@ -60,6 +68,10 @@ header {
 @media screen and (min-width: 40em) {
 
 	header {
+
+		.header-content {
+		    padding-bottom: 0;
+		}
 
 		.top-bar, .top-bar ul {
 		    background-color: #ffffff;

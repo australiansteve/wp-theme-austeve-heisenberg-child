@@ -17,10 +17,16 @@
 .mp_wrapper {
     max-width: 90%;
     margin: auto;
+    background: $brown-dark;
+    margin-bottom: 5rem;
+}
+
+.mp-form-label label {
+	color: white;
 }
 
 .mepr-price-menu.fixed .mepr-price-box-button a {
-	background-color: $logo-green;
+	background-color: $brown-dark-extra;
 }
 
 /* Medium and up */
@@ -35,7 +41,8 @@
 	}
 
 	.mp_wrapper {
-	    max-width: 50%;
+	    max-width: 60%;
 	    margin: auto;
+	    padding: 2rem;
 	}
 }

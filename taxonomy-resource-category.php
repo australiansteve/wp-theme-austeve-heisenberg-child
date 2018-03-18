@@ -49,7 +49,36 @@ function austeve_resource_meta_walk($val, $key, &$new_array){
 
 				<?php
 				endwhile;
+				?>
+				<div class="grid-x <?php echo get_post_type(); ?>">
 
+					<div class="cell medium-4 text-right image">
+						<div class="solid-bg">
+							<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+								the_custom_logo();
+							}?>
+						</div>	
+					</div>
+
+					<div class="cell medium-8 detail" id='austeve-resource-<?php echo get_the_ID(); ?>'>
+
+						<div class="grid-y container">
+							<div class="cell title">
+								<h2>Your organization here</h2>
+							</div>
+							<div class="cell info">
+								Do you belong here? 
+							</div>
+							<div class="cell web-site">
+								<a class="web-site button" href="<?php echo home_url('contact-us');?>">Contact us</a>
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				<?php
 			else: 
 				echo esc_html( "No resources in this category!" );
 			endif;

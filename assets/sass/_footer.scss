@@ -3,12 +3,13 @@
 	color: $brown-dark;
 	padding-top: 0;
 	padding-bottom: 0;
-	margin: 0 0.5rem;
+	margin: 1rem 0.5rem 0 0.5rem;
 
 	h2 {
 		color: $brown-dark;
 		font-size: 1rem;
 		text-transform: none;
+		margin-top: 0;
 	}
 
 	p {
@@ -44,7 +45,7 @@
 @media screen and (min-width: 40em) {
 
 	#colophon {
-		margin: 0 3rem;
+		margin: 1rem 3rem 0 3rem;
 
 		li {
 			margin-left: 1rem;

@@ -9,6 +9,11 @@
 	max-width: 55rem;
 }
 
+.home #content , .home .content-wrapper {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
 .homepage-news, .homepage-events {
 	
 	background-color: $brown-dark;

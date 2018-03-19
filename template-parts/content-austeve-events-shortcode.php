@@ -1,3 +1,5 @@
+<?php get_template_part( 'template-parts/archive', get_post_type().'-before-block' ); ?>
+
 <div class="post-block" data-post='<?php echo get_the_ID(); ?>'>
 <div class="grid-y container" style="height: 20rem;">
 	<div class="cell shrink title">
@@ -13,3 +15,5 @@
 	</div>
 </div>
 </div>
+
+<?php get_template_part( 'template-parts/archive', get_post_type().'-after-block' ); ?>

@@ -10,7 +10,7 @@ get_header(); ?>
 		  // static homepage
 		} elseif ( is_home() ) {
 		  // blog page
-			echo "<h1 class='page-title'>Updates</h1>";
+			echo "<h1 class='page-title'>News</h1>";
 		} else {
 		  //everything else
 			the_archive_title( '<h1 class="page-title">', '</h1>' );

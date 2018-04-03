@@ -8,7 +8,7 @@ get_header(); ?>
 			echo "<h1 class='page-title'><a href=".home_url('events').">Events</a></h1>";
 		} elseif ( is_singular('post') ) {
 		  // Blog post page
-			echo "<h1 class='page-title'><a href=".home_url('blog').">Updates</a></h1>";
+			echo "<h1 class='page-title'><a href=".home_url('blog').">News</a></h1>";
 		} 
 		?>
 	</div>

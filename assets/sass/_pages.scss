@@ -74,6 +74,14 @@
 	background: -webkit-linear-gradient(5deg, $blue-dark 50%, $blue-light 50%);
 }
 
+.page-id-434 #page, .row.page-id-434 { /* 'Subscribe' page and for Homepage */
+	background: -webkit-linear-gradient(5deg, $green-dark 50%, $green-light 50%);
+}
+
+.page-id-17 #page .content-wrapper { /* Login page content */
+	background: $green-dark;
+}
+
 .page-resources {
 
 	margin: 2rem 0;

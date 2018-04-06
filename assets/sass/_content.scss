@@ -40,11 +40,11 @@ h3 {
 	border-color: $logo-blue transparent;
 }
 
-button, .button, input[type=submit], .button:focus {
+button, .button, input[type=submit], .button:focus, #wp-submit {
 	background-color: $green-dark-extra;
 }
 
-button:hover, .button:hover, input[type=submit]:hover, button:active, .button:active, input[type=submit]:active {
+button:hover, .button:hover, input[type=submit]:hover, button:active, .button:active, input[type=submit]:active, #wp-submit:hover {
 	background-color:  transparentize($green-dark-extra, 0.2);
 }
 

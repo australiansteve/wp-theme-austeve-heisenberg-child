@@ -12,7 +12,7 @@ p:empty {
 	display:none; 
 }
 
-a {
+a, .navigation a {
 	font-weight: 700;
 	color: $link-colour;
 }
@@ -40,6 +40,10 @@ p.contact-submit {
 
 }
 
+form.search-form {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
 
 /* Medium and up */
 @media screen and (min-width: 40em) {

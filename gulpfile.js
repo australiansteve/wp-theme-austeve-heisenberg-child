@@ -65,7 +65,7 @@ gulp.task('deploy', function() {
     '*.php',
     '*.css'];
 
-  var destPath = '/Applications/MAMP/htdocs/ssj/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/htdocs/gutenberg/wp-content/themes/austeve-heisenberg-child';
 
   return gulp.src(files, {base:"."})
         .pipe(gulp.dest(destPath))
@@ -73,6 +73,20 @@ gulp.task('deploy', function() {
         message: "✔︎ Deploy task complete",
         onLast: true
       }));
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// CLEAN on local dev env
+////////////////////////////////////////////////////////////////////////////////
+
+gulp.task('clean', function() {
+
+  var destPath = '/Applications/MAMP/htdocs/gutenberg/wp-content/themes/austeve-heisenberg-child';
+
+  return del([
+      destPath
+      ], {force: true});
+
 });
 
 // Full gulp build, mainly used in deployment scripts

@@ -52,6 +52,25 @@ gulp.task('js', function () {
 })
 
 ////////////////////////////////////////////////////////////////////////////////
+// IMAGES
+////////////////////////////////////////////////////////////////////////////////
+
+gulp.task('img', function () {
+
+  var files = [
+    'assets/img/**/*'
+    ];
+
+  return gulp.src(files, {base:"assets/img"})
+        .pipe(gulp.dest(paths.destPath + 'img'))
+        .pipe(notify({
+        message: "✔︎ Image task complete",
+        onLast: true
+      }));
+
+})
+
+////////////////////////////////////////////////////////////////////////////////
 // DEPLOY on local dev env
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -65,7 +84,7 @@ gulp.task('deploy', function() {
     '*.php',
     '*.css'];
 
-  var destPath = '/Applications/MAMP/htdocs/gutenberg/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/htdocs/ecb/wp-content/themes/austeve-heisenberg-child';
 
   return gulp.src(files, {base:"."})
         .pipe(gulp.dest(destPath))
@@ -81,7 +100,7 @@ gulp.task('deploy', function() {
 
 gulp.task('clean', function() {
 
-  var destPath = '/Applications/MAMP/htdocs/gutenberg/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/htdocs/ecb/wp-content/themes/austeve-heisenberg-child';
 
   return del([
       destPath
@@ -90,4 +109,4 @@ gulp.task('clean', function() {
 });
 
 // Full gulp build, mainly used in deployment scripts
-gulp.task('build', ['css', 'js', 'deploy'])
+gulp.task('build', ['css', 'js', 'img', 'deploy'])

@@ -7,7 +7,7 @@ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/_dist/css/app.css' );
     wp_enqueue_style( $parent_style.'-login', get_template_directory_uri() . '/_dist/css/login.min.css' );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/_dist/css/app.css',
+        get_stylesheet_directory_uri() . '/_dist/css/app.css?v='.date('YmdHis'),
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );

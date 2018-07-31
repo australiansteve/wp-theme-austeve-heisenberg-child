@@ -71,7 +71,7 @@ else
 ?>
 
 <header id="masthead">
-	<section class="row column">
+	<div class="row column">
 		<?php 
 			if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 				the_custom_logo();
@@ -87,17 +87,20 @@ else
 		<?php 
 			}
 		?>
-	</section>
+	</div>
+	<div class="row column" id="main-menu">
 
-	<ul class="dropdown menu" data-dropdown-menu>
-		<?php
-		$args = [
-			'theme_location' 	=> 'primary',
-			'container'			=> false,
-			'items_wrap' 		=> '%3$s',
-			'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
-		];
-		wp_nav_menu( $args ); ?>
-	</ul>
+		<ul class="dropdown menu" data-dropdown-menu>
+			<?php
+			$args = [
+				'theme_location' 	=> 'primary',
+				'container'			=> false,
+				'items_wrap' 		=> '%3$s',
+				'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
+			];
+			wp_nav_menu( $args ); ?>
+		</ul>
+
+	</div>
 </header>
 <div id="content" class="site-content" role="main">

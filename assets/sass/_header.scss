@@ -1,3 +1,43 @@
 header {
 	text-align: center;
+
+	.custom-logo {
+		max-width: 85%;
+    	margin-top: 2rem;
+	}
+
+	.dropdown.menu {
+		max-width: 85%;
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	header {
+		.custom-logo {
+			max-width: 60%;
+		}
+		.dropdown.menu {
+			margin: auto;
+			max-width: 60%;
+		}
+	}
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	header {
+		.custom-logo {
+			max-width: 600px;
+			margin-top: 65px;
+		}
+
+		.dropdown.menu {
+			max-width: 600px;
+		}
+	}
+
 }

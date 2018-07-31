@@ -1,5 +1,33 @@
 #colophon {
 	background: none;
 	padding: 0;
-	color: transparentize(#000, 1);
+	text-align: center;
+	color: black;
+	text-transform: uppercase;
+
+	a {
+		color: black;
+	}
+
+	.footer-social a {
+		margin: 3rem 0.5rem;
+		color: #e5b570;
+	}
 }
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#colophon {
+		margin-bottom: 1rem;
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	#colophon {
+		margin-bottom: 3rem;
+	}
+}
+

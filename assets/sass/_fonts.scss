@@ -1,8 +1,21 @@
-h1, h2, h3, h4, h5, h6 {
-	font-family: Helvetica;
+@font-face {
+	font-family: 'Haarlem-Deco';
+	src: url("../fonts/Haarlem Deco.eot#iefix") format("eot"), url("../fonts/Haarlem Deco.ttf") format("truetype"), url("../fonts/Haarlem Deco.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, footer, footer p {
+	font-family: Haarlem-Deco;
+	text-transform: uppercase;
 }
 
 #main-menu ul li {
-	font-family: Helvetica;
+	font-family: Haarlem-Deco;
 	font-weight: 700;
+	text-transform: uppercase;
+
+	a {
+		color: black;
+	}
 }

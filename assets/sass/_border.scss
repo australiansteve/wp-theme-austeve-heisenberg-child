@@ -2,8 +2,8 @@
 @media screen and (min-width: 40em) {
 
 	body {
-		background-image: url("../img/corner.png"), url("../img/corner-90.png"), url("../img/corner-180.png"), url("../img/corner-270.png"), url("../img/horizontal.png"), url("../img/vertical.png"), url("../img/horizontal.png"), url("../img/vertical.png");
-	    background-position: left top, right top, right bottom, left bottom, top, left, bottom, right;
+		background-image: url("../img/corner.png"), url("../img/corner-90.png"), url("../img/corner-180.png"), url("../img/corner-270.png"), url("../img/border-top.png"), url("../img/border-right.png"), url("../img/border-bottom.png"), url("../img/border-left.png");
+	    background-position: left top, right top, right bottom, left bottom, top, right, bottom, left;
 	    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, repeat-y, repeat-x, repeat-y;
 	}
 

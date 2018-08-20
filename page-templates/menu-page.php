@@ -39,6 +39,16 @@ get_header(); ?>
 	</div>
 
 	<div class="row">
+	
+		<div class="small-12 columns austeve-menupage-title">
+
+			<?php echo the_title('<h1>', '</h1>') ?>
+			
+		</div>
+
+	</div>
+
+	<div class="row">
 
 		<main class="small-12 columns austeve-menuitems">
 			<?php

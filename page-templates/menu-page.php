@@ -17,7 +17,7 @@ get_header(); ?>
 				<li><a href="<?php echo home_url('starters'); ?>">Starters</a></li>
 				<li><a href="<?php echo home_url('desserts'); ?>">Desserts</a></li>
 				<li><a href="<?php echo home_url('cocktails'); ?>">Cocktails</a></li>
-				<li><a href="<?php echo home_url('beer-wine'); ?>">Beer + Wine</a></li>
+				<li><a href="<?php echo home_url('wine-beer'); ?>">Wine + Beer</a></li>
 
 			</ul>
 

@@ -1,0 +1,32 @@
+.home.page {
+	
+	.cover-image-section>div, .call-to-action-section>div {
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 400px;
+		background-position: 50% 100%;
+		position: relative; // for bottom alignment of content
+	}
+
+	.content-section>.columns {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.content {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		color: $primary-colour;
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {	
+	
+}

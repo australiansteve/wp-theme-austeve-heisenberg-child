@@ -8,10 +8,19 @@ p, div, span {
 	font-family: 'Raleway', sans-serif;
 }
 
+a.button {
+    background: transparent;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: Haarlem-Deco;
+    letter-spacing: 2.5px;
+    padding: 0.75rem;
+}
+
 /* Medium and up */
 @media screen and (min-width: 40em) {
 	#content {
-	    max-width: 85%;
+	    max-width: calc(100% - 10rem);
 	}
 }
 

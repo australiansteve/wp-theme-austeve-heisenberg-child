@@ -42,16 +42,20 @@ get_header(); ?>
 			<!-- Call To Action section -->
 			<div class="row call-to-action-section text-center">
 
-				<div class="small-12 medium-6 columns" id="cta1" style="background-image:url(<?php echo get_field('cta1_image')['url']; ?>)">
-					<div class="content">
-						<a class="button" href="<?php the_field('cta1_link_url');?>"><?php the_field('cta1_link_text');?></a>
+				<div class="small-12 medium-6 columns" id="cta1" >
+					<div class="container" style="background-image:url(<?php echo get_field('cta1_image')['url']; ?>)">
+						<div class="content">
+							<a class="button" href="<?php the_field('cta1_link_url');?>"><?php the_field('cta1_link_text');?></a>
+						</div>
 					</div>
 				</div>
 
 
-				<div class="small-12 medium-6 columns" id="cta2" style="background-image:url(<?php echo get_field('cta2_image')['url']; ?>)">					
-					<div class="content">
-						<a class="button" href="<?php the_field('cta2_link_url');?>"><?php the_field('cta2_link_text');?></a>
+				<div class="small-12 medium-6 columns" id="cta2">			
+					<div class="container" style="background-image:url(<?php echo get_field('cta1_image')['url']; ?>)">		
+						<div class="content">
+							<a class="button" href="<?php the_field('cta2_link_url');?>"><?php the_field('cta2_link_text');?></a>
+						</div>
 					</div>
 				</div>
 
@@ -69,7 +73,7 @@ get_header(); ?>
 					the_content();
 
 					?>
-					
+
 				</div>
 
 			</div>

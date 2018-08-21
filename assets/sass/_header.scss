@@ -11,9 +11,13 @@ header {
 @media screen and (min-width: 40em) {
 
 	header {
+		min-height: 16rem;
+		
 		.custom-logo {
-			max-width: 60%;
+			max-width: 50%;
+			margin-top: 1.75rem;
 		}
+
 		.dropdown.menu {
 			margin: auto;
 			max-width: 60%;
@@ -32,6 +36,7 @@ header {
 	header {
 		.custom-logo {
 			max-width: 600px;
+			margin-top: 0;
 		}
 
 		.dropdown.menu {

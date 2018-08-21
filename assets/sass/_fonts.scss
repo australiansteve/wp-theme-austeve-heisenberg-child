@@ -8,12 +8,14 @@
 h1, h2, h3, h4, h5, h6, footer, footer p {
 	font-family: Haarlem-Deco;
 	text-transform: uppercase;
+	font-weight: 400;
 }
 
 #main-menu ul li {
 	font-family: Haarlem-Deco;
-	font-weight: 700;
 	text-transform: uppercase;
+	font-size: 1.75rem;
+    letter-spacing: 2px;
 
 	a {
 		color: black;

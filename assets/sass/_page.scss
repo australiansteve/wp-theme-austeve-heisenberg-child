@@ -24,9 +24,18 @@ a.button {
 	}
 }
 
+
 /* Large and up */
 @media screen and (min-width: 64em) {	
 	#content {
 	
+	}
+}
+
+
+/* Specific max width for larger screens to contain banner images */
+@media screen and (min-width: 1200px) {
+	#content {
+	    max-width: 1000px;
 	}
 }

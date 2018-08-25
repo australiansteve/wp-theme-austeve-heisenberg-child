@@ -43,5 +43,8 @@ add_action( 'after_setup_theme', function() {
 
 });
 
+add_image_size( 'large-banner', 1000, 600, array( 'center', 'center' ) );
+add_image_size( 'medium-square', 400, 400, array( 'center', 'center' ) );
+
 
 ?>

@@ -43,6 +43,18 @@ add_action( 'after_setup_theme', function() {
 
 });
 
+
+ add_action( 'pre_get_posts', function($query) {
+	//if querying posts, order by the visual order defined by SCPOrder plugin
+	if (!is_admin() && is_array($query->get('post_type')) && in_array('post', $query->get('post_type')))
+	{
+		$query->set('orderby', 'menu_order');
+		$query->set('order', 'ASC');
+	}
+	return $query;
+});
+
+
 add_image_size( 'large-banner', 1000, 600, array( 'center', 'center' ) );
 add_image_size( 'medium-square', 400, 400, array( 'center', 'center' ) );
 

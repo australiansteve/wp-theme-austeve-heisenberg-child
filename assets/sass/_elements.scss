@@ -4,6 +4,26 @@ a.button, a.ab-button, button {
 	text-transform: uppercase;
 }
 
-.austeve-events-header-image, .austeve-events-about, .austeve-events .event , .austeve-about-header-image, .austeve-teammembers .team-member {
+.austeve-events-about, .austeve-events .event , .austeve-teammembers .team-member {
 	margin-bottom: 3rem;
 }
+
+
+h1 {
+	margin: 1rem auto;
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+	h1 {
+		max-width: 1000px;
+		margin: 3rem auto;
+
+	}
+
+	.austeve-menuitems {
+	    padding-left: 10rem;
+	}
+}
+

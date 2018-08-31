@@ -1,8 +1,19 @@
-header {
+header#masthead {
 	text-align: center;
+	margin-bottom: 0.25rem;
 
 	.custom-logo {
-		max-width: 85%;
+		max-width: 95%;
+	}
+
+	i.fas {
+		color: $tertiary-colour;
+		font-size: 1.5rem;
+	}
+
+	#hamburger-menu.columns {
+		padding-left: 0;
+		padding-top: 1.5rem;
 	}
 
 }
@@ -12,7 +23,7 @@ header {
 
 	header {
 		min-height: 16rem;
-		
+
 		.custom-logo {
 			max-width: 50%;
 			margin-top: 1.75rem;

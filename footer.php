@@ -10,33 +10,35 @@
  */
 ?>
 
-		<div class="row columns">
-			<footer id="colophon" class="site-footer">
+			<div class="row columns">
+				<footer id="colophon" class="site-footer">
 
-				<div class="column row">
+					<div class="column row">
 
-					<p class="text-center">
-						<img src="<?php echo get_stylesheet_directory_uri(); ?>/_dist/img/ecb-logo-footer.png" />
-					</p>
+						<p class="text-center">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/_dist/img/ecb-logo-footer.png" />
+						</p>
 
-					<p class="footer-address">
-						60 Prince William St, Saint John, NB E2L 2B1
-					</p>
-					
-					<p class="footer-signup">
-						<a href="mailchimp.com" target="_blank">sign up for our newsletter</a>
-					</p>
+						<p class="footer-address">
+							60 Prince William St, Saint John, NB E2L 2B1
+						</p>
+						
+						<p class="footer-signup">
+							<a href="mailchimp.com" target="_blank">sign up for our newsletter</a>
+						</p>
 
-					<p class="footer-social">
-						<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-					</p>
+						<p class="footer-social">
+							<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+						</p>
 
-				</div><!-- .column.row -->
+					</div><!-- .column.row -->
 
-			</footer><!-- #colophon -->
-		</div>
+				</footer><!-- #colophon -->
+			</div>
 
-	</div><!-- #content -->
+		</div><!-- #content -->
+		
+	</div><!-- .off-canvas-wrapper -->
 
 </div><!-- #page -->
 

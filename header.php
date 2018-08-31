@@ -36,24 +36,38 @@ $pageClasses = is_home() ? "homepage" : "";
 	<div id="page" class="<?php echo $pageClasses; ?>">
 
 		<header id="masthead">
-			<div class="row column">
-				<?php 
-					if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-						the_custom_logo();
-					}
-					else {
-				?>
-						<h1 class="site-title">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-								<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-							</a>
-						</h1>
-						<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
-				<?php 
-					}
-				?>
+			
+			<div class="row" id="main-menu">
+
+				<div class="columns small-11 medium-12">
+				        <?php 
+							if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+								the_custom_logo();
+							}
+							else {
+						?>
+								<h1 class="site-title">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+										<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+									</a>
+								</h1>
+								<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
+						<?php 
+							}
+						?>
+				</div>
+
+				<div class="columns small-1" id="hamburger-menu">
+
+					<div class="off-canvas-content" data-off-canvas-content>
+							<a href="#" data-toggle="offCanvasLeft"><i class="fas fa-bars"></i></a>
+					</div>
+
+				</div>
+
 			</div>
-			<div class="row column" id="main-menu">
+				
+			<div class="row column show-for-medium" id="main-menu">
 
 				<ul class="dropdown menu" data-dropdown-menu>
 					<?php
@@ -67,5 +81,23 @@ $pageClasses = is_home() ? "homepage" : "";
 				</ul>
 
 			</div>
+
 		</header>
-		<div id="content" class="site-content" role="main">
+
+		<div class="off-canvas-wrapper">
+
+			<div class="off-canvas-absolute position-left" id="offCanvasLeft" data-off-canvas>
+				
+				<ul class="vertical menu">
+					<?php
+					$args = [
+						'theme_location' 	=> 'primary',
+						'container'			=> false,
+						'items_wrap' 		=> '%3$s',
+						'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
+					];
+					wp_nav_menu( $args ); ?>
+				</ul>
+
+			</div>
+			<div id="content" class="site-content" role="main">

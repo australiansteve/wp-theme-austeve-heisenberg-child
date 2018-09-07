@@ -3,6 +3,10 @@
     padding: 3rem 1rem 0 1rem;
     color: black;
     font-size: 0.8rem;
+
+    background: linear-gradient(90deg, $zesty-yellow-light 50%, white 50%, white 0), $zesty-yellow-light;
+    background-size: 20% auto;
+    background-position-x: 6%;
 }
 
 footer {

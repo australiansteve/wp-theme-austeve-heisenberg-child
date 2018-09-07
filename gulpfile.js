@@ -20,7 +20,7 @@ const rename = require('gulp-rename')
 const paths = {
   sassPath: 'assets/sass/',
   nodePath: 'node_modules/',
-  jsPath: 'assets/js/concat',
+  jsPath: 'assets/js',
   destPath: '_dist/',
   foundationJSpath: 'node_modules/foundation-sites/dist/js/plugins/',
   imgPath: 'assets/img/'
@@ -48,7 +48,44 @@ gulp.task('css', function () {
 ////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('js', function () {
-  return true
+  return gulp.src([
+    // Our custom JS
+    paths.jsPath + '/*.js'
+  ])
+    .pipe(babel({
+      presets: [
+        ['env', {
+          targets: {
+            browsers: ['last 2 versions', 'ie >= 10']
+          }
+        }]
+      ]
+    }))
+    .pipe(concat('app.js'))
+    .pipe(gulp.dest(paths.destPath + 'js'))
+    .pipe(uglify().on('error', notify.onError(error => `Error: ${error.message}`)))
+    .pipe(rename('app.min.js'))
+    .pipe(gulp.dest(paths.destPath + 'js'))
+    .pipe(size({showFiles: true}))
+})
+
+////////////////////////////////////////////////////////////////////////////////
+// IMAGES
+////////////////////////////////////////////////////////////////////////////////
+
+gulp.task('img', function () {
+
+  var files = [
+    'assets/img/**/*'
+    ];
+
+  return gulp.src(files, {base:"assets/img"})
+        .pipe(gulp.dest(paths.destPath + 'img'))
+        .pipe(notify({
+        message: "✔︎ Image task complete",
+        onLast: true
+      }));
+
 })
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -59,13 +96,14 @@ gulp.task('deploy', function() {
 
   var files = [
     '_dist/**/*', 
+    'template-parts/**/*',
     'page-templates/**/*',
     'src/**/*',
     'screenshot.png',
     '*.php',
     '*.css'];
 
-  var destPath = '/Applications/MAMP/htdocs/gutenberg/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/htdocs/zesty/wp-content/themes/austeve-heisenberg-child';
 
   return gulp.src(files, {base:"."})
         .pipe(gulp.dest(destPath))
@@ -81,7 +119,7 @@ gulp.task('deploy', function() {
 
 gulp.task('clean', function() {
 
-  var destPath = '/Applications/MAMP/htdocs/gutenberg/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/htdocs/zesty/wp-content/themes/austeve-heisenberg-child';
 
   return del([
       destPath

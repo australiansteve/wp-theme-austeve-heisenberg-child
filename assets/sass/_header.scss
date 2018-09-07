@@ -1,3 +1,30 @@
 header {
 	text-align: center;
+
+	background-image: url("../img/Lemons-1200x800.jpg");
+	min-height: 50vw;
+    background-size: cover;
+    background-position: 50% 50%;
+
+    img {
+    	padding: 5rem 1rem;
+    }
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	header {
+
+		.dropdown.menu a {
+		    padding: 0.7rem 3rem;
+		    color: white;
+		    font-size: 2rem;
+		    font-weight: 700;
+		}
+
+	    img {
+	    	padding: 15vh 1rem;
+	    }
+	}
 }

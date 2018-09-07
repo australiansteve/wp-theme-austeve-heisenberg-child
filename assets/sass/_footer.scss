@@ -1,0 +1,58 @@
+#colophon {
+    background: white;
+    padding: 3rem 1rem 0 1rem;
+    color: black;
+    font-size: 0.8rem;
+}
+
+footer {
+	text-align: center;
+
+    img {
+    	padding-top: 3rem;
+    }
+
+    .website-credit {
+		margin-top: 2rem;
+	}
+
+	.footer-social a {
+		margin-left: 1rem;
+	}
+
+	a {
+		color: black;
+	}
+
+	a:active, a:hover {
+		color: rgba(0, 0, 0, 0.75);
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	footer {
+
+		.logo {
+
+			img {
+				max-width: 200px;
+			}
+		}
+
+		.info p {
+			text-align: right;
+		}
+
+		.website-credit {
+			text-align: right;
+
+			a {
+    			color: rgba(0,0,0,0.3);
+    			font-size: 0.75rem;
+    		}
+		}
+
+	}
+}

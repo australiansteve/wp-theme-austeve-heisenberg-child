@@ -15,6 +15,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Antic+Didone|Dancing+Script" rel="stylesheet">
 
 	<?php wp_head(); ?>
 </head>
@@ -27,77 +29,45 @@ if ( file_exists( $svg_sprite ) ) {
 	echo $svg_sprite;
 } 
 
-$fixedBackground = get_theme_mod('austeve_background_fixed', 'fixed');
-$backgrounds = get_theme_mod('austeve_backgrounds', 0);
-$onlyforhome = get_theme_mod('austeve_background_homeonly', false);
 $pageClasses = is_home() ? "homepage" : "";
 
-if ($fixedBackground == 'fixed') 
-{
-	//Fixed
 ?>
-	<div id="background-div" class="fixed">
-<?php
-		for ($b = 0; $b < $backgrounds; $b++) {
-			if (!$onlyforhome || is_home())
-			{
-				echo '<div id="bgImage'.($b+1).'" class="bgImage">&nbsp;</div>';
-			}
-		}
-?>
-	</div>
-	
+
 	<div id="page" class="<?php echo $pageClasses; ?>">
 
-<?php 
-}
-else
-{
-	//Scrolling
-?>
-	<div id="background-div" class="scrolling">
-<?php
-		for ($b = 0; $b < $backgrounds; $b++) {
-			if (!$onlyforhome || is_home())
-			{
-				echo '<div id="bgImage'.($b+1).'" class="bgImage">&nbsp;</div>';
-			}	
-		}
-?>
+		<header id="masthead">
 
-		<div id="page" class="<?php echo $pageClasses; ?>">
-<?php
-}
-?>
+			<ul class="dropdown menu show-for-medium" data-dropdown-menu>
+				<?php
+				$args = [
+					'theme_location' 	=> 'primary',
+					'container'			=> false,
+					'items_wrap' 		=> '%3$s',
+					'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
+				];
+				wp_nav_menu( $args ); ?>
+			</ul>
 
-<header id="masthead">
-	<section class="row column">
-		<?php 
-			if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-				the_custom_logo();
-			}
-			else {
-		?>
-				<h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-					</a>
-				</h1>
-				<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
-		<?php 
-			}
-		?>
-	</section>
+			<div class="grid-x">
+				<div class="cell">
+					<?php 
+						if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+							the_custom_logo();
+						}
+						else {
+					?>
+							<h1 class="site-title">
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+									<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+								</a>
+							</h1>
+							<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
+					<?php 
+						}
+					?>
+				</div>
+			</div>
 
-	<ul class="dropdown menu" data-dropdown-menu>
-		<?php
-		$args = [
-			'theme_location' 	=> 'primary',
-			'container'			=> false,
-			'items_wrap' 		=> '%3$s',
-			'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
-		];
-		wp_nav_menu( $args ); ?>
-	</ul>
-</header>
-<div id="content" class="site-content" role="main">
+		</header>
+
+		<div id="content" class="site-content" role="main">

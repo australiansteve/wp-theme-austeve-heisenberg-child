@@ -1,0 +1,196 @@
+.section {
+	margin: 2rem 0.5rem 2rem 0.5rem;
+
+	p { 
+		max-width: 600px;
+		margin: auto;
+	}
+}
+
+#about.section {
+	margin-top: 0rem;
+	min-height: 20rem;
+	font-size: 1.3rem;
+}
+
+.banner-image {
+	min-height: 50vw;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#about-image {
+	background-image: url("../img/About-1200x500.jpg");
+}
+
+#catering-image {
+	background-image: url("../img/Catering-1200x500.jpg");
+}
+
+#catering.section {
+	margin-top: 0rem;
+	min-height: 30rem;
+	font-size: 1.3rem;
+}
+
+h2 {
+	font-size: 3rem;
+	margin-top: 2rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+#menu.section {
+    margin: 0;
+	background: linear-gradient(90deg, $zesty-yellow-light 50%, white 50%, white 0), $zesty-yellow-light;
+    background-size: 20% auto;
+    background-position-x: 6%;
+
+	.menu-link a {
+		color: black;
+	}
+
+	.menu-link a:hover, .menu-link a.active {
+		text-decoration: underline;
+	}
+
+    #menu-container {
+    	margin: 1rem 2rem 6rem 2rem;
+    	border: 3px solid black;
+    	background: white;
+    	padding: 3rem 1rem;
+
+		h4 {
+			margin-top: 1rem;
+			font-size: 1.5rem;
+		}
+
+		.menu-item {
+
+			margin: 0 auto 0.75rem auto;
+			max-width: 600px;
+			text-align: left;
+
+			.title {
+				font-weight: 700;
+			}
+
+			.description {
+				margin-left: 0.5rem;
+			}
+
+		}
+
+		.menu-item.deli {
+
+			.price {
+				text-align: right;
+			}
+		}
+
+		.menu-item.lunch-salad {
+
+			.price {
+				margin-left: 2rem;
+			}
+		}
+		
+		.banner-image {
+			min-height: 30vw;
+			margin-top: 2rem;
+		}
+
+		#breakfast-1-image {
+			background-image: url("../img/Breakfast-1-800x400.jpg");
+		}
+
+		#breakfast-2-image {
+			background-image: url("../img/Breakfast-2-800x400.jpg");
+		}
+
+		#bakery-1-image {
+			background-image: url("../img/Bakery-1-800x400.jpg");
+		}
+
+		#lunch-1-image {
+			background-image: url("../img/Lunch-1-800x400.jpg");
+		}
+
+		#lunch-2-image {
+			background-image: url("../img/Lunch-2-800x400.jpg");
+		}
+
+		#lunch-3-image {
+			background-image: url("../img/Lunch-3-800x400.jpg");
+		}
+
+		#deli-1-image {
+			background-image: url("../img/Deli-1-800x400.jpg");
+		}
+    }
+}
+
+#contact {
+
+	h3 {
+		margin-top: 3rem;
+	}
+
+	#contact-form {
+		margin: auto;
+		max-width: 500px;
+
+		.nf-field-label label {
+    		font-weight: 400;
+    	}
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	h2 {
+		font-size: 5rem;
+	}
+
+	#about.section {;
+		min-height: 30rem;
+	}
+
+	#menu.section {
+
+		.menu-link a {
+			font-size: 2rem;
+		}
+
+    	#menu-container {
+
+			.banner-image {
+				margin: auto;
+				margin-top: 2rem;
+			}
+
+			.menu-course-container {
+				margin-top: 5rem;
+				margin-bottom: 5rem;
+				font-size: 1.5rem;
+			}
+
+			h3 {
+				font-size: 3rem;
+			}
+
+			h4 {
+				font-size: 2.5rem;
+				margin-bottom: 2rem;
+			}
+
+			p.tagline {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	
+}

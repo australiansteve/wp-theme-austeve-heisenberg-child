@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/src/menu-display.php';
+
 add_action( 'wp_enqueue_scripts', function() {
 
     $parent_style = 'heisenberg-style';
@@ -11,6 +13,10 @@ add_action( 'wp_enqueue_scripts', function() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
+    wp_enqueue_script( 'child-script',
+        get_stylesheet_directory_uri() . '/_dist/js/app.min.js',
+        array( 'jquery' )
+    );
 });
 
 
@@ -21,8 +27,8 @@ add_action( 'after_setup_theme', function() {
 	 * See https://codex.wordpress.org/Theme_Logo
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 250,
-		'width'       => 250,
+		'height'      => 400,
+		'width'       => 600,
 		'flex-height' => false,
 		'flex-width'  => true,
 		'header-text' => array( 'site-title', 'site-description' ),
@@ -43,5 +49,16 @@ add_action( 'after_setup_theme', function() {
 
 });
 
+add_image_size( 'large-banner', 1200, 800, array( 'center', 'center' ) );
 
+// Set ninja forms to be accessible by Editor users
+// https://developer.ninjaforms.com/codex/submission-permissions/
+// Must use all three filters for this to work properly. 
+add_filter( 'ninja_forms_admin_parent_menu_capabilities',   'austeve_nf_subs_capabilities' ); // Parent Menu
+add_filter( 'ninja_forms_admin_all_forms_capabilities',     'austeve_nf_subs_capabilities' ); // Forms Submenu
+add_filter( 'ninja_forms_admin_submissions_capabilities',   'austeve_nf_subs_capabilities' ); // Submissions Submenu
+
+function austeve_nf_subs_capabilities( $cap ) {
+    return 'edit_posts'; // EDIT: User Capability
+}
 ?>

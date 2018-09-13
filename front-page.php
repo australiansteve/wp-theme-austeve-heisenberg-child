@@ -58,7 +58,50 @@ get_header(); ?>
 							<h3><?php echo get_field('catering_tagline'); ?></h3>
 							<p><?php echo get_field('catering_description'); ?></p>
 
-							<a class="button" href="<?php echo get_field('catering_link_1_url'); ?>"><?php echo get_field('catering_link_1_text'); ?></a>
+							<?php
+								// check if the flexible content field has rows of data
+								if( have_rows('catering_link_1') ):
+									// loop through the rows of data
+									while ( have_rows('catering_link_1') ) : the_row();
+										error_log("Catering 1");
+										if( get_row_layout() == 'url' ):
+											error_log("URL");
+											?>
+											<a class="button" href="<?php the_sub_field('url'); ?>"><?php the_sub_field('text'); ?></a>
+											<?php											
+										elseif( get_row_layout() == 'media' ): 
+											error_log("Media");
+											$media = get_sub_field('document');
+											error_log( print_r($media, true));
+											?>
+											<a class="button" href="<?php echo $media->post_content; ?>" target="blank"><?php the_sub_field('text'); ?></a>
+											<?php
+										endif;
+									endwhile;
+								endif;
+
+								// check if the flexible content field has rows of data
+								if( have_rows('catering_link_2') ):
+									// loop through the rows of data
+									while ( have_rows('catering_link_2') ) : the_row();
+										error_log("Catering 2");
+										if( get_row_layout() == 'url' ):
+											error_log("URL");
+											?>
+											<a class="button" href="<?php the_sub_field('url'); ?>"><?php the_sub_field('text'); ?></a>
+											<?php											
+										elseif( get_row_layout() == 'media' ): 
+											error_log("Media");
+											$media = get_sub_field('document');
+											error_log( print_r($media, true));
+											?>
+											<a class="button" href="<?php echo $media->post_content; ?>" target="blank"><?php the_sub_field('text'); ?></a>
+											<?php
+										endif;
+									endwhile;
+								endif;
+							?>
+							
 						</div>
 
 					</div>

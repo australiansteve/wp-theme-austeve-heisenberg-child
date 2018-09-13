@@ -20,7 +20,7 @@ a.button, input[type=button], input[type=submit] {
 	color: black;
 	letter-spacing: 1.5px;
 	font-size: 1.3rem;
-    width: 10rem;
+    min-width: 10rem;
 }
 
 .button:hover, .button:focus, input[type="submit"]:hover, input[type="submit"]:focus, input[type="button"]:hover, input[type="button"]:focus {

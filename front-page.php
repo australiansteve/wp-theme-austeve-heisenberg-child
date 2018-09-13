@@ -74,7 +74,7 @@ get_header(); ?>
 											$media = get_sub_field('document');
 											error_log( print_r($media, true));
 											?>
-											<a class="button" href="<?php echo $media->post_content; ?>" target="blank"><?php the_sub_field('text'); ?></a>
+											<a class="button" href="<?php echo $media->guid; ?>" target="blank"><?php the_sub_field('text'); ?></a>
 											<?php
 										endif;
 									endwhile;
@@ -95,7 +95,7 @@ get_header(); ?>
 											$media = get_sub_field('document');
 											error_log( print_r($media, true));
 											?>
-											<a class="button" href="<?php echo $media->post_content; ?>" target="blank"><?php the_sub_field('text'); ?></a>
+											<a class="button" href="<?php echo $media->guid; ?>" target="blank"><?php the_sub_field('text'); ?></a>
 											<?php
 										endif;
 									endwhile;

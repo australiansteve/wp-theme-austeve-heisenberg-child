@@ -1,4 +1,4 @@
-header#masthead {
+header {
 	text-align: center;
 	margin-bottom: 0.25rem;
 
@@ -35,6 +35,10 @@ header#masthead {
 
 			.current-menu-item {
 				border-bottom: 2px solid black;
+			}
+
+			#menu-item-42 { /* Hack to remove bottom border on 'Menu' menu item on prod only */
+				border-bottom: none;
 			}
 		}
 	}

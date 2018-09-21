@@ -11,13 +11,13 @@ get_header(); ?>
 
 		<div class="small-12 columns austeve-menupage-sub-menu text-center">
 
-			<ul class="dropdown menu" data-dropdown-menu>
+			<ul class="menu">
 
-				<li><a href="<?php echo home_url('main-course'); ?>">Main Courses</a></li>
-				<li><a href="<?php echo home_url('starters'); ?>">Starters</a></li>
-				<li><a href="<?php echo home_url('desserts'); ?>">Desserts</a></li>
-				<li><a href="<?php echo home_url('cocktails'); ?>">Cocktails</a></li>
-				<li><a href="<?php echo home_url('wine-beer'); ?>">Wine + Beer</a></li>
+				<li><a href="<?php echo home_url('main-course'); ?>" class="<?php if (is_page('main-course')) echo 'active'; ?>">Main Courses</a></li>
+				<li><a href="<?php echo home_url('starters'); ?>" class="<?php if (is_page('starters')) echo 'active'; ?>">Starters</a></li>
+				<li><a href="<?php echo home_url('desserts'); ?>" class="<?php if (is_page('desserts')) echo 'active'; ?>">Desserts</a></li>
+				<li><a href="<?php echo home_url('cocktails'); ?>" class="<?php if (is_page('cocktails')) echo 'active'; ?>">Cocktails</a></li>
+				<li><a href="<?php echo home_url('wine-beer'); ?>" class="<?php if (is_page('wine-beer')) echo 'active'; ?>">Wine + Beer</a></li>
 
 			</ul>
 

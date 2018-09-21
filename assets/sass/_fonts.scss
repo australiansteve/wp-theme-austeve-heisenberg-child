@@ -22,6 +22,15 @@ h1, h2, h3, h4, h5, h6, footer, footer p {
 	}
 }
 
+.austeve-menupage-sub-menu ul li {
+	font-family: Haarlem-Deco;
+	text-transform: uppercase;
+    letter-spacing: 1px;
+
+	a {
+		color: black;
+	}
+}
 
 h1 {
 	font-size: 2.25rem;
@@ -39,5 +48,11 @@ h2 {
 	h1 {
 		font-size: 2.5rem;
 	}
+
+	.austeve-menupage-sub-menu ul li {
+	    font-size: 1.25rem;
+
+	}
+
 }
 

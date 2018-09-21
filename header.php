@@ -57,7 +57,7 @@ $pageClasses = is_home() ? "homepage" : "";
 						?>
 				</div>
 
-				<div class="columns small-1" id="hamburger-menu">
+				<div class="columns small-1 show-for-small-only" id="hamburger-menu">
 
 					<div class="off-canvas-content" data-off-canvas-content>
 							<a href="#" data-toggle="offCanvasLeft"><i class="fas fa-bars"></i></a>

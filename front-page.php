@@ -63,16 +63,12 @@ get_header(); ?>
 								if( have_rows('catering_link_1') ):
 									// loop through the rows of data
 									while ( have_rows('catering_link_1') ) : the_row();
-										error_log("Catering 1");
 										if( get_row_layout() == 'url' ):
-											error_log("URL");
 											?>
 											<a class="button" href="<?php the_sub_field('url'); ?>"><?php the_sub_field('text'); ?></a>
 											<?php											
 										elseif( get_row_layout() == 'media' ): 
-											error_log("Media");
 											$media = get_sub_field('document');
-											error_log( print_r($media, true));
 											?>
 											<a class="button" href="<?php echo $media->guid; ?>" target="blank"><?php the_sub_field('text'); ?></a>
 											<?php
@@ -84,16 +80,12 @@ get_header(); ?>
 								if( have_rows('catering_link_2') ):
 									// loop through the rows of data
 									while ( have_rows('catering_link_2') ) : the_row();
-										error_log("Catering 2");
 										if( get_row_layout() == 'url' ):
-											error_log("URL");
 											?>
 											<a class="button" href="<?php the_sub_field('url'); ?>"><?php the_sub_field('text'); ?></a>
 											<?php											
 										elseif( get_row_layout() == 'media' ): 
-											error_log("Media");
 											$media = get_sub_field('document');
-											error_log( print_r($media, true));
 											?>
 											<a class="button" href="<?php echo $media->guid; ?>" target="blank"><?php the_sub_field('text'); ?></a>
 											<?php
@@ -225,7 +217,7 @@ get_header(); ?>
 				<div class="menu-course-container">
 					<h4>Signature Sandwiches</h4>
 					<?php
-						$courseSlug = 'signature-sandwiches';								
+						$courseSlug = 'signature-sandwiches';
 						AUSteve_Menu_Include($courseSlug);
 					?>
 				</div>
@@ -236,7 +228,7 @@ get_header(); ?>
 				<div class="menu-course-container">
 					<h4>Classic Sandwiches</h4>
 					<?php
-						$courseSlug = 'classic-sandwiches';								
+						$courseSlug = 'classic-sandwiches';
 						AUSteve_Menu_Include($courseSlug);
 					?>
 				</div>

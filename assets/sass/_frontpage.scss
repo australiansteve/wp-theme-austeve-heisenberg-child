@@ -129,6 +129,10 @@ h3 {
 		#deli-1-image {
 			background-image: url("../img/Deli-1-800x400.jpg");
 		}
+
+		p.course-tagline {
+			margin-bottom: 1rem;
+		}
     }
 }
 
@@ -189,6 +193,10 @@ h3 {
 
 			p.tagline {
 				font-size: 1.5rem;
+			}
+
+			p.course-tagline {
+				margin-bottom: 2rem;
 			}
 		}
 	}

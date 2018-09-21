@@ -2,6 +2,9 @@
 
 	function AUSteve_Menu_Include($courseSlug)
 	{
+		$current_term = get_term_by( 'slug', $courseSlug, 'menuitem-course' );
+
+		echo "<p class='course-tagline'>".$current_term->description."</p>";
 
 		// WP_Query arguments
 		$args = array(

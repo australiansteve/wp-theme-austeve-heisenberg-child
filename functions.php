@@ -58,5 +58,13 @@ add_action( 'after_setup_theme', function() {
 add_image_size( 'large-banner', 1000, 600, array( 'center', 'center' ) );
 add_image_size( 'medium-square', 400, 400, array( 'center', 'center' ) );
 
+/* Add link at the end of excerpt*/
+add_filter( 'excerpt_more', function($more) {
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'austeve') . '</a>';
+} );
+
+add_filter( 'excerpt_length', function($length) {
+	return 30;
+}, 999 );
 
 ?>

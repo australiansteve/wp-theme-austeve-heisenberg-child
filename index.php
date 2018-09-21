@@ -19,10 +19,6 @@ get_header(); ?>
 
 				the_posts_navigation();
 
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
 			else :
 
 				echo esc_html( 'Sorry, no posts' );

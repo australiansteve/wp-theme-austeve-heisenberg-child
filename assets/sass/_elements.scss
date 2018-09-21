@@ -16,6 +16,11 @@ h1 {
 	margin: 1rem auto;
 }
 
+.position-left {
+	/*Stops off canvas menu flashing on page load*/
+	transform: translateX(-100%);
+}
+
 /* Medium and up */
 @media screen and (min-width: 40em) {
 	

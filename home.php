@@ -4,7 +4,7 @@
 
 get_header(); ?>
 	
-	<div class="row">
+	<div class="row home journal">
 
 		<main class="small-12 columns">
 			<?php
@@ -16,7 +16,7 @@ get_header(); ?>
 
 				    ?>
 
-						<div class="row">
+						<div class="row post">
 
 							<div class="small-12 medium-6 columns">
 

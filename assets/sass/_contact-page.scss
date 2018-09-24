@@ -1,0 +1,77 @@
+#contact-page {
+
+	div, p, main, aside {
+		font-family: Haarlem-Deco;
+		text-transform: uppercase;
+		font-size: 1.5rem;
+	    line-height: 2rem;
+
+		a {
+			color: black;
+		}
+	}
+
+	p {
+		margin-bottom: 1rem;
+	}
+
+	.wp-block-ninja-forms-form {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+    	font-family: 'Raleway', sans-serif;
+
+    	label, input, textarea {
+    		font-family: Raleway;
+    	}
+
+    	.nf-error-msg {
+    		font-size: 1rem;
+    		color: $salmon-color;
+    	}
+
+    	.nf-response-msg {
+    		color: $tertiary-colour;
+    	}
+
+    	input[type=button] {
+			background: white;
+			color: black;
+			border: 1px solid $tertiary-colour;
+			border-radius: 20px;
+			font-family: Haarlem-Deco;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			padding-bottom: 0.75rem;
+			padding-top: 1rem;
+    	}
+
+    	input, textarea {
+    		border-color: $tertiary-colour;
+    	}
+	}
+}
+
+/* Small screen only */
+@media screen and (max-width: 40em) {
+	
+	#contact-page {
+	
+	}
+}
+
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#contact-page {
+	
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {	
+
+	#contact-page {
+	
+	}
+}

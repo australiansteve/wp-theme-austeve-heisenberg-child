@@ -45,6 +45,19 @@ add_action( 'after_setup_theme', function() {
 
 
  add_action( 'pre_get_posts', function($query) {
+		error_log("Pre-get posts");
+
+	if (is_home())
+	{
+		error_log("Home query:".print_r($query, true));
+		//This is the journal page, so don't show posts with the Event tag
+		$eventsObj = get_category_by_slug('events'); 
+		if ($eventsObj)
+		{	
+			$query->set('category__not_in', array ($eventsObj->term_id));
+		}
+	}
+
 	//if querying posts, order by the visual order defined by SCPOrder plugin
 	if (!is_admin() && is_array($query->get('post_type')) && in_array('post', $query->get('post_type')))
 	{
@@ -60,7 +73,7 @@ add_image_size( 'medium-square', 400, 400, array( 'center', 'center' ) );
 
 /* Add link at the end of excerpt*/
 add_filter( 'excerpt_more', function($more) {
-	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'austeve') . '</a>';
+	return '...<br/><a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'austeve') . '</a>';
 } );
 
 add_filter( 'excerpt_length', function($length) {

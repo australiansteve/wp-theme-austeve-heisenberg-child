@@ -18,20 +18,32 @@ header {
 
 }
 
+/* Small only */
+@media screen and (max-width: 40em) {
+
+	#masthead {
+		margin-top: 1.25rem;
+	}
+}
+
 /* Medium and up */
 @media screen and (min-width: 40em) {
 
 	header {
-		min-height: 16rem;
+		min-height: 10rem;
 
 		.custom-logo {
 			max-width: 50%;
-			margin-top: 1.75rem;
+			margin-top: 1rem;
+		}
+
+		#main-menu {
+			margin-top: 2rem;
 		}
 
 		.dropdown.menu {
 			margin: auto;
-			max-width: 60%;
+			max-width: 80%;
 
 			.current-menu-item {
 				border-bottom: 2px solid black;
@@ -55,7 +67,7 @@ header {
 		}
 
 		.dropdown.menu {
-			max-width: 600px;
+			max-width: 90%;
 		}
 	}
 

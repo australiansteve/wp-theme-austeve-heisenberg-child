@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, footer, footer p {
 #main-menu ul li {
 	font-family: Haarlem-Deco;
 	text-transform: uppercase;
-	font-size: 1.75rem;
+	font-size: 1.5rem;
     letter-spacing: 2px;
 
 	a {
@@ -56,3 +56,11 @@ h2 {
 
 }
 
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	#main-menu ul li {
+		font-size: 1.75rem;
+	}
+	
+}

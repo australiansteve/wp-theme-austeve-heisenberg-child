@@ -37,7 +37,7 @@ $pageClasses = is_home() ? "homepage" : "";
 
 		<header id="masthead">
 			
-			<div class="row" id="main-menu">
+			<div class="row">
 
 				<div class="columns small-11 medium-12">
 				        <?php 

@@ -103,7 +103,7 @@ gulp.task('deploy', function() {
     '*.php',
     '*.css'];
 
-  var destPath = '/Applications/MAMP/htdocs/zesty/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/local.zesty/wp-content/themes/austeve-heisenberg-child';
 
   return gulp.src(files, {base:"."})
         .pipe(gulp.dest(destPath))
@@ -119,7 +119,7 @@ gulp.task('deploy', function() {
 
 gulp.task('clean', function() {
 
-  var destPath = '/Applications/MAMP/htdocs/zesty/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/local.zesty/wp-content/themes/austeve-heisenberg-child';
 
   return del([
       destPath

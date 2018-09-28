@@ -1,51 +1,56 @@
 <?php
 
-	function AUSteve_Menu_Include($courseSlug)
+	function AUSteve_Menu_Include($courseSlug, $format = null)
 	{
 		$current_term = get_term_by( 'slug', $courseSlug, 'menuitem-course' );
 
-		echo "<p class='course-tagline'>".$current_term->description."</p>";
+		if ($current_term)
+		{
 
-		// WP_Query arguments
-		$args = array(
-			'post_type'              => array( 'austeve-menuitems' ),
-			'post_status'            => array( 'publish' ),
-			'tax_query'				=> array(
-				'relation' => 'AND',
-				array(
-					'taxonomy'         => 'menuitem-course',
-					'terms'            => $courseSlug,
-					'field'            => 'slug',
-					'operator'         => 'IN',
-					'include_children' => true,
-				)
-			),
-		);
+			echo "<p class='course-tagline'>".$current_term->description."</p>";
 
-		// The Query
-		$menuItemQuery = new WP_Query( $args );
-		// The Loop
-		if ( have_posts() ) :
-			while ( $menuItemQuery->have_posts() ) :
-			    $menuItemQuery->the_post();
+			// WP_Query arguments
+			$args = array(
+				'post_type'              => array( 'austeve-menuitems' ),
+				'post_status'            => array( 'publish' ),
+				'tax_query'				=> array(
+					'relation' => 'AND',
+					array(
+						'taxonomy'         => 'menuitem-course',
+						'terms'            => $courseSlug,
+						'field'            => 'slug',
+						'operator'         => 'IN',
+						'include_children' => true,
+					)
+				),
+			);
 
-				switch ($courseSlug):
-					case 'meat':
-					case 'cheese':
-					case 'salads-deli':
-						get_template_part( 'template-parts/menu-item-deli' );
-						break;
-					case 'salads':
-						get_template_part( 'template-parts/menu-item-lunch-salad' );
-						break;
-		    		default:
-						get_template_part( 'template-parts/menu-item' );
-			    endswitch;
-			    
-			endwhile;	
-		else :
-			echo esc_html( 'Sorry, no posts' );
-		endif; //have_posts
+			// The Query
+			$menuItemQuery = new WP_Query( $args );
+			// The Loop
+			if ( have_posts() ) :
+				while ( $menuItemQuery->have_posts() ) :
+				    $menuItemQuery->the_post();
+
+					switch ($courseSlug):
+						case 'beverages':
+						case 'meat':
+						case 'cheese':
+						case 'salads-deli':
+							get_template_part( 'template-parts/menu-item-dual-price', $format );
+							break;
+						case 'salads':
+							get_template_part( 'template-parts/menu-item-triple-price' );
+							break;
+			    		default:
+							get_template_part( 'template-parts/menu-item' );
+				    endswitch;
+				    
+				endwhile;	
+			else :
+				echo esc_html( 'Sorry, no posts' );
+			endif; //have_posts
+		}
 	}
 	
 ?>

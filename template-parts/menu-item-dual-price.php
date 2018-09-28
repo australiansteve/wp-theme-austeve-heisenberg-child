@@ -1,7 +1,7 @@
 <?php
 	#Template part for menu items
 ?>
-<div class='menu-item deli'>
+<div class='menu-item dual-price'>
 
 	<div class="grid-x">
 		<div class="cell medium-6">

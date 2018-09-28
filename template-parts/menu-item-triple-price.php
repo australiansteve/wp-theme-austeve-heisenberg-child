@@ -1,7 +1,7 @@
 <?php
 	#Template part for menu items
 ?>
-<div class='menu-item lunch-salad'>
+<div class='menu-item triple-price'>
 
 	<p class='title'>
 		<?php echo get_the_title( ); ?>

@@ -1,0 +1,68 @@
+.menu-board {
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: white;
+
+	.background {
+		height: 100vh;
+		background: linear-gradient(90deg, $zesty-yellow-mb 50%, white 50%, white 0), $zesty-yellow-mb;
+		background-size: 8% auto;
+	}
+
+	.menu-board-content {
+		position: absolute;
+		background: white;
+		top: 2.5em;
+		left: 2.5em;
+		width: calc(100vw - 5em);
+		border: 2px solid black;
+		bottom: 2.5em;
+
+		.container {
+			margin: 2.5em;
+		}
+
+		.heading {
+			border: 5px dashed green;
+			font-size: 1.8rem;
+
+			h1 {
+				font-size: 5rem;
+			}
+		}
+
+		.body {
+			margin-left: 3rem;
+			font-size: 1.75rem;
+			text-align: left;
+
+			.title {
+				margin-bottom: 0rem;
+				line-height: 2.25rem;
+			}
+
+			.description {
+				font-family: 'Antic Didone', serif;
+				font-size: 1.5rem;
+				margin-top: 0;
+				margin-bottom: 1.75rem;
+			}
+		
+		}
+
+		.highlight {
+			border: 5px solid $zesty-yellow-light;
+		}
+
+		p:empty 
+		{
+			display: none;
+		}
+
+		
+	}
+}

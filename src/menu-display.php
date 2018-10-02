@@ -7,8 +7,11 @@
 		if ($current_term)
 		{
 
-			echo "<p class='course-tagline'>".$current_term->description."</p>";
-
+			if ($format != 'menu-board')
+			{
+				echo "<p class='course-tagline'>".$current_term->description."</p>";
+			}
+			
 			// WP_Query arguments
 			$args = array(
 				'post_type'              => array( 'austeve-menuitems' ),
@@ -40,10 +43,10 @@
 							get_template_part( 'template-parts/menu-item-dual-price', $format );
 							break;
 						case 'salads':
-							get_template_part( 'template-parts/menu-item-triple-price' );
+							get_template_part( 'template-parts/menu-item-triple-price', $format );
 							break;
 			    		default:
-							get_template_part( 'template-parts/menu-item' );
+							get_template_part( 'template-parts/menu-item', $format );
 				    endswitch;
 				    
 				endwhile;	

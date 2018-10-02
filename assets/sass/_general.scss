@@ -1,6 +1,7 @@
 $zesty-yellow: #ffe700;
 $zesty-yellow-mb: rgba(255, 231, 0, 0.8);
 $zesty-yellow-light: rgba(255, 231, 0, 0.15);
+$zesty-turquoise: #b9e7dd;
 
 h1, h2, h3, h4 {
 	font-family: 'Dancing Script', cursive;
@@ -39,6 +40,10 @@ div:active {
 
 #content {
 	text-align: center;
+}
+
+.grid-y>.cell {
+	max-width: none;
 }
 
 /* Medium and up */

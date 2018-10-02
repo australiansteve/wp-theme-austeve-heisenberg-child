@@ -21,17 +21,27 @@
 		width: calc(100vw - 5em);
 		border: 2px solid black;
 		bottom: 2.5em;
+		padding: 2rem;
 
 		.container {
-			margin: 2.5em;
 		}
 
 		.heading {
-			border: 5px dashed green;
+			border: 5px dashed $zesty-turquoise;
 			font-size: 1.8rem;
+			margin-bottom: 1rem;
 
 			h1 {
 				font-size: 5rem;
+			}
+
+			.tagline {
+				margin-top: -1rem;
+			}
+
+			.asterisk {
+				display: block;
+				font-size: 1.5rem;
 			}
 		}
 
@@ -49,13 +59,26 @@
 				font-family: 'Antic Didone', serif;
 				font-size: 1.5rem;
 				margin-top: 0;
-				margin-bottom: 1.75rem;
+				margin-bottom: 1rem;
 			}
 		
 		}
 
 		.highlight {
-			border: 5px solid $zesty-yellow-light;
+			border: 15px solid $zesty-yellow-light;
+			height: 100%;
+			font-size: 1.7rem;
+    		padding-bottom: 0.5rem;
+
+			h2 {
+				font-size: 3.5rem;
+				margin-top: 1rem;
+			}
+
+			.asterisk {
+				display: block;
+				font-size: 1.5rem;
+			}
 		}
 
 		p:empty 
@@ -64,5 +87,96 @@
 		}
 
 		
+	}
+
+	#salad-how-to {
+
+		margin-top: 2rem;
+
+		.container {
+			background: $zesty-turquoise;
+			height: 100%;
+		}
+
+		.title {
+			padding-top: 1rem;
+
+			h2 {
+				font-size: 3rem;
+			}
+		}
+
+
+		.step {
+
+			.container {
+				margin: 0;
+			}
+
+			.number {
+				font-family: 'Dancing Script', serif;
+				font-size: 4rem;
+				background: white;
+				border-radius: 50%;
+				width: 6rem;
+				margin: auto;
+				text-align: center;
+			}
+		}
+
+		.step:nth-of-type(2) .body, .step:nth-of-type(3) .body, .step:nth-of-type(4) .body {
+			font-size: 1.5rem;
+		}
+
+		.body {
+			margin-left: 0;
+			text-align: center;
+		}
+	}
+}
+
+#menu-board-1 {
+	#classics, #bakery {
+		margin-bottom: 2rem;
+	}
+
+	#bakery, #beverages {
+		font-size: 2rem;
+
+		.menu-item {
+			margin-bottom: 0.25rem;
+		}
+	}
+
+	.highlight {		
+		font-size: 2.1rem;
+	}
+}
+
+#menu-board-2  {
+
+	#signature-sandwiches {
+		.description {
+		    font-size: 1.25rem;
+		    margin-bottom: 0.5rem;
+		}
+	}
+
+	#classic-sandwiches {
+		margin-bottom: 2rem;
+	}
+}
+
+#menu-board-3  {
+
+	.menu-board-content > .container > .grid-y {
+		height: 850px;
+	}
+
+	.highlight {
+		
+		font-size: 1.5rem;
+		padding-bottom: 1rem;
+
 	}
 }

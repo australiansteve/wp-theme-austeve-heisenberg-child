@@ -13,7 +13,7 @@ get_header(); ?>
 
 		<div class="menu-board-content">
 
-			<div class="grid-x">
+			<div class="grid-x grid-margin-x">
 				
 				<div class="cell small-6">
 
@@ -22,27 +22,26 @@ get_header(); ?>
 						<div class="heading">
 
 							<h1>Signature Breakfast</h1>
-
-							Breakfast is served from 7am-11am
+							<div class="tagline">Breakfast is served from 7am-11am</div>
 
 						</div>
 
 						<div class="body">
 							<?php
 								$courseSlug = 'signature-breakfast';								
-								AUSteve_Menu_Include($courseSlug);
+								AUSteve_Menu_Include($courseSlug, 'menu-board');
 							?>
 
-							<div class="grid-x">
+							<div class="grid-x" id="classics">
 
-								<div class="cell small-5 title">
+								<div class="cell small-4 title">
 									Breakfast Classics -
 								</div>
 
-								<div class="cell small-7">
+								<div class="cell small-8">
 									<?php
 										$courseSlug = 'breakfast-classics';								
-										AUSteve_Menu_Include($courseSlug);
+										AUSteve_Menu_Include($courseSlug, 'menu-board-inline');
 									?>
 								</div>
 
@@ -52,7 +51,9 @@ get_header(); ?>
 
 						<div class="highlight">
 
-							Follow us on Social Media
+							<h2>Follow us on Social Media</h2>
+
+							<i class="fab fa-instagram"> </i> <i class="fab fa-facebook-square"> </i> @zesty_lemon_sj
 
 						</div>
 
@@ -67,15 +68,14 @@ get_header(); ?>
 						<div class="heading">
 
 							<h1>Bakery</h1>
-
-							Freshly Baked Goods
+							<div class="tagline">Freshly Baked Goods</div>
 
 						</div>
 
-						<div class="body">
+						<div class="body" id="bakery">
 							<?php
 								$courseSlug = 'bakery';								
-								AUSteve_Menu_Include($courseSlug);
+								AUSteve_Menu_Include($courseSlug, 'menu-board');
 							?>
 
 						</div>
@@ -86,7 +86,7 @@ get_header(); ?>
 
 						</div>
 
-						<div class="body">
+						<div class="body" id="beverages">
 							<?php
 								$courseSlug = 'beverages';								
 								AUSteve_Menu_Include($courseSlug, 'menu-board');

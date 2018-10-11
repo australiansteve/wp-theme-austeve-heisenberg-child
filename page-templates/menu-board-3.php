@@ -32,7 +32,7 @@ get_header(); ?>
 						</div>
 
 					</div>
-					
+
 					<div class="cell auto">
 					
 						<div class="grid-x grid-margin-x" id="salad-how-to">

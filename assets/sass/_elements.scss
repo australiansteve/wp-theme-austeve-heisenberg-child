@@ -8,6 +8,11 @@ a.button, a.ab-button, button {
 	margin-bottom: 3rem;
 }
 
+.austeve-menupage-title {
+	text-align: center;
+	color: $salmon-color;
+}
+
 .austeve-menupage-sub-menu a.active {
 	text-decoration: underline;
 }
@@ -21,6 +26,54 @@ h1 {
 	transform: translateX(-100%);
 }
 
+.austeve-menupage-dropdown {
+
+	margin-bottom: 2rem;
+
+	.is-drilldown-submenu-parent>a {
+		background: $tertiary-colour;
+	}
+	
+	a {
+		color: $secondary-colour;
+	}
+
+	.drilldown .is-drilldown-submenu-parent>a::after {
+		border-color: transparent transparent transparent $secondary-colour;
+	}
+
+	.drilldown .js-drilldown-back>a::before {
+		border-color: transparent $secondary-colour transparent transparent;
+	}
+
+	.menu .active>a {
+		background: $tertiary-colour;
+		color: $secondary-colour;
+	}
+}
+
+.austeve-menuitems {
+
+	.menu-item {
+	    max-width: 90%;
+		margin: auto;
+		margin-bottom: 1.5rem;
+
+		.title, .price {
+			margin-bottom: 0;
+		}
+
+		.price {
+			float: right;
+		}
+
+		.description {
+			color: $secondary-colour;
+		}
+	}
+}
+
+
 /* Medium and up */
 @media screen and (min-width: 40em) {
 	
@@ -31,7 +84,19 @@ h1 {
 	}
 
 	.austeve-menuitems {
-	    padding-left: 10rem;
+		.menu-item {
+		    max-width: 80%;
+    	}
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+	
+	.austeve-menuitems {
+		.menu-item {
+		    max-width: 60%;
+    	}
 	}
 }
 

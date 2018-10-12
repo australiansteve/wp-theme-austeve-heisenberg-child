@@ -52,7 +52,7 @@ get_header(); ?>
 
 
 				<div class="small-12 medium-6 columns" id="cta2">			
-					<div class="container" style="background-image:url(<?php echo get_field('cta1_image')['url']; ?>)">		
+					<div class="container" style="background-image:url(<?php echo get_field('cta2_image')['url']; ?>)">		
 						<div class="content">
 							<a class="button" href="<?php the_field('cta2_link_url');?>"><?php the_field('cta2_link_text');?></a>
 						</div>

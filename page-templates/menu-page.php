@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<div class="large-12 columns austeve-menupage-sub-menu text-center show-for-large-only">
+		<div class="large-12 columns austeve-menupage-sub-menu text-center show-for-large">
 
 			<ul class="menu">
 

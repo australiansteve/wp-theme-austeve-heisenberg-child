@@ -1,9 +1,3 @@
-a.button, a.ab-button, button {
-	border: 5px solid $button-border-colour !important;
-	border-radius: 10px;
-	text-transform: uppercase;
-}
-
 .austeve-events-about, .austeve-events .event , .austeve-teammembers .team-member {
 	margin-bottom: 3rem;
 }
@@ -33,7 +27,7 @@ h1 {
 	.is-drilldown-submenu-parent>a {
 		background: $tertiary-colour;
 	}
-	
+
 	a {
 		color: $secondary-colour;
 	}

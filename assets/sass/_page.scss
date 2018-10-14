@@ -9,12 +9,19 @@ p, div, span {
 }
 
 a.button {
+	border: 5px solid $button-border-colour !important;
+	border-radius: 10px;
+	text-transform: uppercase;
     background: transparent;
     font-size: 2rem;
     font-weight: 700;
     font-family: Haarlem-Deco;
     letter-spacing: 2.5px;
-    padding: 0.75rem;
+    padding: 1rem 0.75rem 0.75rem 1rem;
+}
+
+a.button:hover, a.button:active  {
+	background: rgba($secondary-colour, 0.4);
 }
 
 .off-canvas-absolute.position-left {

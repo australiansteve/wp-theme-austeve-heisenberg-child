@@ -32,7 +32,7 @@ get_header(); ?>
 
 			<?php if (has_post_thumbnail( $post->ID ) ): ?>
 				<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large-banner'); ?>
-				<img src="<?php echo $image[0];?>" width="1000px" height="600px"/>
+				<img src="<?php echo $image[0];?>" width="900px" height="600px"/>
 			<?php endif; ?>
 			
 		</div>

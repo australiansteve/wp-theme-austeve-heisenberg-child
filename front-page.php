@@ -16,15 +16,13 @@ get_header(); ?>
 				<!-- Cover image section -->
 				<?php
 				$cover_image = get_field('cover_image');
-				$size = 'full'; // (thumbnail, medium, large, full or custom size)
-
+				
 				if( $cover_image ):
 				?>
 
 					<div class="row cover-image-section">
 
-						<div class="small-12 columns" style="background-image:url(<?php echo $cover_image['url']; ?>)">
-					
+						<div class="small-12 columns flex-image" data-flex-ratio="0.67" style="background-image:url(<?php echo $cover_image['url']; ?>)">					
 
 							<div class="content text-center">
 								<p><?php the_field('text');?></p>
@@ -43,7 +41,7 @@ get_header(); ?>
 			<div class="row call-to-action-section text-center">
 
 				<div class="small-12 medium-6 columns" id="cta1" >
-					<div class="container" style="background-image:url(<?php echo get_field('cta1_image')['url']; ?>)">
+					<div class="container flex-image" data-flex-ratio="1" style="background-image:url(<?php echo get_field('cta1_image')['url']; ?>)">
 						<div class="content">
 							<a class="button" href="<?php the_field('cta1_link_url');?>"><?php the_field('cta1_link_text');?></a>
 						</div>
@@ -52,7 +50,7 @@ get_header(); ?>
 
 
 				<div class="small-12 medium-6 columns" id="cta2">			
-					<div class="container" style="background-image:url(<?php echo get_field('cta2_image')['url']; ?>)">		
+					<div class="container flex-image" data-flex-ratio="1" style="background-image:url(<?php echo get_field('cta2_image')['url']; ?>)">		
 						<div class="content">
 							<a class="button" href="<?php the_field('cta2_link_url');?>"><?php the_field('cta2_link_text');?></a>
 						</div>

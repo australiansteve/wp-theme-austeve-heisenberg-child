@@ -3,7 +3,6 @@
 	.cover-image-section>div, .call-to-action-section>div .container {
 		background-repeat: no-repeat;
 		background-size: cover;
-		min-height: 500px;
 		background-position: 50% 100%;
 		position: relative; // for bottom alignment of content
 	}
@@ -19,7 +18,7 @@
 
 	.content {
 		position: absolute;
-		bottom: 0px;
+		bottom: 50px;
 		left: 0;
 		width: 100%;
 		color: $primary-colour;

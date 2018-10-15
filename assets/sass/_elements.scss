@@ -61,10 +61,12 @@ h1 {
 
 		.price {
 			float: right;
+			font-size: 1.25rem;
+			color: $dark-blue-color;
 		}
 
 		.description {
-			color: $secondary-colour;
+			color: $mid-blue-color;
 		}
 	}
 }

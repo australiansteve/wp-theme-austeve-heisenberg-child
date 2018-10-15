@@ -67,6 +67,29 @@ h1 {
 	}
 }
 
+.wine-list-category {
+
+	margin-bottom: 2.5rem;
+
+	.wine-heading, .price-heading {
+		color: $salmon-color;
+	}
+
+	.price-heading, .price {
+		text-align: center;
+	}
+
+	.menu-item.wine-list {
+		max-width: none;
+	}
+
+	.description {
+		color: $mid-blue-color;
+		font-style: italic;
+		font-size: 0.9rem;
+	}
+}
+
 
 /* Medium and up */
 @media screen and (min-width: 40em) {

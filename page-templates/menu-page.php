@@ -81,44 +81,76 @@ get_header(); ?>
 			if ($courseId) :
 			
 				if (get_term($courseId)->slug == 'wine-beer') :
-					//Wine & Beer page is different
+					//Wine & Beer page is different					
 
+					?>
+					<div class="wine-list-category">
+						<div class="grid-x grid-padding-x">
+							<div class="cell small-12 medium-8 wine-heading">
+								<h2>Sparkling, Rose & Cider</h2>
+							</div>
+							<div class="cell medium-1 price-heading show-for-medium">
+								5oz
+							</div>
+							<div class="cell medium-1 price-heading show-for-medium">
+								½L
+							</div>
+							<div class="cell medium-2 price-heading show-for-medium">
+							  	Bottle
+							</div>
+						</div>
+						<?php
+						//Sparkling, Rose & Cider
+						$sparkling = get_term_by( 'slug', 'sparkling-rose-cider', 'menuitem-course' );
+						austeve_display_menu_course( $sparkling->term_id, 'wine-list' );
+						?>
+					</div>
+					<div class="wine-list-category">
+						<div class="grid-x grid-padding-x">
+							<div class="cell small-12 medium-8 wine-heading">
+								<h2>White Wine</h2>
+							</div>
+							<div class="cell medium-1 price-heading show-for-medium">
+								5oz
+							</div>
+							<div class="cell medium-1 price-heading show-for-medium">
+								½L
+							</div>
+							<div class="cell medium-2  price-heading show-for-medium">
+							  	Bottle
+							</div>
+						</div>
+						<?php
+						//White Wine
+						$whitewine = get_term_by( 'slug', 'white', 'menuitem-course' );
+						austeve_display_menu_course( $whitewine->term_id, 'wine-list' );
+						?>
+					</div>
+					<div class="wine-list-category">
+						<div class="grid-x grid-padding-x">
+							<div class="cell small-12 medium-8 wine-heading">
+								<h2>Red Wine</h2>
+							</div>
+							<div class="cell medium-1 price-heading show-for-medium">
+								5oz
+							</div>
+							<div class="cell medium-1 price-heading show-for-medium">
+								½L
+							</div>
+							<div class="cell medium-2  price-heading show-for-medium">
+							  	Bottle
+							</div>
+						</div>
+						<?php
+						//Red Wine
+						$redwine = get_term_by( 'slug', 'red', 'menuitem-course' );
+						austeve_display_menu_course( $redwine->term_id, 'wine-list' );
+						?>
+					</div>
+				<?php
 				else:
-					//All other menu pages are the same
-
-					// WP_Query arguments
-					$args = array(
-						'post_type'              => array( 'austeve-menuitems' ),
-						'post_status'            => array( 'publish' ),
-						'tax_query'				=> array(
-							'relation' => 'AND',
-							array(
-								'taxonomy'         => 'menuitem-course',
-								'terms'            => $courseId,
-								'field'            => 'term_id',
-								'operator'         => 'IN',
-								'include_children' => true,
-							)
-						),
-					);
-
-					// The Query
-					$menuItemQuery = new WP_Query( $args );
-
-					// The Loop
-					if ( have_posts() ) :
-						while ( $menuItemQuery->have_posts() ) :
-						    $menuItemQuery->the_post();
-						    
-
-						    get_template_part( 'template-parts/menu-item' );
-
-						endwhile;	
-					else :
-
-						echo esc_html( 'Sorry, no posts' );
-
-					endif; //have_posts
+					//All other menu pages are the same	
+					austeve_display_menu_course( $courseId, null );
 
 				endif;
 
@@ -131,4 +163,40 @@ get_header(); ?>
 	</div>
 
 <?php
+
+function austeve_display_menu_course($courseId, $format)
+{
+	// WP_Query arguments
+	$args = array(
+		'post_type'              => array( 'austeve-menuitems' ),
+		'post_status'            => array( 'publish' ),
+		'tax_query'				=> array(
+			'relation' => 'AND',
+			array(
+				'taxonomy'         => 'menuitem-course',
+				'terms'            => $courseId,
+				'field'            => 'term_id',
+				'operator'         => 'IN',
+				'include_children' => true,
+			)
+		),
+	);
+
+	// The Query
+	$menuItemQuery = new WP_Query( $args );
+
+	// The Loop
+	if ( have_posts() ) :
+		while ( $menuItemQuery->have_posts() ) :
+		    $menuItemQuery->the_post();
+		    
+		    get_template_part( 'template-parts/menu-item', $format );
+
+		endwhile;	
+	else :
+
+		echo esc_html( 'Sorry, no posts' );
+
+	endif; //have_posts
+}
 get_footer();

@@ -30,7 +30,7 @@
 						</p>
 						-->
 						<p class="footer-social">
-							<a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+							<a href="https://www.instagram.com/eastcoastbistr0" target="_blank"><i class="fab fa-instagram fa-2x"></i></a><a href="https://www.facebook.com/EastCoastBistro" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
 						</p>
 
 					</div><!-- .column.row -->

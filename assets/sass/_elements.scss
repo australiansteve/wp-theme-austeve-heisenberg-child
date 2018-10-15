@@ -34,10 +34,12 @@ h1 {
 
 	.drilldown .is-drilldown-submenu-parent>a::after {
 		border-color: transparent transparent transparent $secondary-colour;
+		margin-bottom: 0.25rem;
 	}
 
 	.drilldown .js-drilldown-back>a::before {
 		border-color: transparent $secondary-colour transparent transparent;
+		margin-bottom: 0.25rem;
 	}
 
 	.menu .active>a {

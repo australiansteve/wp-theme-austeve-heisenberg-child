@@ -11,7 +11,7 @@ get_header(); ?>
 	
 		<main class="cell small-12">
 
-			<iframe src="<?php echo get_field('url');?>"></iframe>
+			<iframe src="<?php echo get_field('url');?>" id="frame-<?php echo $post->post_name; ?>"></iframe>
 
 		</main>
 

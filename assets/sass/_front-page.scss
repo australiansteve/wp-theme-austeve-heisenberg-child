@@ -1,14 +1,30 @@
 .home.page {
 	
-	.cover-image-section>div, .call-to-action-section>div .container {
+	.cover-image-section .container, .call-to-action-section .container {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: 50% 100%;
 		position: relative; // for bottom alignment of content
 	}
 
-	.call-to-action-section>div .container {
+	.call-to-action-section .container {
 		min-height: 300px;
+	}
+
+	.intro-content {
+	    padding: 3rem 1rem 0 1rem;
+	    margin: auto;
+	    font-size: 1.2rem;
+	    font-weight: 400;
+
+		p {
+			margin-bottom: 0.75rem;
+		}
+
+		img {
+			margin-top: 1rem;
+			max-width: 150px;
+		}
 	}
 
 	.content-section>.columns, .call-to-action-section>.columns {
@@ -18,14 +34,24 @@
 
 	.content {
 		position: absolute;
-		bottom: 50px;
-		left: 0;
+		top: 50px;
 		width: 100%;
 		color: $primary-colour;
+		font-size: 1.2rem;
+
+
+		p {
+			margin-bottom: 0.75rem;
+		}
 
 		a {
 			margin-top: 1.5rem;
 		}
+	}
+
+	.content.bottom {
+		bottom: 50px;
+		top: unset;
 	}
 
 	.call-to-action-section .content {
@@ -34,7 +60,7 @@
 
 	.call-to-action-section, .content-section {
 		margin-top: 4rem;
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 }
 
@@ -46,6 +72,7 @@
 		#cta2 {
 			margin-top: 4rem;
 		}
+
 	}
 }
 
@@ -55,9 +82,13 @@
 
 	.home.page {
 
-		.call-to-action-section>div .container {
+		.call-to-action-section .container {
 			min-height: 300px;
 		}
+
+		.intro-content {
+	    	padding: 3rem 2rem 0 2rem;
+	    }
 
 		.content {
 			p {
@@ -74,6 +105,11 @@
 		#cta2 .container {
 			margin-left: 2rem;
 		}
+
+		.call-to-action-section, .content-section, .content, .intro-content {
+			font-size: 1.5rem;
+		}
+
     }
 }
 
@@ -82,7 +118,11 @@
 
 	.home.page {
 
-		.call-to-action-section>div .container {
+		.intro-content {
+	    	padding: 3rem 4rem 0 4rem;
+	    }
+
+		.call-to-action-section .container {
 			min-height: 400px;
 		}
 	}

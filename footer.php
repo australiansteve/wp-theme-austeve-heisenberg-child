@@ -16,11 +16,10 @@
 					<div class="column row">
 
 						<p class="text-center">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/_dist/img/ecb-logo-footer.png" />
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/_dist/img/ecb-logo-footer.png" alt-text="East Coast Bistro"/>
 						</p>
 
 						<p class="footer-address">
-							<span class="name">East Coast Bistro</span><br/>
 							60 Prince William St<br/>
 							Saint John, NB E2L 2B1
 						</p>						

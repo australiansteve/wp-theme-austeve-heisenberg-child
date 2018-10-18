@@ -99,5 +99,8 @@ $pageClasses = is_home() ? "homepage" : "";
 					wp_nav_menu( $args ); ?>
 				</ul>
 
+				<div class="off-canvas-logo">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/_dist/img/ecb-logo-footer.png" alt-text="East Coast Bistro"/>
+				</div>
 			</div>
 			<div id="content" class="site-content" role="main">

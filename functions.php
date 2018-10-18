@@ -74,6 +74,7 @@ add_action( 'after_setup_theme', function() {
 
 add_image_size( 'large-banner', 900, 600, array( 'center', 'center' ) );
 add_image_size( 'medium-square', 400, 400, array( 'center', 'center' ) );
+add_image_size( 'medium-portrait', 400, 600, array( 'center', 'center' ) );
 
 /* Add link at the end of excerpt*/
 add_filter( 'excerpt_more', function($more) {
@@ -83,5 +84,10 @@ add_filter( 'excerpt_more', function($more) {
 add_filter( 'excerpt_length', function($length) {
 	return 30;
 }, 999 );
+
+/* Add ACF options page for header & footer */
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
 
 ?>

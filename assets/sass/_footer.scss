@@ -1,20 +1,30 @@
 #colophon {
-	background: none;
-	padding: 0;
+	background-color: $dark-blue-color;
+	padding: 2rem;
 	text-align: center;
-	color: black;
+	color: white;
 	text-transform: uppercase;
 	margin-top: 6rem;
-	margin-bottom: 2rem;
+    max-width: 1100px;
+
+    h3 {
+    	font-size: 1.3rem;
+    }
 
 	a {
-		color: black;
+		color: white;
+	}
+
+	.footer-contact {
+
+		margin-bottom: 2rem;
 	}
 
 	.footer-address {
+
 		.name {
 			font-family: Haarlem-Deco;
-			color: $dark-blue-color;
+			color: $light-gold-color;
 		}
 	}
 
@@ -23,8 +33,29 @@
 		color: $light-gold-color;
 	}
 
+	.footer-owners {
+		font-family: Raleway;
+		font-style: italic;
+		color: $light-gold-color;
+		text-transform: initial;
+		font-size: 0.75rem;
+		margin-top: 1rem;
+	}
+
+	.footer-hours {
+		margin-bottom: 2rem;
+		.day {
+			font-family: Haarlem-Deco;
+		}
+		.times {
+			font-family: Raleway;
+			font-style: italic;
+			text-transform: initial;
+		}
+	}
+
 	img {
-		max-height: 100px;
+		max-width: 250px;
 		margin-bottom: 1rem;
 	}
 }
@@ -33,7 +64,13 @@
 @media screen and (min-width: 40em) {
 
 	#colophon {
-		margin-bottom: 6rem;
+		margin: 6rem auto;
+
+		.footer-social a {
+			margin-left: 0;
+			margin-right: 1rem;
+		}
+		
 	}
 }
 
@@ -41,10 +78,6 @@
 @media screen and (min-width: 64em) {
 
 	#colophon {
-
-		img {
-			max-height: 150px;
-		}
 	}
 }
 

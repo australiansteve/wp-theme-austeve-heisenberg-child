@@ -55,10 +55,19 @@ a.button:hover, a.button:active  {
 	text-align: center;
 }
 
+.austeve-about-content {
+	margin-bottom: 3rem;
+
+	p {
+		margin-bottom: 1rem;
+	}
+}
+
 /* Medium and up */
 @media screen and (min-width: 40em) {
 	#content {
 	    max-width: calc(100% - 10rem);
+	    margin-bottom: 6rem;
 	}
 }
 

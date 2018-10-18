@@ -147,10 +147,62 @@ get_header(); ?>
 						austeve_display_menu_course( $redwine->term_id, 'wine-list' );
 						?>
 					</div>
+					<div class="wine-list-category">
+						<div class="grid-x grid-padding-x">
+							<div class="cell small-12 wine-heading text-center">
+								<h1>Beer</h1>
+							</div>
+						</div>
+						<?php
+						//Red Wine
+						$beer = get_term_by( 'slug', 'beer', 'menuitem-course' );
+						austeve_display_menu_course( $beer->term_id, 'wine-list' );
+						?>
+					</div>
+				<?php
+
+				elseif (get_term($courseId)->slug == 'cocktails') :
+					//Cocktails page is different					
+
+					?>
+					<div class="wine-list-category">
+						<!--Main page heading is Cocktails, so no need to display it again here -->
+						<?php
+						//Cocktails
+						$cocktails = get_term_by( 'slug', 'cocktails', 'menuitem-course' );
+						austeve_display_menu_course( $cocktails->term_id );
+						?>
+					</div>
+					<div class="wine-list-category">
+						<div class="grid-x grid-padding-x">
+							<div class="cell small-12 wine-heading text-center">
+								<h2>Scotch, Port & Ice Wine</h2>
+							</div>
+							
+						</div>
+						<?php
+						//Scotch Port & Ice Wine
+						$scotch = get_term_by( 'slug', 'scotch-port-ice-wine', 'menuitem-course' );
+						austeve_display_menu_course( $scotch->term_id );
+						?>
+					</div>
+					<div class="wine-list-category">
+						<div class="grid-x grid-padding-x">
+							<div class="cell small-12 wine-heading text-center">
+								<h2>Specialty Coffee</h2>
+							</div>
+							
+						</div>
+						<?php
+						//Specialty Coffee
+						$coffee = get_term_by( 'slug', 'specialty-coffee', 'menuitem-course' );
+						austeve_display_menu_course( $coffee->term_id );
+						?>
+					</div>
 				<?php
 				else:
 					//All other menu pages are the same	
-					austeve_display_menu_course( $courseId, null );
+					austeve_display_menu_course( $courseId );
 
 				endif;
 
@@ -164,7 +216,7 @@ get_header(); ?>
 
 <?php
 
-function austeve_display_menu_course($courseId, $format)
+function austeve_display_menu_course($courseId, $format = null)
 {
 	// WP_Query arguments
 	$args = array(
@@ -177,7 +229,7 @@ function austeve_display_menu_course($courseId, $format)
 				'terms'            => $courseId,
 				'field'            => 'term_id',
 				'operator'         => 'IN',
-				'include_children' => true,
+				'include_children' => false,
 			)
 		),
 	);

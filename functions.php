@@ -43,5 +43,9 @@ add_action( 'after_setup_theme', function() {
 
 });
 
+/* Enable ACF options page for theme options if ACF is activated */
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();
+}
 
 ?>

@@ -48,4 +48,7 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
 
+
+add_image_size( 'header-image-size', 2048, 1462 );
+
 ?>

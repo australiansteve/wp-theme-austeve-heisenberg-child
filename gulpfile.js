@@ -62,7 +62,7 @@ gulp.task('deploy', function() {
     'page-templates/**/*',
     'src/**/*',
     'screenshot.png',
-    '*.php',
+    '**/*.php',
     '*.css'];
 
   var destPath = '/Applications/MAMP/local.pram/wp-content/themes/austeve-heisenberg-child';

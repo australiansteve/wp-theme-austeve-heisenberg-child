@@ -27,77 +27,39 @@ if ( file_exists( $svg_sprite ) ) {
 	echo $svg_sprite;
 } 
 
-$fixedBackground = get_theme_mod('austeve_background_fixed', 'fixed');
-$backgrounds = get_theme_mod('austeve_backgrounds', 0);
-$onlyforhome = get_theme_mod('austeve_background_homeonly', false);
 $pageClasses = is_home() ? "homepage" : "";
+?>
 
-if ($fixedBackground == 'fixed') 
-{
-	//Fixed
-?>
-	<div id="background-div" class="fixed">
-<?php
-		for ($b = 0; $b < $backgrounds; $b++) {
-			if (!$onlyforhome || is_home())
-			{
-				echo '<div id="bgImage'.($b+1).'" class="bgImage">&nbsp;</div>';
+<div class="grid-x grid-x-margin" id="header">
+
+	<div class="cell small-12">
+
+		<div id="header-image">
+			<?php
+			$image = get_field('header_image', 'option');
+			$size = 'header-image-size'; // (thumbnail, medium, large, full or custom size)
+
+			if( $image ) {
+
+				$headerImage = wp_get_attachment_image( $image, $size );
+				error_log("Front page image: ".print_r($image, true));
+
+				?>
+				<img src="<?php echo $image['sizes']['header-image-size'];?>" width="<?php echo $image['sizes']['header-image-size-width'];?>" height="<?php echo $image['sizes']['header-image-size-height'];?>"/>
+				<?php
+
 			}
-		}
-?>
+			?>
+		</div>
+
+		<div id="introduction">
+			<?php the_field('header_introduction', 'option'); ?>
+		</div>
+
 	</div>
 	
-	<div id="page" class="<?php echo $pageClasses; ?>">
+</div>
 
-<?php 
-}
-else
-{
-	//Scrolling
-?>
-	<div id="background-div" class="scrolling">
-<?php
-		for ($b = 0; $b < $backgrounds; $b++) {
-			if (!$onlyforhome || is_home())
-			{
-				echo '<div id="bgImage'.($b+1).'" class="bgImage">&nbsp;</div>';
-			}	
-		}
-?>
+<div id="page" class="<?php echo $pageClasses; ?>">
 
-		<div id="page" class="<?php echo $pageClasses; ?>">
-<?php
-}
-?>
-
-<header id="masthead">
-	<section class="row column">
-		<?php 
-			if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-				the_custom_logo();
-			}
-			else {
-		?>
-				<h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-					</a>
-				</h1>
-				<h2 class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></h2>
-		<?php 
-			}
-		?>
-	</section>
-
-	<ul class="dropdown menu" data-dropdown-menu>
-		<?php
-		$args = [
-			'theme_location' 	=> 'primary',
-			'container'			=> false,
-			'items_wrap' 		=> '%3$s',
-			'walker' 			=> new AUSteve_Foundation_Dropdown_Nav_Menu(),
-		];
-		wp_nav_menu( $args ); ?>
-	</ul>
-</header>
-<div id="content" class="site-content" role="main">
+	<div id="content" class="site-content" role="main">

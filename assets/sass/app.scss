@@ -1,1 +1,10 @@
+$pink-color : #e80e8b;
+$pink-color-dimmed : #d80d8b;
+$primary-color: $pink-color;
+$light-color: white;
+$dark-color: black;
+
 @import "header";
+@import "page";
+@import "portfolio";
+@import "footer";

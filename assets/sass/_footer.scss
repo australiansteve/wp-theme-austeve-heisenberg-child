@@ -1,16 +1,16 @@
 #colophon {
-	background: $dark-color;
-	color: $light-color;
+	background: $pink-color;
+	color: $dark-color;
 	max-width: 1200px;	
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 
 	a {
-		color: $pink-color;
+		color: $dark-color;
 	}
 
 	a:hover {
-		color: $pink-color-dimmed;
+		color: $light-color;
 	}
 }
 

@@ -29,10 +29,24 @@ get_header(); ?>
 		
 	</div>
 
-	<div class="grid-x" id="soundcloud-embed">
+	<div class="grid-x">
 
-		<div class="cell small-12">
-			<?php the_field('soundcloud_embed_code', 'option'); ?> 
+		<div class="cell small-12 medium-6">
+
+			<div id="soundcloud-embed">
+				<?php the_field('soundcloud_embed_code', 'option'); ?> 
+
+				<a href="https://soundcloud.com/user-792010754" class="button"><i class="fab fa-soundcloud"></i> Follow on SoundCloud</a>
+			</div>
+
+		</div>
+
+		<div class="cell small-12 medium-6">
+
+			<div id="instagram-feed">
+				<?php echo do_shortcode('[instagram-feed]'); ?> 
+			</div>
+
 		</div>
 	
 	</div>

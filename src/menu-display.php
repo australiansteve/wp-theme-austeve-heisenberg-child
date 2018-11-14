@@ -1,6 +1,6 @@
 <?php
 
-	function AUSteve_Menu_Include($courseSlug, $format = null)
+	function AUSteve_Menu_Include($courseSlug, $format = null, $excludeSlug = null)
 	{
 		$current_term = get_term_by( 'slug', $courseSlug, 'menuitem-course' );
 
@@ -28,6 +28,20 @@
 				),
 			);
 
+			error_log("BEFORE:".print_r($args, true));
+
+			if ($excludeSlug)
+			{
+				$args['tax_query'][] = array(
+					'taxonomy'         => 'menuitem-course',
+					'terms'            => $excludeSlug,
+					'field'            => 'slug',
+					'operator'         => 'NOT IN',
+					'include_children' => false,
+				);
+			}
+			error_log("AFTER: ".print_r($args, true));
+
 			// The Query
 			$menuItemQuery = new WP_Query( $args );
 			// The Loop
@@ -40,10 +54,8 @@
 						case 'meat':
 						case 'cheese':
 						case 'salads-deli':
-							get_template_part( 'template-parts/menu-item-dual-price', $format );
-							break;
 						case 'salads':
-							get_template_part( 'template-parts/menu-item-triple-price', $format );
+							get_template_part( 'template-parts/menu-item-dual-price', $format );
 							break;
 			    		default:
 							get_template_part( 'template-parts/menu-item', $format );

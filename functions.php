@@ -17,6 +17,16 @@ add_action( 'wp_enqueue_scripts', function() {
         get_stylesheet_directory_uri() . '/_dist/js/app.min.js',
         array( 'jquery' )
     );
+
+    if (is_page_template( 'page-templates/menu-board-1.php' ) ||
+			is_page_template( 'page-templates/menu-board-2.php' ) ||
+			is_page_template( 'page-templates/menu-board-3.php' ))
+    {
+		wp_enqueue_script( 'child-menu-board-script',
+			get_stylesheet_directory_uri() . '/_dist/js/menu-boards.min.js',
+			array( 'jquery' )
+		);
+    }
 });
 
 

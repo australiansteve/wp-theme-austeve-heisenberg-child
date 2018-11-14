@@ -34,26 +34,18 @@ get_header(); ?>
 
 							<div class="grid-x" id="classics">
 
-								<div class="cell small-4 title">
+								<div class="cell small-5 title">
 									Breakfast Classics -
 								</div>
 
-								<div class="cell small-8">
+								<div class="cell small-7">
 									<?php
 										$courseSlug = 'breakfast-classics';								
-										AUSteve_Menu_Include($courseSlug, 'menu-board-inline');
+										AUSteve_Menu_Include($courseSlug, 'menu-board');
 									?>
 								</div>
 
 							</div>
-
-						</div>
-
-						<div class="highlight">
-
-							<h2>Follow us on Social Media</h2>
-
-							<i class="fab fa-instagram"> </i> <i class="fab fa-facebook-square"> </i> @zesty_lemon_sj
 
 						</div>
 

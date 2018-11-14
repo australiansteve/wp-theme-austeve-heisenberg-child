@@ -19,41 +19,17 @@ get_header(); ?>
 
 					<div class="container">
 
-						<div class="grid-y" style="">
+						<div class="heading">
 
-							<div class="cell small-2">
+							<h1>Signature Sandwiches</h1>
+							<div class="tagline">Served with Kettle Chips and a Dill Pickle</div>
+						</div>
 
-								<div class="heading">
-
-									<h1>Signature Sandwiches</h1>
-									<div class="tagline">Served with Kettle Chips and a Dill Pickle</div>
-								</div>
-
-							</div>
-
-							<div class="cell small-8">
-
-								<div class="body" id="signature-sandwiches">
-									<?php
-										$courseSlug = 'signature-sandwiches';								
-										AUSteve_Menu_Include($courseSlug, 'menu-board');
-									?>
-
-								</div>
-
-							</div>
-
-							<div class="cell small-2">
-
-								<div class="highlight">
-
-									<h2>Make it a Meal</h2>
-									<div class="tagline">Add soup or pasta salad to your sandwich for +$3.29</div>
-									<div class="asterisk">*Prices do not include tax</div>
-
-								</div>
-
-							</div>
+						<div class="body" id="signature-sandwiches">
+							<?php
+								$courseSlug = 'signature-sandwiches';								
+								AUSteve_Menu_Include($courseSlug, 'menu-board');
+							?>
 
 						</div>
 
@@ -68,8 +44,7 @@ get_header(); ?>
 						<div class="heading">
 
 							<h1>Classic Sandwiches</h1>
-							<div class="tagline">Old Favourites - Served with Cheese</div>
-							<div class="asterisk">Add Kettle Chips and a Dill Pickle for $1.25</div>
+							<div class="tagline">Served with Kettle Chips and a Dill Pickle</div>
 
 						</div>
 
@@ -81,17 +56,11 @@ get_header(); ?>
 
 						</div>
 
-						<div class="heading">
+						<div class="highlight blue">
 
-							<h1>Side Dishes</h1>
-
-						</div>
-
-						<div class="body">
-							<?php
-								$courseSlug = 'side-dishes';								
-								AUSteve_Menu_Include($courseSlug, 'menu-board');
-							?>
+							<h2>Make it a Meal</h2>
+							<div class="tagline">Add soup or pasta salad to your sandwich for +$3.29</div>
+							<div class="asterisk">*Prices do not include tax</div>
 
 						</div>
 

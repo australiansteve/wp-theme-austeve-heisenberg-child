@@ -16,11 +16,11 @@
 	.menu-board-content {
 		position: absolute;
 		background: white;
-		top: 2.5em;
-		left: 2.5em;
-		width: calc(100vw - 5em);
+		top: 3em;
+		left: 3em;
+		width: calc(100vw - 6em);
 		border: 2px solid black;
-		bottom: 2.5em;
+		bottom: 3em;
 		padding: 2rem;
 
 		.container {
@@ -47,7 +47,7 @@
 
 		.body {
 			margin-left: 3rem;
-			font-size: 1.75rem;
+			font-size: 2.25rem;
 			text-align: left;
 
 			.title {
@@ -57,7 +57,7 @@
 
 			.description {
 				font-family: 'Antic Didone', serif;
-				font-size: 1.5rem;
+				font-size: 1.75rem;
 				margin-top: 0;
 				margin-bottom: 1rem;
 			}
@@ -65,9 +65,9 @@
 		}
 
 		.highlight {
-			border: 15px solid $zesty-yellow-light;
+			border: 15px solid $zesty-yellow-mb;
 			height: 100%;
-			font-size: 1.7rem;
+			font-size: 2.1rem;
     		padding-bottom: 0.5rem;
 
 			h2 {
@@ -81,6 +81,10 @@
 			}
 		}
 
+		.highlight.blue {
+			border: 15px solid $zesty-turquoise;
+		}
+
 		p:empty 
 		{
 			display: none;
@@ -89,50 +93,6 @@
 		
 	}
 
-	#salad-how-to {
-
-		margin-top: 2rem;
-
-		.container {
-			background: $zesty-turquoise;
-			height: 100%;
-		}
-
-		.title {
-			padding-top: 1rem;
-
-			h2 {
-				font-size: 3rem;
-			}
-		}
-
-
-		.step {
-
-			.container {
-				margin: 0;
-			}
-
-			.number {
-				font-family: 'Dancing Script', serif;
-				font-size: 4rem;
-				background: white;
-				border-radius: 50%;
-				width: 6rem;
-				margin: auto;
-				text-align: center;
-			}
-		}
-
-		.step:nth-of-type(2) .body, .step:nth-of-type(3) .body, .step:nth-of-type(4) .body {
-			font-size: 1.5rem;
-		}
-
-		.body {
-			margin-left: 0;
-			text-align: center;
-		}
-	}
 }
 
 #menu-board-1 {
@@ -140,11 +100,21 @@
 		margin-bottom: 2rem;
 	}
 
+	#classics {
+		.menu-item {
+			margin-bottom: 1rem;
+
+			.description { 
+				margin-bottom: 0;
+			}
+		}
+	}
+
 	#bakery, #beverages {
-		font-size: 2rem;
+		font-size: 2.25rem;
 
 		.menu-item {
-			margin-bottom: 0.25rem;
+			margin-bottom: 0.75rem;
 		}
 	}
 
@@ -157,13 +127,18 @@
 
 	#signature-sandwiches {
 		.description {
-		    font-size: 1.25rem;
-		    margin-bottom: 0.5rem;
+		    font-size: 1.5rem;
+		    margin-bottom: 0.75rem;
 		}
 	}
 
 	#classic-sandwiches {
 		margin-bottom: 2rem;
+
+		.menu-item {
+			margin-bottom: 1.2rem;
+    		font-size: 2.5rem;
+		}
 	}
 }
 
@@ -173,9 +148,59 @@
 		height: 850px;
 	}
 
-	.highlight {
+	#side-dishes {
+
+		margin-bottom: 2rem;
+
+		.menu-item {
+			margin-bottom: 1rem;
+		}
+
+	}
+
+	#salads {
+
+		min-height: 575px;
+
+		.intro {
+			margin-bottom: 0.7rem;
+		}
+
+		.step {
+			font-size: 2rem;
+
+			.body {
+				font-size: 1.65rem;
+
+				p {
+					margin-bottom: 0.6rem;
+				}
+			}
+		}
+
+	}
+
+	#specials {
+		min-height: 16rem;
+	}
+
+	.no-highlight {
 		
-		font-size: 1.5rem;
+		font-size: 2rem;
+
+		h2 {
+
+		}
+
+	}
+
+	.highlight {
+
+		h1 {
+			font-size: 5rem;
+		}
+		
+		font-size: 1.8rem;
 		padding-bottom: 1rem;
 
 	}

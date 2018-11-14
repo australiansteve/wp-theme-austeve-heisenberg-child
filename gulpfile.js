@@ -50,7 +50,7 @@ gulp.task('css', function () {
 gulp.task('js', function () {
   return gulp.src([
     // Our custom JS
-    paths.jsPath + '/*.js'
+    paths.jsPath + '/app.js'
   ])
     .pipe(babel({
       presets: [
@@ -65,6 +65,29 @@ gulp.task('js', function () {
     .pipe(gulp.dest(paths.destPath + 'js'))
     .pipe(uglify().on('error', notify.onError(error => `Error: ${error.message}`)))
     .pipe(rename('app.min.js'))
+    .pipe(gulp.dest(paths.destPath + 'js'))
+    .pipe(size({showFiles: true}))
+})
+
+
+gulp.task('js-menu-boards', function () {
+  return gulp.src([
+    // Our custom JS
+    paths.jsPath + '/menu-boards.js'
+  ])
+    .pipe(babel({
+      presets: [
+        ['env', {
+          targets: {
+            browsers: ['last 2 versions', 'ie >= 10']
+          }
+        }]
+      ]
+    }))
+    .pipe(concat('menu-boards.js'))
+    .pipe(gulp.dest(paths.destPath + 'js'))
+    .pipe(uglify().on('error', notify.onError(error => `Error: ${error.message}`)))
+    .pipe(rename('menu-boards.min.js'))
     .pipe(gulp.dest(paths.destPath + 'js'))
     .pipe(size({showFiles: true}))
 })

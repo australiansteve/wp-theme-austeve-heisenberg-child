@@ -35,7 +35,7 @@ $pageClasses = is_home() ? "homepage" : "";
 
 		<header id="masthead">
 
-			<div class="grid-x grid-margin-x">
+			<div class="grid-x">
 
 				<div class="cell small-11 medium-6">
 

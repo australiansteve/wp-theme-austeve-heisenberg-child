@@ -11,6 +11,10 @@ add_action( 'wp_enqueue_scripts', function() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
+    wp_enqueue_script( 'child-script',
+        get_stylesheet_directory_uri() . '/_dist/js/app.min.js',
+        array( 'jquery' )
+    );
 });
 
 

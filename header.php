@@ -33,9 +33,9 @@ $pageClasses = is_home() ? "homepage" : "";
 	
 	<div id="page" class="<?php echo $pageClasses; ?>">
 
-		<header id="masthead">
+		<header id="masthead" data-sticky-container>
 
-			<div class="grid-x">
+			<div class="grid-x" data-sticky data-options="marginTop:0;">
 
 				<div class="cell small-11 medium-6">
 
@@ -102,8 +102,6 @@ $pageClasses = is_home() ? "homepage" : "";
 				</div>
 
 			</div>
-
-			
 
 		</header>
 

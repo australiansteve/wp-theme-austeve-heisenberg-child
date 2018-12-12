@@ -1,5 +1,10 @@
-header {
+header#masthead {
 	text-align: center;
+	margin-bottom: 0;
+
+	> div.grid-x {
+		background-color: white;
+	}
 
 	img {
 	    max-width: 300px;
@@ -13,6 +18,15 @@ header {
 		}
 	}
 
+}
+
+#offCanvasLeft {
+	background: $primary-color;
+	font-size: 1.25rem;
+}
+
+#offCanvasLeft.off-canvas-absolute.is-transition-overlap.is-open {
+    box-shadow: none;
 }
 
 /* Small only */

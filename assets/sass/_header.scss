@@ -23,6 +23,12 @@ header#masthead {
 #offCanvasLeft {
 	background: $primary-color;
 	font-size: 1.25rem;
+
+	.off-canvas-logo {
+	    max-width: 75%;
+	    margin: auto;
+	    margin-top: 2rem;
+	}
 }
 
 #offCanvasLeft.off-canvas-absolute.is-transition-overlap.is-open {

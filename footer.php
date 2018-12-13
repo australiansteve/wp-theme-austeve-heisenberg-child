@@ -17,7 +17,7 @@
 
 <footer id="colophon" class="site-footer">
 
-	<div class="grid-x grid-margin-x">
+	<div class="grid-x">
 
 		<div class="cell small-12">
 

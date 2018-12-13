@@ -23,7 +23,7 @@ if ( have_posts() ) :
 
 		<?php endif; ?>
 
-	<div class="grid-x grid-margin-x">
+	<div class="grid-x">
 
 		<div class="cell" id="page-content">
 			<?php the_content(); ?>

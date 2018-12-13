@@ -37,7 +37,7 @@ $pageClasses = is_home() ? "homepage" : "";
 
 			<div class="grid-x" data-sticky data-options="marginTop:0;">
 
-				<div class="cell small-11 medium-6">
+				<div class="cell small-11 medium-4" id="header-left">
 
 					<?php 
 						if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
@@ -58,21 +58,21 @@ $pageClasses = is_home() ? "homepage" : "";
 				</div>
 
 
-				<div class="cell medium-6 show-for-medium">
+				<div class="cell medium-8 show-for-medium" id="header-right">
 					
-					<div class="grid-x grid-margin-x" id="main-menu">
+					<div class="grid-x align-right" id="quick-actions">
 
-						<div class="cell medium-8">
+						<div class="cell auto">
 							<?php get_search_form( true ); ?>
 						</div>
 
-						<div class="cell medium-4">
-							<a href="/donate" class="button">Donate Now</a>
+						<div class="cell shrink">
+							<a href="/donate" class="button donate-now">Donate Now</a>
 						</div>
 
 					</div>
 
-					<div class="grid-x grid-margin-x" id="main-menu">
+					<div class="grid-x" id="main-menu">
 
 						<div class="cell medium-12">
 

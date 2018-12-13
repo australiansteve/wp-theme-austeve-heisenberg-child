@@ -42,7 +42,32 @@ header#masthead {
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
-	
+	#header-left {
+		text-align: left;
+	}
+	#header-right {
+		text-align: right;
+
+		.donate-now {
+			background-color: $green-color;
+			color: black;
+			margin-left: 1rem;
+		}
+
+		#quick-actions {
+			margin-top: 1rem;
+		}
+
+		#main-menu {
+			margin-top: 1rem;
+
+			.dropdown.menu a {
+			    padding: 0.7rem 0.2rem 0.7rem 1.8rem;;
+			    color: black;
+			}
+		}
+		
+	}
 }
 
 /* Medium only */

@@ -5,3 +5,11 @@ a {
 a:hover, a:focus {
     color: $blue-bright-color;
 }
+
+.search-form {
+	#submit {
+		width: 100%;
+		background-color: $blue-color;
+		color: grey;
+	}
+}

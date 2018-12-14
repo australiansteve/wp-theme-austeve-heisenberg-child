@@ -49,7 +49,21 @@ add_action( 'after_setup_theme', function() {
 
 /* Enable ACF options page for theme options if ACF is activated */
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page();
+
+	// add parent
+	$parent = acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title' 	=> 'Theme Settings',
+		'redirect' 		=> false
+	));
+	
+	
+	// add sub page
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Footer Settings',
+		'menu_title' 	=> 'Footer',
+		'parent_slug' 	=> $parent['menu_slug'],
+	));
 }
 
 ?>

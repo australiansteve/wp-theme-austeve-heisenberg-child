@@ -69,4 +69,10 @@ if( function_exists('acf_add_options_page') ) {
 add_image_size( 'bio-pic-size', 250, 250, array( 'center', 'center' ) ); // Hard crop center
 
 
+function austeve_clean_string($string) {
+   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+   return strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $string)); // Removes special chars.
+}
+
 ?>

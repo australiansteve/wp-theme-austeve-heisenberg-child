@@ -66,4 +66,7 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+add_image_size( 'bio-pic-size', 250, 250, array( 'center', 'center' ) ); // Hard crop center
+
+
 ?>

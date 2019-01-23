@@ -67,6 +67,7 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 add_image_size( 'bio-pic-size', 250, 250, array( 'center', 'center' ) ); // Hard crop center
+add_image_size( 'feature-pic-size', 600, 350, array( 'center', 'center' ) ); // Hard crop center
 
 
 function austeve_clean_string($string) {

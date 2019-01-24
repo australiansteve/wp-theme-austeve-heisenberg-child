@@ -101,7 +101,7 @@ get_header(); ?>
 				 	// loop through the rows of data
 				    while ( have_rows('board_of_directors') ) : the_row();
 			?>
-							<div class="cell small-4 medium-2" class="bod-image <?php echo ($b == 0) ? 'active' : ''?>">
+							<div class="cell small-4 medium-2 bod-image <?php echo ($b == 0) ? 'active' : ''?>">
 								<?php
 								$image = get_sub_field('bod_image');
 
@@ -116,30 +116,28 @@ get_header(); ?>
 									$height = $image['sizes'][ $size . '-height' ];
 								?>
 									 <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php the_sub_field('bod_name'); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-id="<?php echo $b;?>"/>
-	 								<div class="hidden" class="bod-bio" style="display:none" data-id="<?php echo $b;?>"><?php the_sub_field('bod_bio'); ?></div>
-
+	 								<div class="hidden bod-bio" style="display:none" data-id="<?php echo $b;?>"><?php the_sub_field('bod_bio'); ?></div>
+	 								
 								 <?php
 								endif;
 								?>
-							</div>			        
+							</div>		
 			<?php
 						$b++;
 
-						if ($b % 6 == 0):
-							//Output div to be used to display bios on medium+ screens
-							?><div class="cell small-12 show-for-medium" id="bod-bio-display"></div><?php
-						endif;
-						if ($b % 3 == 0):
-							//Output div to be used to display bios on small screens
-							?><div class="cell small-12 hide-for-medium" id="bod-bio-display"></div><?php
-						endif;
-
+						if ($b % 3 == 0 || $b == count(get_field('board_of_directors')))
+						{
+							echo "<div class='bio-display cell small-12 hide-for-medium'></div>";
+						}
+						if ($b % 6 == 0 || $b == count(get_field('board_of_directors')))
+						{
+							echo "<div class='bio-display cell small-12 show-for-medium'></div>";
+						}
 				    endwhile;
 				    ?>
 						</div>
 						<!-- The following divs will be used if there's an uneven number of board members displayed -->
-						<div class="cell small-12 show-for-medium" id="bod-bio-display"></div>
-						<div class="cell small-12 hide-for-medium" id="bod-bio-display"></div>
+						
 					<?php
 
 				endif;

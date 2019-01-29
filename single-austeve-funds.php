@@ -28,8 +28,8 @@ if ( have_posts() ) :
 		</div>
 
 		<div class="cell small-12 medium-4" id="donate-now">
-			<?php echo get_field('canada_helps_form_url', 'option')."/fundid=".get_field('canada_helps_fund_id'); ?>
-			<iframe width="100%" height="800px" src="<?php echo get_field('canada_helps_form_url', 'option')."/fundid=".get_field('canada_helps_fund_id'); ?>"/>
+			<?php echo get_field('canada_helps_form_url', 'option')."?fundID=".get_field('canada_helps_fund_id'); ?>
+			<iframe width="100%" height="800px" src="<?php echo get_field('canada_helps_form_url', 'option')."?fundID=".get_field('canada_helps_fund_id'); ?>"/>
 		</div>
 
 	<?php else:?>

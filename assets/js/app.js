@@ -53,4 +53,18 @@ jQuery(document).ready(function($) {
 		
 	});
 
+	$(".reason-image").on('click', function(e){
+		console.log("reason click");
+		var img = $(this).find('img');
+		var bio = $(this).find('.reason-bio').html();
+		console.log("reason:" + bio);
+
+		$(".reason-display:visible").each(function(){
+			$(this).html("");
+		});
+
+		$(this).nextAll(".reason-display:visible").first().html(bio);		
+		
+	});
+
 });

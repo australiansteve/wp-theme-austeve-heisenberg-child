@@ -10,7 +10,7 @@ get_header();
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<div class="grid-x" id="contact-page">
+		<div class="grid-x" id="faq-page">
 
 		<?php while ( have_posts() ) : the_post(); 
 

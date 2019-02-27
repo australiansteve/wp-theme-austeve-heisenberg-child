@@ -76,4 +76,38 @@ function austeve_clean_string($string) {
    return strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $string)); // Removes special chars.
 }
 
+function austeve_alter_funds_archive_search($query) {
+	if (is_post_type_archive('austeve-funds')) 
+	{
+		if(isset($_GET['fund-name']))
+		{
+			$query->set('s', $_GET['fund-name']);
+			//error_log(print_r($query, true));
+		}
+		if(isset($_GET['fund-category']))
+		{
+			error_log(print_r($query, true));
+			$tax_query = array(
+				'taxonomy' => 'austeve-funds-category',
+				'field'    => 'slug',
+				'terms' => explode(",", $_GET['fund-category']),
+				'operator' => 'IN',
+				'include_children' => true
+			);
+
+			$query->set( 'tax_query', array(
+				'relation' => 'AND',
+				$tax_query
+			));
+
+			error_log(print_r($query, true));
+		}
+	}
+	else
+	{
+		error_log("This is not a funds archive search");
+	}
+}
+add_action('pre_get_posts','austeve_alter_funds_archive_search');
+
 ?>

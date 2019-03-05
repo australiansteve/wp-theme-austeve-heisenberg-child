@@ -18,6 +18,24 @@ header#masthead {
 		}
 	}
 
+	#quick-actions {
+		.search-form {
+
+			input[type="text"] {
+				text-transform: uppercase;
+				letter-spacing: 0.25rem;
+			}
+
+			#submit {
+				font-style: italic;
+			}
+		}
+
+		.donate-now {
+			text-transform: uppercase;
+		}
+	}
+
 }
 
 #offCanvasLeft {
@@ -42,6 +60,12 @@ header#masthead {
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
+
+	header#masthead  img {
+	    max-width: 200px;
+	    margin: 2rem 3rem;
+	}
+
 	#header-left {
 		text-align: left;
 	}
@@ -49,9 +73,12 @@ header#masthead {
 		text-align: right;
 
 		.donate-now {
-			background-color: $green-color;
+			background-color: $yellow-color;
 			color: black;
 			margin-left: 1rem;
+			letter-spacing: 0.25rem;
+    		padding-left: 2rem;
+    		padding-right: 2rem;
 		}
 
 		#quick-actions {
@@ -78,6 +105,15 @@ header#masthead {
 /* Large and up */
 @media screen and (min-width: 64em) {
 	
+	header#masthead img {
+	    margin: 0rem 3rem;
+	    max-width: 300px;
+	}
+
+	header#masthead .is-stuck img {
+	    margin: 0rem 3rem;
+	}
+
 }
 
 /* Large only */

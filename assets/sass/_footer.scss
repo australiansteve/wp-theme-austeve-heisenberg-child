@@ -1,6 +1,7 @@
 footer#colophon {
 	background: black;
 	color: white;
+	padding: 3rem 1rem;
 
 	#footer {
 		max-width: 80em;
@@ -15,9 +16,13 @@ footer#colophon {
 		color: #a0a0a0;
 	}
 
-	.left-column, .center-column, .right-column {
-		padding: 0rem 3rem;
+	.left-column, .center-column {
+		padding: 0rem 3rem 0rem 0rem;
 
+	}
+	
+	.right-column {
+		padding: 0rem;
 	}
 
 }
@@ -31,6 +36,8 @@ footer#colophon {
 @media screen and (min-width: 40em) {
 	footer#colophon {
 
+		padding: 3rem 0rem;
+		
 		.left-column, .center-column, .right-column {
 
 			.container {

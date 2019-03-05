@@ -67,7 +67,7 @@ $pageClasses = is_home() ? "homepage" : "";
 						</div>
 
 						<div class="cell shrink">
-							<a href="/donate" class="button donate-now">Donate Now</a>
+							<a href="/funds" class="button donate-now">Donate Now</a>
 						</div>
 
 					</div>

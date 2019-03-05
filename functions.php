@@ -111,4 +111,15 @@ function austeve_alter_funds_archive_search($query) {
 }
 add_action('pre_get_posts','austeve_alter_funds_archive_search');
 
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+    if( is_post_type_archive("austeve-funds") ) {
+        $title = post_type_archive_title( '', false );
+    }
+
+    return $title;
+});
+
+
 ?>

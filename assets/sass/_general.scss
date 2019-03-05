@@ -17,3 +17,8 @@ a:hover, a:focus {
 .hidden {
 	display: none !important;
 }
+
+#page {
+	max-width:80em;
+	margin: auto;
+}

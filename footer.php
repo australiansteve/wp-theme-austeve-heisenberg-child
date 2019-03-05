@@ -109,7 +109,7 @@
 					<?php $image = get_field('a_member_of', 'option');
 
 					if( !empty($image) ): ?>
-
+						
 						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 					<?php endif; ?>

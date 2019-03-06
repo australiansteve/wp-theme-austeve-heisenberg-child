@@ -61,9 +61,14 @@ header#masthead {
 /* Medium and up */
 @media screen and (min-width: 40em) {
 
-	header#masthead  img {
-	    max-width: 200px;
-	    margin: 2rem 3rem;
+	header#masthead  
+	{
+		margin-right: 1rem;
+
+		img {
+		    max-width: 200px;
+		    margin: 2rem 3rem;
+		}
 	}
 
 	#header-left {
@@ -105,13 +110,17 @@ header#masthead {
 /* Large and up */
 @media screen and (min-width: 64em) {
 	
-	header#masthead img {
-	    margin: 0rem 3rem;
-	    max-width: 300px;
-	}
+	header#masthead {
+		margin-right: 0rem;
 
-	header#masthead .is-stuck img {
-	    margin: 0rem 3rem;
+		img {
+		    margin: 0rem 3rem;
+		    max-width: 300px;
+		}
+
+		.is-stuck img {
+		    margin: 0rem 3rem;
+		}
 	}
 
 }

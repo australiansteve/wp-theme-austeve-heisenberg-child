@@ -21,4 +21,9 @@ a:hover, a:focus {
 #page {
 	max-width:80em;
 	margin: auto;
+
+	#content {
+		margin: 1rem;
+		min-height: 50vh;
+	}
 }

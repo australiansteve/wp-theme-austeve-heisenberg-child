@@ -55,13 +55,7 @@
 	.board {
 
 		.active-arrow.active {
-			width: 0;
-			height: 0;
-			border-left: 30px solid transparent;
-			border-right: 30px solid transparent;
 			border-bottom: 30px solid $orange-color;
-			margin-bottom: -2rem;
-			margin-left: 45px;
 		}
 
 		.bio-display {

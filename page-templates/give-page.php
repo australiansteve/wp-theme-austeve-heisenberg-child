@@ -60,6 +60,7 @@ get_header(); ?>
 ?>
 						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php the_sub_field('reason_name'); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-id="<?php echo $reasonNum;?>"/>
 						<div class="reason-name"><?php the_sub_field('reason_name'); ?></div>
+						<div class="active-arrow"></div>
 
 						<div class="hidden reason-bio" style="display:none" data-id="<?php echo $reasonNum;?>"><?php the_sub_field('reason_bio'); ?></div>
 	 								

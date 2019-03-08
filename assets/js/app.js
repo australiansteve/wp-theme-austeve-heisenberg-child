@@ -74,6 +74,17 @@ jQuery(document).ready(function($) {
 			$(this).html("");
 		});
 
+
+		$(".active-arrow.active").each(function(){
+			//console.log("Removing active from active-arrow");
+			$(this).removeClass("active");
+		});
+
+		$(this).find('.active-arrow').each(function(){
+			//console.log("Adding active to active-arrow");
+			$(this).addClass('active');
+		});
+
 		$(this).nextAll(".reason-display:visible").first().html(bio);		
 		
 	});

@@ -12,41 +12,51 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="cell small-12" class="page-title">
+			<div class="cell small-1 page-title">
 				<h1><?php the_title(); ?></h1>
 			</div>
 
-			<div class="cell small-12" class="page-content">
+			<div class="cell small-12 page-content">
 				<?php the_content(); ?>
 			</div>
 
-			<div class="cell small-12" class="highlights">
-				<div class="grid-x">
-					<div class="cell small-12 medium-6" class="highlight">
-						<h3><?php the_field('highlight_1_title'); ?></h3>
-						<p><?php the_field('highlight_1_text'); ?></p>
+			<div class="cell small-12 highlights">
+				<div class="grid-x" data-equalizer data-equalize-by-row="true">
+					<div class="cell small-12 medium-6 highlight">
+						<div class="container" data-equalizer-watch>
+							<h3><?php the_field('highlight_1_title'); ?></h3>
+							<p><?php the_field('highlight_1_text'); ?></p>
+						</div>
 					</div>
 
-					<div class="cell small-12 medium-6" class="highlight">
-						<h3><?php the_field('highlight_2_title'); ?></h3>
-						<p><?php the_field('highlight_2_text'); ?></p>
+					<div class="cell small-12 medium-6 highlight" >
+						<div class="container" data-equalizer-watch>
+							<h3><?php the_field('highlight_2_title'); ?></h3>
+							<p><?php the_field('highlight_2_text'); ?></p>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="cell small-12" class="links">
+			<div class="cell small-12 links">
 				<div class="grid-x">
-					<div class="cell small-12 medium-6" class="link">
+					<div class="cell medium-3 link-spacer show-for-medium">
+					</div>
+
+					<div class="cell small-12 medium-3 link link-1 text-center">
 						<a href="<?php the_field('link_1_destination'); ?>"><?php the_field('link_1_text'); ?></a>
 					</div>
 
-					<div class="cell small-12 medium-6" class="link">
+					<div class="cell small-12 medium-3 link link-2 text-center">
 						<a href="<?php the_field('link_2_destination'); ?>"><?php the_field('link_2_text'); ?></a>
+					</div>
+
+					<div class="cell medium-3 link-spacer show-for-medium">
 					</div>
 				</div>
 			</div>
 
-			<div class="cell small-12" class="team">
+			<div class="cell small-12 team">
 
 <?php 
 	// check if the repeater field has rows of data
@@ -59,7 +69,7 @@ get_header(); ?>
 ?>
 				<div class="grid-x">
 
-					<div class="cell small-12 medium-3" class="team-member-image">
+					<div class="cell small-12 medium-3 large-2 team-member-image">
 <?php
 			$image = get_sub_field('team_member_image');
 
@@ -78,7 +88,7 @@ get_header(); ?>
 			endif;
 ?>
 					</div>
-					<div class="cell small-12 medium-9" class="team-member-bio"><?php the_sub_field('team_member_bio'); ?></div>
+					<div class="cell small-12 medium-9 large-10 team-member-bio"><?php the_sub_field('team_member_bio'); ?></div>
 				</div>					        
 <?php
     	endwhile;
@@ -88,7 +98,7 @@ get_header(); ?>
 
 			</div>
 
-			<div class="cell small-12" class="board">
+			<div class="cell small-12 board">
 
 <?php 
 	// check if the repeater field has rows of data
@@ -119,6 +129,7 @@ get_header(); ?>
 				$height = $image['sizes'][ $size . '-height' ];
 ?>
 						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php the_sub_field('bod_name'); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-id="<?php echo $b;?>"/>
+						<div class="active-arrow"></div>
 						<div class="hidden bod-bio" style="display:none" data-id="<?php echo $b;?>"><?php the_sub_field('bod_bio'); ?></div>
 	 								
 <?php

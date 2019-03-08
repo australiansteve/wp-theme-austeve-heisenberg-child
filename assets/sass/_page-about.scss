@@ -1,0 +1,132 @@
+#about-page {
+
+	h1, h2 {
+		color: $pink-color;
+	}
+
+	.highlights {
+
+		text-align: center;
+		margin-top: 2rem;
+
+		h3, p {
+			color: white;
+		}
+
+		.highlight .container {
+			padding: 1rem;
+			margin-bottom: 2rem;
+			margin-top: 1rem;
+		}
+
+		.highlight:nth-of-type(1) .container {
+			background: $blue-color;
+		}
+
+		.highlight:nth-of-type(2) .container {
+			background: $orange-color;
+		}
+	}
+
+	.links {
+		.link {
+
+			padding: 1rem;
+			margin-bottom: 2rem;
+
+			a {
+				background: $secondary-color;
+				color: $primary-color;
+				display: inline-block;
+				width: 100%;
+				padding: 1.25rem;
+			}
+		}
+	}
+
+	.team {
+		margin-bottom: 2rem;
+
+		.team-member-bio, .team-member-image {
+			padding-bottom: 1.5rem;
+		}
+	}
+
+	.board {
+
+		.active-arrow.active {
+			width: 0;
+			height: 0;
+			border-left: 30px solid transparent;
+			border-right: 30px solid transparent;
+			border-bottom: 30px solid $orange-color;
+			margin-bottom: -2rem;
+			margin-left: 45px;
+		}
+
+		.bio-display {
+			background: $orange-color;
+			margin-top: 1.8rem;
+			margin-bottom: 2rem;
+			
+			p {
+				margin: 1rem;
+				padding: 0.5rem;
+				background: white;
+			}
+		}
+	}
+
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+	#about-page {
+		
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	#about-page {
+
+		.highlights {
+
+			.highlight:nth-of-type(1) .container {
+				margin-right: 1rem;
+			}
+
+			.highlight:nth-of-type(2) .container {
+				margin-left: 1rem;
+			}
+		}
+
+		.team {
+
+			.team-member-bio {
+				padding-left: 2rem;
+			}
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+	#about-page {
+	
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+	#about-page {
+	
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+	#about-page {
+	
+	}
+}

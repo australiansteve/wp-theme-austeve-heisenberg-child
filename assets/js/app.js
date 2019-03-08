@@ -40,13 +40,24 @@ jQuery(document).ready(function($) {
 
 
 	$(".bod-image").on('click', function(e){
-		console.log("bio click");
+		//console.log("bio click");
 		var img = $(this).find('img');
 		var bio = $(this).find('.bod-bio').html();
-		console.log("bio:" + bio);
+		//console.log("bio:" + bio);
 
 		$(".bio-display:visible").each(function(){
 			$(this).html("");
+		});
+
+
+		$(".active-arrow.active").each(function(){
+			//console.log("Removing active from active-arrow");
+			$(this).removeClass("active");
+		});
+
+		$(this).find('.active-arrow').each(function(){
+			//console.log("Adding active to active-arrow");
+			$(this).addClass('active');
 		});
 
 		$(this).nextAll(".bio-display:visible").first().html(bio);		

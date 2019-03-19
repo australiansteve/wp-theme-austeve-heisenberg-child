@@ -1,0 +1,79 @@
+.featured-fund {
+
+	min-height: 25vh;
+
+	.container {
+		position: relative;
+		text-align: center;
+		color: white;
+
+		.bg-color {
+
+			background-color: $pink-color;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			z-index: -2;
+			opacity: 0.7;
+		}
+
+		.bg-image {
+			background-position: 50% 50%;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.3;
+			z-index: -4;
+		}
+
+		.action .button {
+			background-color: white;
+			color: black;
+			padding: 1rem 3rem;
+			margin-top: 1.5rem;
+			font-weight: 500;
+			font-size: 1rem;
+		}
+	}	
+
+	.container:hover {
+
+		.bg-image {
+			opacity: 0.5;
+		}
+	}	
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+	
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+	
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+	
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+	
+}
+
+/* Minimum aspect ratio */
+@media (min-aspect-ratio: 1/1) {
+	.featured-fund {
+		min-height: 40vh;
+	}
+}

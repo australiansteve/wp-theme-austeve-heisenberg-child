@@ -32,19 +32,6 @@ add_action( 'after_setup_theme', function() {
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 
-	/**
-	 * Filter page title to not show 'Homepage' h1 element
-	 */
-	add_filter( 'the_title', function( $title, $id = null ) {
-
-		//Check if in the loop also to avoid menu items being filtered
-	    if ( is_front_page() && in_the_loop() ) {
-	        return '';
-	    }
-
-	    return $title;
-	}, 10, 2 );
-
 });
 
 /* Enable ACF options page for theme options if ACF is activated */
@@ -107,6 +94,7 @@ function austeve_alter_funds_archive_search($query) {
 	else
 	{
 		//error_log("This is not a funds archive search");
+		return $query;
 	}
 }
 add_action('pre_get_posts','austeve_alter_funds_archive_search');

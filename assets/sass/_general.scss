@@ -26,8 +26,12 @@ a:hover, a:focus {
 		margin: 1rem;
 		min-height: 50vh;
 	}
-}
 
+	h1, h2 {
+		color: $pink-color;
+	}
+
+}
 
 .active-arrow.active {
 	width: 0;
@@ -38,3 +42,23 @@ a:hover, a:focus {
 	margin-bottom: -2rem;
 	margin-left: 45px;
 }
+
+/** START RESPONSIVE OEMBED STYLE from https://www.advancedcustomfields.com/resources/oembed **/
+.embed-container { 
+	position: relative; 
+	padding-bottom: 56.25%;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+} 
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/** END RESPONSIVE OEMBED STYLE **/

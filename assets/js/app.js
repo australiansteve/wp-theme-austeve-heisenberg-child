@@ -72,8 +72,6 @@ jQuery(document).ready(function($) {
 		var img = $(this).find('img');
 		var bio = $(this).find('.reason-bio').html();
 		//console.log("reason:" + bio);
-		var marginLeft = (img.width()/2) - 30;
-		//console.log("marginLeft:" + marginLeft);
 
 		$(".reason-display:visible").each(function(){
 			$(this).html("");
@@ -88,7 +86,6 @@ jQuery(document).ready(function($) {
 		$(this).find('.active-arrow').each(function(){
 			//console.log("Adding active to active-arrow");
 			$(this).addClass('active');
-			$(this).css('margin-left', marginLeft+'px');
 		});
 
 		$(this).nextAll(".reason-display:visible").first().html(bio);		

@@ -33,6 +33,8 @@ get_header(); ?>
 
 			<div class="cell small-12" id="reasons">
 
+				<div class="container">
+
 <?php 
 	// check if the repeater field has rows of data
 	if( have_rows('reasons_to_give') ):
@@ -40,13 +42,13 @@ get_header(); ?>
 		echo "<h2>Reasons to Give</h2>";
 		$reasonNum = 0;
 ?>
-				<div class="grid-x">
+				<div class="row small-up-2 medium-up-5">
 <?php
 		// loop through the rows of data
 		while ( have_rows('reasons_to_give') ) : the_row();
 ?>
 
-					<div class="cell small-6 medium-2 reason-image <?php echo ($reasonNum == 0) ? 'active' : ''?>">
+					<div class="column reason-image <?php echo ($reasonNum == 0) ? 'active' : ''?>">
 
 <?php
 			$image = get_sub_field('reason_image');
@@ -89,7 +91,7 @@ get_header(); ?>
 <?php
 	endif;
 ?>
-
+				</div>
 			</div>
 
 		<?php endwhile; // End of the loop. ?>

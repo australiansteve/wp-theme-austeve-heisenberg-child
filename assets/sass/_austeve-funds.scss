@@ -53,7 +53,18 @@
 
 /* Medium and up */
 @media screen and (min-width: 40em) {
-	
+	#featured-funds>div.featured-fund:nth-of-type(1) {
+
+		.container {
+			margin-right:1rem;
+		}
+	}
+	#featured-funds>div.featured-fund:nth-of-type(2) {
+
+		.container {
+			margin-left:1rem;
+		}
+	}
 }
 
 /* Medium only */

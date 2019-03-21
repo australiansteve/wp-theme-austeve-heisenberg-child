@@ -129,4 +129,4 @@ $pageClasses = is_home() ? "homepage" : "";
 				</div>
 			</div>
 
-			<div id="content" class="site-content" role="main">
+			<div id="content" class="site-content" role="main" data-equalizer="box">

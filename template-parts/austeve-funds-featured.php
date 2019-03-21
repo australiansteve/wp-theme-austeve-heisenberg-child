@@ -11,7 +11,7 @@ if(!$bgColor)
 		<div class="bg-image" style="background-image:url(<?php the_post_thumbnail_url();?>)"></div>
 		<div class="bg-color" style="background-color:<?php echo $bgColor; ?>"></div>
 
-		<div class="grid-x align-middle featured-fund">
+		<div class="grid-x align-middle featured-fund" data-equalizer-watch="box">
 			<div class="cell small-12">
 
 				<?php the_title('<h3>', '</h3>'); ?>

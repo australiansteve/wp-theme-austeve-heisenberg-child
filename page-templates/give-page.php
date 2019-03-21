@@ -12,23 +12,26 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="cell small-12" class="page-title">
+			<div class="cell small-12" id="page-title">
 				<h1><?php the_title(); ?></h1>
 			</div>
 
-			<div class="cell small-12" class="page-content">
+			<div class="cell small-12" id="page-content">
 				<?php the_content(); ?>
 			</div>
 
-			<div class="cell small-12" class="featured-funds">
+			<div class="cell small-12" id="featured-funds">
 				<h2>Featured Funds</h2>
+
+				<?php get_template_part( 'template-parts/austeve-funds', 'featured-snippet' ); ?>
+
 			</div>
 
-			<div class="cell small-12" class="otherwise">
+			<div class="cell small-12" id="otherwise">
 				<?php the_field('otherwise_text'); ?>
 			</div>
 
-			<div class="cell small-12" class="reasons">
+			<div class="cell small-12" id="reasons">
 
 <?php 
 	// check if the repeater field has rows of data

@@ -166,5 +166,27 @@ add_filter('acf/load_field/name=canada_helps_fund_id', function($field) {
 	return $field;
 });
 
+function austeve_populate_color_selector_values($field) {
+
+	//Only get list of funds when admin page is being edited in the backend
+	if (is_admin())
+	{
+		// reset choices
+		$field['choices'] = array(
+			'#bc5298' => 'Pink',
+			'#7fb955' => 'Green',
+			'#e68f52' => 'Orange',
+			'#e4e164' => 'Yellow',
+			'#6abfdb' => 'Blue',
+			'#6cc2dd' => 'Bright Blue',
+		);
+	}
+
+	return $field;
+}
+
+add_filter('acf/load_field/name=featured_post_background_color', 'austeve_populate_color_selector_values');
+add_filter('acf/load_field/name=color', 'austeve_populate_color_selector_values');
+
 
 ?>

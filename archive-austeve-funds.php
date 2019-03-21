@@ -66,19 +66,25 @@ foreach($terms as $term):
 
 					<div class="cell small-12 medium-9" id="filter-results">
 
-						<div class="grid-x">
+						<div class="grid-x" data-equalizer="fund">
+
+<?php 
+
+global $categoryBgColors; 
+$savedBgColors = get_field('fund_category_background_colors', 'options');
+error_log(print_r($savedBgColors, true));
+foreach($savedBgColors as $color)
+{
+	$categoryBgColors[$color['category']] = $color['color'];
+}
+error_log(print_r($categoryBgColors, true));
 
 
-<?php if ( have_posts() ) : ?>
-<?php 	while ( have_posts() ) : the_post(); ?>
-
-							<div class="cell small-12 medium-3" class="fund-title">
-								<h2><?php the_title(); ?></h2>
-								<a href="<?php the_permalink(); ?>" class="button fund-link">Read More</a>
-							</div>
-
-<?php 	endwhile; // End of the loop. ?>
-<?php else: ?>
+if ( have_posts() ) :
+	while ( have_posts() ) : the_post();
+		get_template_part('template-parts/austeve-funds', 'archive');
+ 	endwhile; // End of the loop. 
+else: ?>
 							<div class="cell small-12" class="fund-title">
 								No funds found. Please try a broader search
 							</div>

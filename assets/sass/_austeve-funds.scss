@@ -1,4 +1,4 @@
-.featured-fund {
+.featured-fund, .fund {
 
 	min-height: 25vh;
 
@@ -47,6 +47,17 @@
 	}	
 }
 
+.fund {
+
+    padding: 0rem 1rem 2rem 1rem;
+
+	.archive-content {
+
+		min-height: 25vh;
+
+	}
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 	
@@ -85,7 +96,7 @@
 
 /* Minimum aspect ratio */
 @media (min-aspect-ratio: 1/1) {
-	.featured-fund {
+	.featured-fund, {
 		min-height: 40vh;
 	}
 }

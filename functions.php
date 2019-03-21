@@ -110,4 +110,61 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 });
 
 
+
+add_filter('acf/load_field/name=canada_helps_fund_id', function($field) {
+
+	//Only get list of funds when admin page (ie. A fund) is being edited in the backend
+	if (is_admin())
+	{
+		// reset choices
+		$field['choices'] = array();
+
+		// get the textarea value from options page without any formatting
+		$url = get_field('canada_helps_webservice_url', 'option');
+
+		//$args = array( 'timeout' => 120, 'httpversion' => '1.1' );
+		$response = wp_remote_get( $url );
+		//error_log("Canada Helps page response: ".print_r($response, true));
+
+		$field['choices']["NO_FUND"] = "Select fund";
+
+		if ( is_array( $response ) ) {
+			$header = $response['headers']; // array of http header lines
+			$body = $response['body']; // use the content
+
+			$jsonResponse = json_decode($body);
+
+			if ($jsonResponse->CharityFunds)
+			{
+				$funds = $jsonResponse->CharityFunds;
+
+				if (count($funds) == 0)
+				{
+					$field['choices']["ERROR03"] = "ERROR03: No funds could be found in the response from CanadaHelps. Reload page to try again. Contact steve@weavercrawford.com if the problem persists";
+
+				}
+
+				foreach($funds as $fund)
+				{
+					//error_log("Fund: ".print_r($fund, true));
+			 		$field['choices'][$fund->FundID] = $fund->FundDescription;
+				}
+			}
+			else
+			{
+				$field['choices']["ERROR02"] = "ERROR02: Could not get Funds from CanadaHelps. Reload page to try again. Contact steve@weavercrawford.com if the problem persists";
+			}
+		}
+		else
+		{
+			$field['choices']["ERROR01"] = "ERROR01: Could not retrieve response from CanadaHelps. Reload page to try again";
+		}
+
+		//error_log("Choices: ".print_r($field['choices'], true));
+	}
+
+	return $field;
+});
+
+
 ?>

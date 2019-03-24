@@ -100,7 +100,7 @@ gulp.task('deploy', function() {
 
 gulp.task('clean', function() {
 
-  var destPath = '/Applications/MAMP/local.cfsl/wp-content/themes/austeve-heisenberg-child';
+  var destPath = '/Applications/MAMP/local.cfsj/wp-content/themes/austeve-heisenberg-child';
 
   return del([
       destPath

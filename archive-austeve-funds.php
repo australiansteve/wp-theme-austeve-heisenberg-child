@@ -5,6 +5,17 @@
 
 get_header(); 
 
+
+global $categoryBgColors; 
+$savedBgColors = get_field('fund_category_background_colors', 'options');
+//error_log(print_r($savedBgColors, true));
+foreach($savedBgColors as $color)
+{
+	$categoryBgColors[$color['category']] = $color['color'];
+}
+//error_log(print_r($categoryBgColors, true));
+
+
 ?>
 
 <div id="primary" class="content-area">
@@ -29,20 +40,30 @@ get_header();
 						<form method="GET" action="#" id="search-filters" onsubmit="return validateSearch()">
 							<input type="hidden" name="austeve-funds-archive" value="true"/>
 							<div class="grid-x align-right">
-								<div class="cell shrink">
-								    <input type="text" name="fund-name" id="fund-name" data-filter="fund-name" class="filter" value="<?php echo (isset($_GET['fund-name']) ? $_GET['fund-name'] : ''); ?>" />
+								<div class="cell auto">
+								    <input type="text" name="fund-name" id="fund-name" data-filter="fund-name" class="filter" value="<?php echo (isset($_GET['fund-name']) ? $_GET['fund-name'] : ''); ?>" placeholder="Search Funds"/>
 								</div>
-								<div class="cell small-2">
+								<div class="cell shrink">
 								    <input type="submit" value="go" id="submit"></input>
 								</div>
 							</div>
-							<div class="grid-x align-right">
+							<div class="grid-x" id="fund-category-filters">
 <?php
 $terms = get_terms( 'austeve-funds-category', array(
     'hide_empty' => false,
 ) );
 
+
+if (count($terms) > 0) :
+	echo "<div class='cell'><p>Filter by fund category:</p></div>";
 foreach($terms as $term):
+
+	$bgColor = "#00000f"; //Default color
+	if (array_key_exists($term->term_id, $categoryBgColors))
+	{
+		$bgColor = $categoryBgColors[$term->term_id];
+	}
+
 	$checked = "";
 	if (isset($_GET['fund-category'])) {
 		$values = explode(',', $_GET['fund-category']);
@@ -52,13 +73,16 @@ foreach($terms as $term):
 		}
 	}
 ?>
-								<div class="cell small-1">
-									<input type="checkbox" name="fund-category" id="fund-category" data-filter="fund-category" value="<?php echo $term->slug;?>" <?php echo $checked; ?>/>
+								<div class="cell small-6 medium-12">
+									<div class="fund-category-checkbox" style="background-color: <?php echo $bgColor;?>">
+										<input type="checkbox" name="fund-category" id="fund-category" data-filter="fund-category" value="<?php echo $term->slug;?>" <?php echo $checked; ?>/>
+										<?php echo $term->name;?>								     
+									</div>							     
 								</div>
-								<div class="cell small-11">
-								    <?php echo $term->name;?> 
-								</div>
-<?php endforeach;?>
+<?php 
+endforeach;
+endif;
+?>
 							</div>
 						</form>
 
@@ -69,16 +93,6 @@ foreach($terms as $term):
 						<div class="grid-x" data-equalizer="fund">
 
 <?php 
-
-global $categoryBgColors; 
-$savedBgColors = get_field('fund_category_background_colors', 'options');
-error_log(print_r($savedBgColors, true));
-foreach($savedBgColors as $color)
-{
-	$categoryBgColors[$color['category']] = $color['color'];
-}
-error_log(print_r($categoryBgColors, true));
-
 
 if ( have_posts() ) :
 	while ( have_posts() ) : the_post();

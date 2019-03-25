@@ -6,7 +6,6 @@
 		position: relative;
 		text-align: center;
 		color: white;
-		margin-bottom: 2rem;
 
 		.bg-color {
 
@@ -38,7 +37,7 @@
 			color: black;
 			font-weight: 500;
 			font-size: 0.8rem;
-			margin: 0.5rem 0.5rem;
+			margin: 0.5rem 0.5rem 1rem 0.5rem;
 		}
 	}	
 
@@ -62,8 +61,32 @@
 
 	.archive-content {
 
-		min-height: 25vh;
+		min-height: 20vh;
 
+	}
+}
+
+#fund-category-filters {
+
+	margin-bottom: 1rem;
+
+	p {
+		margin-bottom: 0.25rem;
+	}
+
+	.fund-category-checkbox {
+		margin: 0.25rem;
+		padding: 0.25rem 0.5rem;
+		color: white;
+
+		input {
+			margin-bottom: 0.5rem;
+		}
+
+		input:checked {
+			color: green;
+			background: red;
+		}
 	}
 }
 

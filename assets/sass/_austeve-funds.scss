@@ -29,13 +29,16 @@
 			z-index: -4;
 		}
 
+		.description {
+			margin-bottom: 1.5rem;
+		}
+
 		.action .button {
 			background-color: white;
 			color: black;
-			padding: 1rem 3rem;
-			margin-top: 1.5rem;
 			font-weight: 500;
-			font-size: 1rem;
+			font-size: 0.8rem;
+			margin: 0.5rem 0.5rem;
 		}
 	}	
 
@@ -49,7 +52,13 @@
 
 .fund {
 
-    padding: 0rem 1rem 2rem 1rem;
+    padding: 0rem 0.25rem 1rem 0.25rem;
+
+    h4 {
+    	padding-top: 1rem;
+    	font-size: 1.4rem;
+    	display: inline-block;
+    }
 
 	.archive-content {
 
@@ -77,6 +86,19 @@
 			margin-left:1rem;
 		}
 	}
+
+
+	.fund {
+
+		padding: 0rem 1rem 2rem 1rem;
+
+		.archive-content {
+
+			min-height: 150px;
+
+		}
+
+	}
 }
 
 /* Medium only */
@@ -86,7 +108,27 @@
 
 /* Large and up */
 @media screen and (min-width: 64em) {
-	
+	.featured-fund, .fund {
+
+		.container {
+			h4 {
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+	    		font-size: 1.7rem;
+			}
+
+			.archive-content {
+
+				min-height: 200px;
+
+			}
+
+			.action .button {
+				padding: 1rem 3rem;
+				margin-bottom: 1.5rem
+			}
+		}
+	}
 }
 
 /* Large only */

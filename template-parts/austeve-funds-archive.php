@@ -23,16 +23,17 @@ foreach($terms as $term)
 		<div class="bg-image" style="background-image:url(<?php the_post_thumbnail_url();?>)"></div>
 		<div class="bg-color" style="background-color:<?php echo $bgColor; ?>"></div>
 
-		<div class="grid-x align-middle archive-content" data-equalizer-watch="fund">
-			<div class="cell small-12">
-
+		<div class="grid-y archive-content" data-equalizer-watch="fund">
+			<div class="cell auto">
 				<?php the_title('<h4>', '</h3>'); ?>
-
+			</div>
+			<div class="cell shrink">
 				<div class="action">		
 					<a class="button" href="<?php the_permalink();?>">DONATE NOW</a>
 				</div>
-
 			</div>
 		</div>
+
+
 	</div>
 </div>

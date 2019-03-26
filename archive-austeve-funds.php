@@ -90,7 +90,7 @@ endif;
 
 					<div class="cell small-12 medium-9" id="filter-results">
 
-						<div class="grid-x" data-equalizer="fund">
+						<div class="grid-x small-up-2 medium-up-3" data-equalizer="fund" data-equalize-by-row="true">
 
 <?php 
 

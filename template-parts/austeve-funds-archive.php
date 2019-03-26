@@ -21,7 +21,7 @@ if ($terms)
 // }
 
 ?>
-<div class="cell small-6 medium-4 fund">
+<div class="cell fund">
 	<div class="container">
 		<div class="bg-image" style="background-image:url(<?php the_post_thumbnail_url();?>)"></div>
 		<div class="bg-color" style="background-color:<?php echo $bgColor; ?>"></div>

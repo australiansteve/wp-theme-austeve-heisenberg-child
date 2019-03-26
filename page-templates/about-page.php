@@ -38,7 +38,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="cell small-12 links">
+			<div class="cell small-12" id="links">
 				<div class="grid-x">
 					<div class="cell medium-3 link-spacer show-for-medium">
 					</div>
@@ -56,7 +56,7 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="cell small-12 team">
+			<div class="cell small-12" id="team">
 
 <?php 
 	// check if the repeater field has rows of data
@@ -98,7 +98,7 @@ get_header(); ?>
 
 			</div>
 
-			<div class="cell small-12 board">
+			<div class="cell small-12" id="board">
 
 <?php 
 	// check if the repeater field has rows of data

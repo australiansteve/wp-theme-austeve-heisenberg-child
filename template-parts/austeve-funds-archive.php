@@ -2,7 +2,7 @@
 $terms = get_the_terms($post, 'austeve-funds-category' );
 error_log("terms for post ".$post->ID.": ".print_r($terms, true));
 
-$bgColor = "#00000f"; //Default color
+$bgColor = get_field('default_fund_background_color', 'option'); //Default color
 global $categoryBgColors;
 error_log(print_r($categoryBgColors, true));
 if ($terms)

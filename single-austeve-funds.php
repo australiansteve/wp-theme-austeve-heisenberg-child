@@ -30,8 +30,15 @@ if ( have_posts() ) :
 		</div>
 
 		<div class="cell small-12 medium-4" id="donate-now">
-			<?php //echo get_field('canada_helps_form_url', 'option')."?fundID=".get_field('canada_helps_fund_id'); ?>
-			<iframe width="100%" height="800px" src="<?php echo get_field('canada_helps_form_url', 'option')."?fundID=".get_field('canada_helps_fund_id'); ?>"/>
+			<?php 
+			$fundId = get_field('canada_helps_fund_id');
+			if(!$fundId || $fundId == 'NO_FUND')
+			{
+				$fundId = get_field('canada_helps_default_fund', 'option');
+			}
+			$iFrameSrc = get_field('canada_helps_form_url', 'option')."?fundID=".$fundId;
+			?>
+			<iframe width="100%" height="800px" src="<?php echo $iFrameSrc; ?>"/>
 		</div>
 
 	<?php else:?>

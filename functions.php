@@ -114,7 +114,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
 
 
-add_filter('acf/load_field/name=canada_helps_fund_id', function($field) {
+function austeve_populate_fund_selector_values($field) {
 
 	//Only get list of funds when admin page (ie. A fund) is being edited in the backend
 	if (is_admin())
@@ -167,7 +167,9 @@ add_filter('acf/load_field/name=canada_helps_fund_id', function($field) {
 	}
 
 	return $field;
-});
+}
+add_filter('acf/load_field/name=canada_helps_fund_id', 'austeve_populate_fund_selector_values');
+add_filter('acf/load_field/name=canada_helps_default_fund', 'austeve_populate_fund_selector_values');
 
 function austeve_populate_color_selector_values($field) {
 
@@ -188,8 +190,10 @@ function austeve_populate_color_selector_values($field) {
 	return $field;
 }
 
-add_filter('acf/load_field/name=featured_post_background_color', 'austeve_populate_color_selector_values');
 add_filter('acf/load_field/name=color', 'austeve_populate_color_selector_values');
+add_filter('acf/load_field/name=featured_post_background_color', 'austeve_populate_color_selector_values');
+add_filter('acf/load_field/name=default_fund_background_color', 'austeve_populate_color_selector_values');
+
 
 
 ?>

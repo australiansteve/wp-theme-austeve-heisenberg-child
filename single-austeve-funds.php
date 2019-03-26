@@ -38,7 +38,7 @@ if ( have_posts() ) :
 			}
 			$iFrameSrc = get_field('canada_helps_form_url', 'option')."?fundID=".$fundId;
 			?>
-			<iframe width="100%" height="800px" src="<?php echo $iFrameSrc; ?>"/>
+			<iframe width="100%" height="1000px" src="<?php echo $iFrameSrc; ?>"/>
 		</div>
 
 	<?php else:?>

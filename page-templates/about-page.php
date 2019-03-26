@@ -130,7 +130,11 @@ get_header(); ?>
 ?>
 						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php the_sub_field('bod_name'); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-id="<?php echo $b;?>"/>
 						<div class="active-arrow"></div>
-						<div class="hidden bod-bio" style="display:none" data-id="<?php echo $b;?>"><?php the_sub_field('bod_bio'); ?></div>
+						<div class="hidden bod-bio" style="display:none" data-id="<?php echo $b;?>">
+							<div class="container">
+								<?php the_sub_field('bod_bio'); ?>
+							</div>
+						</div>
 	 								
 <?php
 			endif;

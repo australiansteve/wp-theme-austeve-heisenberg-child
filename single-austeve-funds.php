@@ -19,16 +19,18 @@ if ( have_posts() ) :
 
 	</div>
 
-	<div class="grid-x">
+	<div class="grid-x fund-single">
 
 	<?php if (!get_field('eligibility')):?>
 		<!-- FUND -->
 		<div class="cell small-12 medium-8" id="page-content">
+			<?php the_post_thumbnail(); ?>
+
 			<?php the_content(); ?>
 		</div>
 
 		<div class="cell small-12 medium-4" id="donate-now">
-			<?php echo get_field('canada_helps_form_url', 'option')."?fundID=".get_field('canada_helps_fund_id'); ?>
+			<?php //echo get_field('canada_helps_form_url', 'option')."?fundID=".get_field('canada_helps_fund_id'); ?>
 			<iframe width="100%" height="800px" src="<?php echo get_field('canada_helps_form_url', 'option')."?fundID=".get_field('canada_helps_fund_id'); ?>"/>
 		</div>
 

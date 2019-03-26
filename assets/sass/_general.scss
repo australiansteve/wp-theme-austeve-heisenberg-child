@@ -47,6 +47,10 @@ input[type=submit], input[type=button], .button, button {
 	margin-left: 45px;
 }
 
+iframe {
+	border: solid 1px gray;
+}
+
 /** START RESPONSIVE OEMBED STYLE from https://www.advancedcustomfields.com/resources/oembed **/
 .embed-container { 
 	position: relative; 

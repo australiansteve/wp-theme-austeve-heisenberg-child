@@ -66,6 +66,7 @@ function austeve_clean_string($string) {
 function austeve_alter_funds_archive_search($query) {
 	if (is_post_type_archive('austeve-funds') && $query->is_main_query()) 
 	{
+		$query->set('posts_per_page', '-1');
 		if(isset($_GET['fund-name']))
 		{
 			$query->set('s', $_GET['fund-name']);
@@ -89,6 +90,8 @@ function austeve_alter_funds_archive_search($query) {
 
 			//error_log(print_r($query, true));
 		}
+		//error_log(print_r($query, true));
+
 		return $query;
 	}
 	else

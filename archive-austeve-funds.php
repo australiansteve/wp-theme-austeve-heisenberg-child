@@ -35,19 +35,21 @@ foreach($savedBgColors as $color)
 
 				<div class="grid-x">
 
-					<div class="cell small-12 medium-3" id="filter-sidebar">
+					<div class="cell small-12 medium-3" id="filter-sidebar" data-sticky-container>
 
-						<form method="GET" action="#" id="search-filters" onsubmit="return validateSearch()">
-							<input type="hidden" name="austeve-funds-archive" value="true"/>
-							<div class="grid-x align-right">
-								<div class="cell auto">
-								    <input type="text" name="fund-name" id="fund-name" data-filter="fund-name" class="filter" value="<?php echo (isset($_GET['fund-name']) ? $_GET['fund-name'] : ''); ?>" placeholder="Search Funds"/>
+						<div class="sticky" data-sticky data-top-anchor="page-introduction:bottom" data-anchor="filter-results" data-margin-top="9">
+
+							<form method="GET" action="#" id="search-filters" onsubmit="return validateSearch()">
+								<input type="hidden" name="austeve-funds-archive" value="true"/>
+								<div class="grid-x align-right">
+									<div class="cell auto">
+									    <input type="text" name="fund-name" id="fund-name" data-filter="fund-name" class="filter" value="<?php echo (isset($_GET['fund-name']) ? $_GET['fund-name'] : ''); ?>" placeholder="Search Funds"/>
+									</div>
+									<div class="cell shrink">
+									    <input type="submit" value="go" id="submit"></input>
+									</div>
 								</div>
-								<div class="cell shrink">
-								    <input type="submit" value="go" id="submit"></input>
-								</div>
-							</div>
-							<div class="grid-x" id="fund-category-filters">
+								<div class="grid-x" id="fund-category-filters">
 <?php
 $terms = get_terms( 'austeve-funds-category', array(
     'hide_empty' => false,
@@ -73,19 +75,20 @@ foreach($terms as $term):
 		}
 	}
 ?>
-								<div class="cell small-6 medium-12">
-									<div class="fund-category-checkbox" style="background-color: <?php echo $bgColor;?>">
-										<input type="checkbox" name="fund-category" id="fund-category" data-filter="fund-category" value="<?php echo $term->slug;?>" <?php echo $checked; ?>/>
-										<?php echo $term->name;?>								     
-									</div>							     
-								</div>
+									<div class="cell small-6 medium-12">
+										<div class="fund-category-checkbox" style="background-color: <?php echo $bgColor;?>">
+											<input type="checkbox" name="fund-category" id="fund-category" data-filter="fund-category" value="<?php echo $term->slug;?>" <?php echo $checked; ?>/>
+											<?php echo $term->name;?>								     
+										</div>							     
+									</div>
 <?php 
 endforeach;
 endif;
 ?>
-							</div>
-						</form>
+								</div>
+							</form>
 
+						</div>
 					</div>
 
 					<div class="cell small-12 medium-9" id="filter-results">

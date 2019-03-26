@@ -46,10 +46,32 @@
 				</p>
 			</div>
 
+<?php 
+if( have_rows('page_links', 'option') ):
+?>
+			<div class="container page-links">
+<?php
+	// loop through the rows of data
+    while ( have_rows('page_links', 'option') ) : the_row();
+		$post_id = get_sub_field('page', false, false);
+
+		// check 
+		if( $post_id ): 
+?>
+			<p><a href="<?php echo get_the_permalink($post_id); ?>"><?php echo get_the_title($post_id); ?></a></p>
+<?php 	
+		endif; 
+	endwhile;
+?>
+			</div>
+<?php
+endif;
+?>
 
 			<div class="container">
-				<strong>Find us on</strong>
+				
 				<p class="find-us-on">
+					<strong>
 					<?php 
 					$findUsOn = get_field('find_us_on', 'option'); 
 					if( have_rows('find_us_on', 'option') ):
@@ -62,7 +84,7 @@
 
 					        if ($url)
 					        {
-					        	echo "<a href='".$url."' target='blank'>";
+					        	echo "<p><a href='".$url."' target='blank'>";
 					        	
 								if( have_rows('footer_find_us_logo', 'option') ):
 
@@ -81,9 +103,13 @@
 
 									endwhile;
 
+								elseif (get_sub_field('footer_find_us_text', 'option')) :
+
+									the_sub_field('footer_find_us_text', 'option');
+
 								endif;
 
-					        	echo "</a>";
+					        	echo "</a></p>";
 					        }
 
 					    endwhile;
@@ -95,6 +121,7 @@
 					endif;
 
 					?>
+					</strong>
 				</p>
 
 			</div>
@@ -105,14 +132,27 @@
 
 			<div class="container">
 				<strong>A member of</strong>
-				<p class="a-member-of-address">
-					<?php $image = get_field('a_member_of', 'option');
+				<p class="a-member-of">
+<?php
+if( have_rows('a_member_of', 'option') ):
 
-					if( !empty($image) ): ?>
-						
-						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+	// loop through the rows of data
+	while ( have_rows('a_member_of', 'option') ) : the_row();
 
-					<?php endif; ?>
+		$image = get_sub_field('image', 'option');
+
+		if( !empty($image) ): 
+
+?>
+
+					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+<?php 
+		endif; 
+?>
+<?php
+	endwhile;
+endif;
+?>
 				</p>
 			</div>
 

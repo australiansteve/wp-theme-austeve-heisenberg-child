@@ -25,6 +25,18 @@ footer#colophon {
 		padding: 0rem;
 	}
 
+	.page-links {
+		a {
+			font-weight: 700;
+		}
+	}
+
+	.a-member-of {
+		img {
+			margin-bottom: 0.5rem;
+		}
+	}
+
 }
 
 /* Small only */
@@ -42,6 +54,10 @@ footer#colophon {
 
 			.container {
 				min-height: 8rem;
+			}
+
+			.page-links.container {
+				min-height: 4rem;
 			}
 		}
 

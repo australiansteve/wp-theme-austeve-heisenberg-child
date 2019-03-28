@@ -70,3 +70,22 @@ iframe {
 	height: 100%;
 }
 /** END RESPONSIVE OEMBED STYLE **/
+
+/** START Print specific styling **/
+
+.print-only {
+	display: none !important;
+}
+
+@media print
+{    
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+	.print-only {
+		display: block !important;
+	}
+}
+/** END Print specific styling **/

@@ -37,7 +37,15 @@ $pageClasses = is_home() ? "homepage" : "";
 
 			<div class="grid-x" data-sticky data-options="marginTop:0;">
 
-				<div class="cell small-11 medium-4" id="header-left">
+				<div class="cell small-12 print-only">
+					<?php 
+						if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+							echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' );
+						}
+					?>
+				</div>
+
+				<div class="cell small-11 medium-4 no-print" id="header-left">
 
 					<?php 
 						if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
@@ -46,7 +54,7 @@ $pageClasses = is_home() ? "homepage" : "";
 						else {
 					?>
 							<h1 class="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								<a class="no-print" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 									<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 								</a>
 							</h1>
@@ -58,7 +66,7 @@ $pageClasses = is_home() ? "homepage" : "";
 				</div>
 
 
-				<div class="cell medium-8 show-for-medium" id="header-right">
+				<div class="cell medium-8 show-for-medium no-print" id="header-right">
 					
 					<div class="grid-x align-right" id="quick-actions">
 
@@ -93,7 +101,7 @@ $pageClasses = is_home() ? "homepage" : "";
 
 				</div>
 
-				<div class="cell small-1 show-for-small-only" id="hamburger-menu">
+				<div class="cell small-1 show-for-small-only no-print" id="hamburger-menu">
 
 					<div class="off-canvas-content" data-off-canvas-content>
 							<a href="#" data-toggle="offCanvasLeft"><i class="fas fa-bars"></i></a>

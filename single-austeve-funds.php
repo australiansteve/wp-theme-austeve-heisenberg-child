@@ -27,9 +27,13 @@ if ( have_posts() ) :
 			<?php the_post_thumbnail(); ?>
 
 			<?php the_content(); ?>
+
+			<div class="print-only" id="page-link">
+				<p>Donate now at: <br/><?php echo get_permalink(); ?></p>
+			</div>
 		</div>
 
-		<div class="cell small-12 medium-4" id="donate-now">
+		<div class="cell small-12 medium-4 no-print" id="donate-now">
 			<?php 
 			$fundId = get_field('canada_helps_fund_id');
 			if(!$fundId || $fundId == 'NO_FUND')
@@ -52,12 +56,15 @@ if ( have_posts() ) :
 			<?php the_field('eligibility'); ?>
 		</div>
 
+		<div class="print-only" id="page-link">
+			<p><a href="<?php echo get_permalink(); ?>"><?php echo get_permalink(); ?></a></p>
+		</div>
+
 	<?php endif; ?>
 
 	</div>
 
 <?php
-
 
 	endwhile;
 

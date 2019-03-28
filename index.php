@@ -15,6 +15,15 @@ get_header(); ?>
 
 					the_content();
 
+					//If parent page is the 'Give' page we want to display the common Give info like the featured funds and links to other Give sub pages
+					if ($post->post_parent != 0)
+					{
+						if (strpos(get_page_template_slug($post->post_parent), 'give-page.php') !== false)
+						{
+							get_template_part('template-parts/austeve-give-page', 'common');
+						}
+					}
+
 				endwhile;
 
 				the_posts_navigation();

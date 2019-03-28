@@ -20,60 +20,26 @@ get_header(); ?>
 				<?php the_content(); ?>
 			</div>
 
-			<div class="cell small-12" id="featured-funds">
-				<h2>Featured Funds</h2>
-
-				<?php get_template_part( 'template-parts/austeve-funds', 'featured-snippet' ); ?>
-
-			</div>
-
-			<div class="cell small-12" id="otherwise">
-				<?php the_field('otherwise_text'); ?>
-			</div>
-
-			<div class="cell small-12" id="reasons">
-
-				<div class="container">
+			<?php get_template_part('template-parts/austeve-give-page', 'common'); ?>
 
 <?php 
 	// check if the repeater field has rows of data
 	if( have_rows('reasons_to_give') ):
+?>
+			<div class="cell small-12" id="reasons">
 
-		echo "<h2>Reasons to Give</h2>";
+				<div class="container">
+					<h2>Reasons to Give</h2>
+<?php
 		$reasonNum = 0;
 ?>
-				<div class="row small-up-2 medium-up-5">
+					<div class="row small-up-2 medium-up-5">
 <?php
 		// loop through the rows of data
 		while ( have_rows('reasons_to_give') ) : the_row();
-?>
 
-					<div class="column reason-image <?php echo ($reasonNum == 0) ? 'active' : ''?>">
+			get_template_part('template-parts/austeve-give-reason');
 
-<?php
-			$image = get_sub_field('reason_image');
-
-			if( !empty($image) ): 
-				// vars
-				$alt = $image['alt'];
-
-				// thumbnail
-				$size = 'thumbnail';
-				$thumb = $image['sizes'][ $size ];
-				$width = $image['sizes'][ $size . '-width' ];
-				$height = $image['sizes'][ $size . '-height' ];
-?>
-						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php the_sub_field('reason_name'); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-id="<?php echo $reasonNum;?>"/>
-						<div class="reason-name"><?php the_sub_field('reason_name'); ?></div>
-						<div class="active-arrow"></div>
-
-						<div class="hidden reason-bio" style="display:none" data-id="<?php echo $reasonNum;?>"><?php the_sub_field('reason_bio'); ?></div>
-	 								
-<?php
-			endif;
-?>
-					</div>		
-<?php
 			$reasonNum++;
 
 			if ($reasonNum % 2 == 0 || $reasonNum == count(get_field('reasons_to_give')))
@@ -86,13 +52,12 @@ get_header(); ?>
 			}
 		endwhile;
 ?>
+					</div>
 				</div>
-						
+			</div>			
 <?php
 	endif;
 ?>
-				</div>
-			</div>
 
 		<?php endwhile; // End of the loop. ?>
 

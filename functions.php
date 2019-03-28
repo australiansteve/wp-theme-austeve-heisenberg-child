@@ -193,6 +193,7 @@ function austeve_populate_color_selector_values($field) {
 add_filter('acf/load_field/name=color', 'austeve_populate_color_selector_values');
 add_filter('acf/load_field/name=featured_post_background_color', 'austeve_populate_color_selector_values');
 add_filter('acf/load_field/name=default_fund_background_color', 'austeve_populate_color_selector_values');
+add_filter('acf/load_field/name=about_sub_page_link_color', 'austeve_populate_color_selector_values');
 
 
 

@@ -13,6 +13,13 @@
 	}
 }
 
+#sub-page-links {
+	.button {
+		display: block;
+		text-align: center;
+		padding: 2em 0;
+	}
+}
 
 #reasons {
 	background-color: $green-color;
@@ -51,6 +58,31 @@
 /* Medium and up */
 @media screen and (min-width: 40em) {
 	
+	#sub-page-links {
+
+		>div>div {
+			.button{
+				margin:1em;
+			}
+		}
+		>div>div:nth-of-type(1) {
+			.button{
+				margin-left: 0;
+			}
+		}
+		>div>div:nth-last-of-type(1) {
+			.button{
+				margin-right: 0;
+			}
+		}
+
+		.button {
+			display: block;
+			text-align: center;
+			padding: 2em 0;
+		}
+	}
+
 	#reasons {
 		padding: 2rem;
 

@@ -67,6 +67,10 @@ function austeve_alter_funds_archive_search($query) {
 	if (is_post_type_archive('austeve-funds') && $query->is_main_query()) 
 	{
 		$query->set('posts_per_page', '-1');
+		$query->set('meta_key', 'stripped_name');
+		$query->set('orderby', 'meta_value');
+		$query->set('order'	, 'ASC');
+
 		if(isset($_GET['fund-name']))
 		{
 			$query->set('s', $_GET['fund-name']);
@@ -195,6 +199,59 @@ add_filter('acf/load_field/name=featured_post_background_color', 'austeve_popula
 add_filter('acf/load_field/name=default_fund_background_color', 'austeve_populate_color_selector_values');
 add_filter('acf/load_field/name=about_sub_page_link_color', 'austeve_populate_color_selector_values');
 
+function austeve_get_stripped_fund_name($fundName)
+{
+	$strippedName = $fundName;
+	//error_log(strpos(strtolower($fundName), 'the '));
+	if (strpos(strtolower($fundName), 'the ') === 0)
+	{
+		//error_log("Fund name starts with 'the'");
+		$strippedName = substr($fundName, 4);
+	}
+	//error_log('Updating stripped_name attribute of fund: '.$strippedName);
+	return $strippedName;
+}
 
+function austeve_set_post_stripped_name($post_id, $post, $update) {
+	//error_log('Fund has been saved: '.$post->post_title);
+	$strippedName = austeve_get_stripped_fund_name($post->post_title);
+	update_field('stripped_name', $strippedName, $post_id);
+}
+
+add_action( 'save_post_austeve-funds', 'austeve_set_post_stripped_name', 10,3 );
+
+function austeve_populate_fund_stripped_name( $plugin, $network_activation ) {
+	error_log(print_r($plugin, true));
+
+	if (strpos($plugin, 'austeve-funds') === 0)
+	{
+		error_log("Activating funds plugins. Setting stripped_name for existing funds");
+
+		// WP_Query arguments
+		$args = array(
+			'post_type'	=> array( 'austeve-funds' ),
+			'posts_per_page' => '-1',
+		);
+
+		// The Query
+		$the_query = new WP_Query( $args );
+
+		// The Loop
+		if ( $the_query->have_posts() ) {
+			while ( $the_query->have_posts() ) {
+				$the_query->the_post();
+				error_log(get_the_title());
+				update_field('stripped_name', austeve_get_stripped_fund_name(get_the_title()), get_the_ID());
+				error_log('--->'.get_field('stripped_name', get_the_ID()));
+			}
+		} else {
+			// no posts found
+		}
+		/* Restore original Post Data */
+		wp_reset_postdata();
+
+	}
+}
+add_action( 'activated_plugin', 'austeve_populate_fund_stripped_name', 10, 2 );
 
 ?>

@@ -12,7 +12,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="cell small-12" class="page-title">
+			<div class="cell small-12" id="page-title">
 				<h1><?php the_title(); ?></h1>
 			</div>
 
@@ -50,17 +50,22 @@ $grantCount = $grantsQuery->post_count;
 
 if ($grantsQuery->have_posts() ) :
 ?>
-			<div class="cell small-12" class="open-grants-highlight">
-				<p>The following grants are currently open for applications:</p>
-				<ul>
+			<div class="cell small-12" id="open-grants-highlight">
+				<div class="container">
+					<p>Applications are now being accepted for:</p>
+					<ul>
 <?php
 	// The Loop
 	while ( $grantsQuery->have_posts() ) :
 	    $grantsQuery->the_post();
-	    	the_title('<li>', '</li>');    
+	    	// make date object
+			$date = new DateTime(get_field('applications_close'));
+
+	    	echo "<li><a href='".get_permalink()."'>".get_the_title()."<br class='show-for-small-only'><span class='deadline'><span class='show-for-medium'> (</span>Deadline is ".$date->format('jS F Y')."<span class='show-for-medium'>)</span></span></a></li>";    
 	endwhile;
 ?>
-				</ul>
+					</ul>
+				</div>
 			</div>
 <?php
 endif;
@@ -68,21 +73,20 @@ wp_reset_postdata();
 
 ?>
 
-			</div>
-
-			<div class="cell small-12" class="intro">
+			<div class="cell small-12" id="intro">
 				<?php the_field('introduction'); ?>
 			</div>
 
-			<div class="cell small-12" class="grants">
+			<div class="cell small-12" id="grants" data-equalizer="grant-title">
 
-				<div class="grid-x">
+				<div class="grid-x small-up-1 medium-up-3">
 <?php 
 
 // WP_Query arguments
 $args = array(
-	'post_type'              => array( 'austeve-grants' ),
-	'post_status'            => array( 'publish' ),
+	'post_type'		=> array( 'austeve-grants' ),
+	'post_status'	=> array( 'publish' ),
+	'orderby'		=> array( 'menu_order' ),
 );
 
 // The Query
@@ -93,21 +97,24 @@ $grantCount = $grantsQuery->post_count;
 // The Loop
 while ( $grantsQuery->have_posts() ) :
     $grantsQuery->the_post();
-?>
-					<div class="cell small-12 medium-<?php echo 12/$grantCount;?>">
-<?php		
 		get_template_part( 'template-parts/austeve-grants', 'archive' );
-?>
-
-					</div>
-<?php
-    
 endwhile;
 wp_reset_postdata();
 
 ?>
 				</div>
 
+			</div>
+
+			<div class="cell small-12" id="after-grants">
+				<?php the_field('after_grants'); ?>
+			</div>
+
+			<div class="cell small-12" id="grant-eligibility">
+				<div class="container">
+				
+					<?php get_template_part( 'template-parts/austeve-eligibility' ); ?>
+				</div>
 			</div>
 
 		<?php endwhile; // End of the loop. ?>

@@ -21,16 +21,32 @@ if ( have_posts() ) :
 
 	<div class="grid-x fund-single">
 
-	<?php if (!get_field('eligibility')):?>
 		<!-- FUND -->
 		<div class="cell small-12 medium-8" id="page-content">
-			<?php the_post_thumbnail(); ?>
 
-			<?php the_content(); ?>
+			<div class="grid-x">
+				<div class="cell small-12">
 
-			<div class="print-only" id="page-link">
-				<p>Donate now at: <br/><?php echo get_permalink(); ?></p>
+					<?php the_post_thumbnail(); ?>
+
+					<?php the_content(); ?>
+
+				</div>
+
+<?php if (get_field('eligibility')):?>
+				<div class="cell small-12" id="grant-eligibility">
+					<div class="container">
+						<h3>Eligibility</h3>
+						<?php the_field('eligibility'); ?>
+					</div>
+				</div>
+<?php endif; ?>
+
+				<div class="cell print-only" id="page-link">
+					<p>Donate now at: <br/><?php echo get_permalink(); ?></p>
+				</div>
 			</div>
+
 		</div>
 
 		<div class="cell small-12 medium-4 no-print" id="donate-now">
@@ -42,25 +58,8 @@ if ( have_posts() ) :
 			}
 			$iFrameSrc = get_field('canada_helps_form_url', 'option')."?fundID=".$fundId;
 			?>
-			<iframe width="100%" height="1000px" src="<?php echo $iFrameSrc; ?>"/>
+			<iframe width="100%" height="1000px" src="<?php echo $iFrameSrc; ?>"></iframe>
 		</div>
-
-	<?php else:?>
-		<!-- BURSARY -->
-		<div class="cell small-12" id="bursary-content">
-			<?php the_content(); ?>
-		</div>
-
-		<div class="cell small-12" id="bursary-eligibility">
-			<h3>Eligibility</h3>
-			<?php the_field('eligibility'); ?>
-		</div>
-
-		<div class="print-only" id="page-link">
-			<p><a href="<?php echo get_permalink(); ?>"><?php echo get_permalink(); ?></a></p>
-		</div>
-
-	<?php endif; ?>
 
 	</div>
 
@@ -75,5 +74,4 @@ else :
 endif; ?>
 
 
-<?php
-get_footer();
+<?php get_footer(); ?>

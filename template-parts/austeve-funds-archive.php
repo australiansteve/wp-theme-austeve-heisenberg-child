@@ -1,4 +1,5 @@
 <?php
+
 $terms = get_the_terms($post, 'austeve-funds-category' );
 error_log("terms for post ".$post->ID.": ".print_r($terms, true));
 
@@ -9,9 +10,14 @@ if ($terms)
 {
 	foreach($terms as $term)
 	{
-		if (array_key_exists($term->term_id, $categoryBgColors))
+		//Don't color according to 'featured' post category
+		error_log($term->slug);
+		if ($term->slug != 'featured')
 		{
-			$bgColor = $categoryBgColors[$term->term_id];
+			if (array_key_exists($term->term_id, $categoryBgColors))
+			{
+				$bgColor = $categoryBgColors[$term->term_id];
+			}
 		}
 	}
 }

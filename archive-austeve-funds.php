@@ -51,8 +51,12 @@ foreach($savedBgColors as $color)
 								</div>
 								<div class="grid-x" id="fund-category-filters">
 <?php
+//Exclude 'featured' category
+$excludeCategories[] = get_term_by( 'slug', 'featured', 'austeve-funds-category' )->term_id;
+
 $terms = get_terms( 'austeve-funds-category', array(
     'hide_empty' => false,
+    'exclude' => $excludeCategories,
 ) );
 
 
@@ -60,7 +64,7 @@ if (count($terms) > 0) :
 	echo "<div class='cell'><p>Filter by fund category:</p></div>";
 foreach($terms as $term):
 
-	$bgColor = "#00000f"; //Default color
+	$bgColor = get_field('default_fund_background_color', 'option'); //Default color
 	if (array_key_exists($term->term_id, $categoryBgColors))
 	{
 		$bgColor = $categoryBgColors[$term->term_id];
@@ -84,7 +88,19 @@ foreach($terms as $term):
 <?php 
 endforeach;
 endif;
+
+$allFundsChecked = "";
+if (!isset($_GET['fund-category']) && !isset($_GET['fund-name']))
+{
+	$allFundsChecked = "checked='checked'";
+}
 ?>
+									<div class="cell small-6 medium-12">
+										<div class="fund-category-checkbox" style="background-color: <?php echo get_field('default_fund_background_color', 'option');?>">
+											<input type="checkbox" name="fund-category" id="fund-category" data-filter="fund-category" value="all-funds" <?php echo $allFundsChecked; ?>/>
+											Show all funds							     
+										</div>							     
+									</div>
 								</div>
 							</form>
 
@@ -102,8 +118,8 @@ if ( have_posts() ) :
 		get_template_part('template-parts/austeve-funds', 'archive');
  	endwhile; // End of the loop. 
 else: ?>
-							<div class="cell small-12" class="fund-title">
-								No funds found. Please try a broader search
+							<div class="cell fund auto" class="fund-title">
+								No funds could be found with your search criteria. Please try a broader search or view <a href='/funds'>all funds</a>
 							</div>
 <?php endif; ?>
 
@@ -125,11 +141,11 @@ $request_url = substr($current_url, - ($afterhome-1));
 
 			<script type="text/javascript">
 				jQuery("input[name='fund-category']").on('click', function(){
-					console.log(jQuery(this).val());
-					validateSearch();
+					//console.log(jQuery(this).val());
+					validateSearch(jQuery(this).val() === 'all-funds');
 				});
 
-				function validateSearch() {
+				function validateSearch(clearCategoryFilter) {
 					// vars
 					var url = "<?php echo home_url( $request_url ); ?>";
 					var args = {};
@@ -155,6 +171,12 @@ $request_url = substr($current_url, - ($afterhome-1));
 					// append to args
 					args[ 'fund-category' ] = diffVals.join(',');
 
+
+					//If 'all funds' option has been selected clear the array
+					if (clearCategoryFilter)
+					{
+							args = {};
+					}
 					// update url
 					url += '?';
 					

@@ -13,6 +13,20 @@ jQuery(document).on('closed.zf.offcanvas', function() {
 
 jQuery(document).ready(function($) {
 
+	var icons = {
+      header: "ui-icon-circle-plus",
+      activeHeader: "ui-icon-circle-minus"
+    };
+
+    $( "#report-types" ).accordion({
+		icons : icons,
+		collapsible: true,
+		heightStyle: "content",
+	});
+
+	$( "#report-types" ).accordion( "option", "icons", icons );
+
+
 	$("a.change-faqs").on('click', function(e){
 		e.preventDefault();
 

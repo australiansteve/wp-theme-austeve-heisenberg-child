@@ -14,19 +14,19 @@ get_header();
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="cell small-12" class="page-title">
+			<div class="cell small-12" id="page-title">
 				<h1><?php the_title(); ?></h1>
 			</div>
 
-			<div class="cell small-12" class="page-content">
+			<div class="cell small-12" id="page-content">
 
 				<div class="grid-x">
 
-					<div class="cell small-12 medium-4" class="page-content">
+					<div class="cell small-12 medium-4" id="page-content">
 						<?php the_content(); ?>
 					</div>
 
-					<div class="cell small-12 medium-8" class="page-content">
+					<div class="cell small-12 medium-8" id="feature-image">
 						<?php the_post_thumbnail('feature-pic-size'); ?>
 					</div>
 
@@ -34,12 +34,14 @@ get_header();
 				
 				<div class="grid-x">
 
-					<div class="cell small-12 medium-4" class="page-content">
+					<div class="cell small-12 medium-4" id="contact-form-into">
 						<b><?php the_field('contact_form_intro');?></b>
 					</div>
 
-					<div class="cell small-12 medium-8" class="page-content">
-						<?php echo do_shortcode("[ninja_form id='".get_field('contact_form_id')."']"); ?>
+					<div class="cell small-12 medium-8" id="contact-form">
+						<div class="container">
+							<?php echo do_shortcode("[ninja_form id='".get_field('contact_form_id')."']"); ?>
+						</div>
 					</div>
 
 				</div>

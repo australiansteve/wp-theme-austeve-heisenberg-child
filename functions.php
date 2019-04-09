@@ -4,6 +4,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
     $parent_style = 'heisenberg-style';
 
+	wp_enqueue_style( 'jquery-ui-css', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css');
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/_dist/css/app.css' );
     wp_enqueue_style( $parent_style.'-login', get_template_directory_uri() . '/_dist/css/login.min.css' );
     wp_enqueue_style( 'child-style',
@@ -13,7 +14,7 @@ add_action( 'wp_enqueue_scripts', function() {
     );
     wp_enqueue_script( 'child-script',
         get_stylesheet_directory_uri() . '/_dist/js/app.min.js',
-        array( 'jquery' )
+        array( 'jquery-ui-accordion', 'jquery' )
     );
 });
 
@@ -44,6 +45,12 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect' 		=> false
 	));
 	
+	// add sub page
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Canada Helps Settings',
+		'menu_title' 	=> 'Canada Helps',
+		'parent_slug' 	=> $parent['menu_slug'],
+	));
 	
 	// add sub page
 	acf_add_options_sub_page(array(

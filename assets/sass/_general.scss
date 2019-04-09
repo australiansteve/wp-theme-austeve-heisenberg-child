@@ -31,10 +31,14 @@ input[type=submit], input[type=button], .button, button {
 		min-height: 50vh;
 	}
 
-	h1, h2 {
-		color: $pink-color;
-	}
+}
 
+h1, h2 {
+	color: $pink-color;
+}
+
+h3 {
+	color: $yellow-color;
 }
 
 .active-arrow.active {

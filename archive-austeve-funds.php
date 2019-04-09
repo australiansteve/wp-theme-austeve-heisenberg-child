@@ -104,7 +104,25 @@ if (!isset($_GET['fund-category']) && !isset($_GET['fund-name']))
 								</div>
 							</form>
 
+
+							<div id="donate-now" class="grid-x cell">
+								<div class="container">
+									<p><?php the_field('donate_now_text', 'option');?></p>
+<?php	
+$fund = get_field('local_default_fund', 'option');	
+if ($fund):				
+?>
+									<a class="button donate-now" href="<?php echo get_the_permalink($fund);?>">Donate Now</a>
+<?php	
+endif;				
+?>
+								</div>
+							</div>
+							<div class="placeholder">&nbsp;</div> <!-- Needed to stop the bottom margin of the #donate-now being lost when equalizer does it's thing on small screens -->
+
+
 						</div>
+
 					</div>
 
 					<div class="cell small-12 medium-9" id="filter-results">

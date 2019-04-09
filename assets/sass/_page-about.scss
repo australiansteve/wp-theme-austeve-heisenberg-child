@@ -78,6 +78,50 @@
 
 }
 
+#report-types {
+	
+	.report-type {		
+
+		margin-top: 0.5rem;
+
+		p {
+			margin-bottom: 0.5rem;
+		}
+
+		.ui-icon {
+			margin-right: 0.5rem;
+		}
+	}
+
+	.report-type:focus {
+		outline-color: #454545; 
+	}
+
+	.reports {
+		margin-bottom: 0.5rem;
+	}
+
+	/* Overrite some of the default 'active' colors of jQuery UI */
+	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+       	border: 1px solid black;
+	    background: white;
+	    font-weight: normal;
+		color: $green-color;
+	}
+
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active
+	{
+		background: white;
+	    color: $green-color;
+	}
+
+	.ui-state-active .ui-icon, .ui-button:active .ui-icon {
+	    background-image: url(../img/ui-icons_454545_256x240.png);
+	}
+
+}
+
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 	#about-page {

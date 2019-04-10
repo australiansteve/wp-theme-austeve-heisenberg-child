@@ -86,11 +86,13 @@ wp_reset_postdata();
 $args = array(
 	'post_type'		=> array( 'austeve-grants' ),
 	'post_status'	=> array( 'publish' ),
-	'orderby'		=> array( 'menu_order' ),
+	'orderby'		=> 'menu_order',
+	'order'			=> 'ASC',
 );
 
 // The Query
 $grantsQuery = new WP_Query( $args );
+error_log("Grants query:".print_r($grantsQuery, true));
 
 $grantCount = $grantsQuery->post_count;
 

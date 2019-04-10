@@ -10,7 +10,7 @@ get_header(); ?>
 
 		<div class="grid-x" id="about-page">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="cell small-1 page-title">
 				<h1><?php the_title(); ?></h1>
@@ -56,14 +56,13 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="cell small-12" id="team">
-
 <?php 
 	// check if the repeater field has rows of data
 	if( have_rows('team_members') ):
-
-		echo "<h2>Team</h2>";
-
+?>
+			<div class="cell small-12" id="team">
+				<h2>Team</h2>
+<?php
 	 	// loop through the rows of data
 	    while ( have_rows('team_members') ) : the_row();
 ?>
@@ -92,19 +91,17 @@ get_header(); ?>
 				</div>					        
 <?php
     	endwhile;
-
-	endif;
 ?>
-
 			</div>
+<?php
+	endif; //end if( have_rows('team_members') ):
 
-			<div class="cell small-12" id="board">
-
-<?php 
 	// check if the repeater field has rows of data
 	if( have_rows('board_of_directors') ):
-
-		echo "<h2>Board of Directors</h2>";
+?>
+			<div class="cell small-12" id="board">
+			<h2>Board of Directors</h2>
+<?php
 		$b = 0;
 ?>
 				<div class="grid-x">
@@ -154,14 +151,74 @@ get_header(); ?>
 		endwhile;
 ?>
 				</div>
-						
+				
+			</div>		
 <?php
-	endif;
+	endif; //end if( have_rows('board_of_directors') ):
+
+	// check if the repeater field has rows of data
+	if( have_rows('legal_council') ):
+?>
+			<div class="cell small-12" id="legal">
+
+				<h2>Honarary Legal Council</h2>
+<?php
+		$b = 0;
+?>
+				<div class="grid-x">
+<?php
+		// loop through the rows of data
+		while ( have_rows('legal_council') ) : the_row();
 ?>
 
-			</div>
+					<div class="cell small-4 medium-2 bod-image <?php echo ($b == 0) ? 'active' : ''?>">
 
-		<?php endwhile; // End of the loop. ?>
+<?php
+			$image = get_sub_field('lc_image');
+
+			if( !empty($image) ): 
+				// vars
+				$alt = $image['alt'];
+
+				// thumbnail
+				$size = 'thumbnail';
+				$thumb = $image['sizes'][ $size ];
+				$width = $image['sizes'][ $size . '-width' ];
+				$height = $image['sizes'][ $size . '-height' ];
+?>
+						<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php the_sub_field('lc_name'); ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" data-id="<?php echo $b;?>"/>
+						<div class="active-arrow"></div>
+						<div class="hidden bod-bio" style="display:none" data-id="<?php echo $b;?>">
+							<div class="container">
+								<?php the_sub_field('lc_bio'); ?>
+							</div>
+						</div>
+	 								
+<?php
+			endif;
+?>
+					</div>		
+<?php
+			$b++;
+
+			if ($b % 3 == 0 || $b == count(get_field('legal_council')))
+			{
+				echo "<div class='bio-display cell small-12 hide-for-medium'></div>";
+			}
+			if ($b % 6 == 0 || $b == count(get_field('legal_council')))
+			{
+				echo "<div class='bio-display cell small-12 show-for-medium'></div>";
+			}
+		endwhile;
+?>
+				</div>
+		
+			</div>				
+<?php
+	endif; //end if( have_rows('legal_council') ):
+?>
+
+<?php endwhile; // End of the loop. ?>
 
 		</div>
 

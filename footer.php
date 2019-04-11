@@ -142,11 +142,16 @@ if( have_rows('a_member_of', 'option') ):
 		$image = get_sub_field('image', 'option');
 
 		if( !empty($image) ): 
-
+			$linkTo = get_sub_field('link_to', 'option');
+			if (!empty($linkTo)) :
+				echo "<a href='".$linkTo."' target='blank'>";
+			endif;
 ?>
-
 					<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 <?php 
+			if (!empty($linkTo)) :
+				echo "</a>";
+			endif;
 		endif; 
 ?>
 <?php

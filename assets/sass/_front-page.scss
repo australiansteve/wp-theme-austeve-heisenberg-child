@@ -8,8 +8,6 @@
 
 #featured-post {
 
-	margin-top: 2rem;
-
 	.featured-post-content {
 		text-align: center;
 	}
@@ -33,6 +31,21 @@
 		margin: 2rem;
 		padding: 0;
 		background-color: none;
+	}
+}
+
+#more-stories {
+	padding-top: 3rem;
+    text-align: center;
+    
+    a {
+		display: inline-block;
+		background-color: #000;
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		font-weight: 700;
+		padding: 2rem 3rem;
 	}
 }
 

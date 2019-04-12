@@ -61,7 +61,7 @@ get_header(); ?>
 	if( have_rows('team_members') ):
 ?>
 			<div class="cell small-12" id="team">
-				<h2>Team</h2>
+				<h2>Staff</h2>
 <?php
 	 	// loop through the rows of data
 	    while ( have_rows('team_members') ) : the_row();
@@ -161,7 +161,7 @@ get_header(); ?>
 ?>
 			<div class="cell small-12" id="legal">
 
-				<h2>Honarary Legal Council</h2>
+				<h2>Honarary Legal Counsel</h2>
 <?php
 		$b = 0;
 ?>

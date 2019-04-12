@@ -22,7 +22,7 @@ if ( have_posts() ) :
 	<div class="grid-x fund-single">
 
 		<!-- FUND -->
-		<div class="cell small-12 medium-8" id="page-content">
+		<div class="cell small-12 medium-7 large-8" id="page-content">
 
 			<div class="grid-x">
 				<div class="cell small-12">
@@ -49,7 +49,7 @@ if ( have_posts() ) :
 
 		</div>
 
-		<div class="cell small-12 medium-4 no-print" id="donate-now">
+		<div class="cell small-12 medium-5 large-4 no-print" id="donate-now">
 			<?php 
 			$fundId = get_field('canada_helps_fund_id');
 			if(!$fundId || $fundId == 'NO_FUND')

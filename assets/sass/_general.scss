@@ -37,6 +37,10 @@ h1, h2 {
 	color: $pink-color;
 }
 
+.page:not(.page-template-contact-page) img.wp-post-image {
+	margin: 0em 0 1em 0em;
+}
+
 .active-arrow.active {
 	width: 0;
 	height: 0;
@@ -89,3 +93,36 @@ iframe {
 	}
 }
 /** END Print specific styling **/
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+	
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+	.page:not(.page-template-contact-page) img.wp-post-image {
+		float: right;
+		margin: 0em 0 1em 1em;
+		max-width: 60%
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+	
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+	
+	.page:not(.page-template-contact-page) img.wp-post-image {
+		max-width: none;
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+	
+}

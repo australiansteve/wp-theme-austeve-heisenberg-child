@@ -70,7 +70,7 @@ endif;
 
 			<div class="container">
 				
-				<p class="find-us-on">
+				<div class="find-us-on">
 					<strong>
 					<?php 
 					$findUsOn = get_field('find_us_on', 'option'); 
@@ -103,7 +103,9 @@ endif;
 
 									endwhile;
 
-								elseif (get_sub_field('footer_find_us_text', 'option')) :
+								endif;
+
+								if (get_sub_field('footer_find_us_text', 'option')) :
 
 									the_sub_field('footer_find_us_text', 'option');
 
@@ -122,7 +124,7 @@ endif;
 
 					?>
 					</strong>
-				</p>
+				</div>
 
 			</div>
 		</div>

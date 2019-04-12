@@ -31,7 +31,12 @@ $bgColor = get_field('grant_highlight_color'); //Default color
 			<?php else: ?>
 			<div class="cell dates">
 				<p>Currently CLOSED</p>
+
+				<?php if ($today >= $rawOpenDate): ?>
+				<p><?php the_field('current_status'); ?></p>
+				<?php else: ?>
 				<p>Applications open: <br/><?php echo $openDate->format('jS F Y'); ?>
+				<?php endif; ?>
 			</div>
 			<?php endif; ?>
 

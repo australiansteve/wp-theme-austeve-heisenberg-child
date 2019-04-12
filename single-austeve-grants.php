@@ -31,6 +31,7 @@ $closeDate = get_field( 'applications_close' );
 $deliberation = get_field( 'deliberation_period' );
 $notification = get_field( 'applicant_notification' );
 $awarded = get_field( 'grants_awarded' );
+$currentStatus = get_field( 'current_status' );
 
 if ($openDate) :
 	$openDisplay = new DateTime($openDate);
@@ -61,6 +62,12 @@ endif;
 if ($awarded) :
 ?>
 			<div class="timeline-value awarded"><span class="title">Grants awarded: </span><?php echo $awarded; ?></div>
+<?php
+endif;
+
+if ($currentStatus) :
+?>
+			<div class="timeline-value current-status"><span class="title">Current status: </span><?php echo $currentStatus; ?></div>
 <?php
 endif;
 ?>

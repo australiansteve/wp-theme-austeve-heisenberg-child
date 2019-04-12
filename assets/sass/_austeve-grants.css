@@ -71,6 +71,15 @@
 	.grant-timeline, .grant-closing {
 		margin-bottom: 2rem;
 	}
+
+	.current-status {
+	    font-weight: 700;
+    	margin-top: 0.5em;
+    }
+
+    #grant-eligibility {
+    	margin-top: 2em;
+    }
 }
 
 /* Small only */
@@ -91,6 +100,10 @@
 
 		}
 
+		.dates {
+			min-height: 7em;
+		}
+		
 	}
 }
 

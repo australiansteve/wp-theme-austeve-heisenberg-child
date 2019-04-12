@@ -112,13 +112,6 @@ wp_reset_postdata();
 				<?php the_field('after_grants'); ?>
 			</div>
 
-			<div class="cell small-12" id="grant-eligibility">
-				<div class="container">
-				
-					<?php get_template_part( 'template-parts/austeve-eligibility' ); ?>
-				</div>
-			</div>
-
 		<?php endwhile; // End of the loop. ?>
 
 		</div>

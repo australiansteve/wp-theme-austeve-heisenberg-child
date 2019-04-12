@@ -183,8 +183,11 @@ $request_url = substr($current_url, - ($afterhome-1));
 					var diffVals = [];
 					jQuery('#search-filters input[name=fund-category]').each(function(){
 						//console.log(jQuery(this).val() + " " + jQuery(this).attr('checked'))
-						if (jQuery(this).attr('checked') == 'checked')
+						if (jQuery(this).attr('checked') == 'checked' && jQuery(this).val() != 'all-funds')
+						{
+							//console.log("Adding category:" + jQuery(this).val());
 							diffVals.push(jQuery(this).val());
+						}
 					});
 					// append to args
 					args[ 'fund-category' ] = diffVals.join(',');
@@ -193,7 +196,7 @@ $request_url = substr($current_url, - ($afterhome-1));
 					//If 'all funds' option has been selected clear the array
 					if (clearCategoryFilter)
 					{
-							args = {};
+						args = {};
 					}
 					// update url
 					url += '?';

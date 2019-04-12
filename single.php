@@ -1,7 +1,7 @@
 <?php
 get_header(); ?>
 
-	<div class="grid-x">
+	<div class="grid-x single-post">
 
 		<main class="cell small-12">
 <?php
@@ -10,11 +10,20 @@ if ( have_posts() ) :
 	while ( have_posts() ) : 
 		the_post();
 ?>
-			<div id="single-post-content">
 <?php
 		the_title( '<h1>', '</h1>' );
 
-		if (has_post_thumbnail()):
+		$video = get_field('post_video'); 
+		if ($video) :
+?>
+			<div class="embed-container" data-equalizer-watch="box">
+				<?php echo $video; ?>
+			</div>
+
+			<div id="single-post-content">
+<?php
+		endif;
+		if(has_post_thumbnail()):
 			the_post_thumbnail('feature-pic-size');
 		endif;
 

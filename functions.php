@@ -261,4 +261,17 @@ function austeve_populate_fund_stripped_name( $plugin, $network_activation ) {
 }
 add_action( 'activated_plugin', 'austeve_populate_fund_stripped_name', 10, 2 );
 
+add_filter('next_posts_link_attributes', 'austeve_posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'austeve_posts_link_attributes');
+
+function austeve_posts_link_attributes() {
+    return 'class="button"';
+}
+
+function austeve_get_one_post_at_a_time($query) {
+	$query->set('posts_per_page', 1);
+	return $query;
+}
+//add_action('pre_get_posts','austeve_get_one_post_at_a_time');
+
 ?>

@@ -79,40 +79,44 @@ endif;
 					 	// loop through the rows of data
 					    while ( have_rows('find_us_on', 'option') ) : the_row();
 
+					    	echo "<p>";
 					        // display a sub field value
 					        $url = get_sub_field('footer_find_us_link', 'option');
 
-					        if ($url)
-					        {
-					        	echo "<p><a href='".$url."' target='blank'>";
-					        	
-								if( have_rows('footer_find_us_logo', 'option') ):
+							if ($url):
+								echo "<a href='".$url."' target='blank'>";
+							endif;
 
-									// loop through the rows of data
-									while ( have_rows('footer_find_us_logo', 'option') ) : the_row();
+							if( have_rows('footer_find_us_logo', 'option') ):
 
-										if( get_row_layout() == 'html' ):
+								// loop through the rows of data
+								while ( have_rows('footer_find_us_logo', 'option') ) : the_row();
 
-											the_sub_field('html');
+									if( get_row_layout() == 'html' ):
 
-										elseif( get_row_layout() == 'image' ): 
+										the_sub_field('html');
 
-											error_log("Need to output images here");
+									elseif( get_row_layout() == 'image' ): 
 
-										endif;
+										error_log("Need to output images here");
 
-									endwhile;
+									endif;
 
-								endif;
+								endwhile;
 
-								if (get_sub_field('footer_find_us_text', 'option')) :
+							endif;
 
-									the_sub_field('footer_find_us_text', 'option');
+							if (get_sub_field('footer_find_us_text', 'option')) :
 
-								endif;
+								the_sub_field('footer_find_us_text', 'option');
 
-					        	echo "</a></p>";
-					        }
+							endif;
+
+					        if ($url):
+					        	echo "</a>";
+					        endif;
+
+				        	echo "</p>";
 
 					    endwhile;
 

@@ -79,7 +79,6 @@ wp_reset_postdata();
 
 			<div class="cell small-12" id="grants" data-equalizer="grant-title">
 
-				<div class="grid-x small-up-1 medium-up-3">
 <?php 
 
 // WP_Query arguments
@@ -97,14 +96,21 @@ error_log("Grants query:".print_r($grantsQuery, true));
 $grantCount = $grantsQuery->post_count;
 
 // The Loop
-while ( $grantsQuery->have_posts() ) :
-    $grantsQuery->the_post();
-		get_template_part( 'template-parts/austeve-grants', 'archive' );
-endwhile;
-wp_reset_postdata();
-
+if ($grantsQuery->have_posts()) :
+	$mediumCells = 2 + ($grantCount % 2);
+?>
+				<div class="grid-x align-center small-up-1 medium-up-<?php echo $mediumCells;?>">
+<?php
+	while ( $grantsQuery->have_posts() ) :
+	    $grantsQuery->the_post();
+			get_template_part( 'template-parts/austeve-grants', 'archive' );
+	endwhile;
 ?>
 				</div>
+<?php
+endif;
+wp_reset_postdata();
+?>
 
 			</div>
 

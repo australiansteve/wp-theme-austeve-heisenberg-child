@@ -21,7 +21,7 @@ const paths = {
   sassPath: 'assets/sass/',
   nodePath: 'node_modules/',
   jsPath: 'assets/js/',
-  destPath: '_dist/',
+  destPath: 'assets/_dist/',
   foundationJSpath: 'node_modules/foundation-sites/dist/js/plugins/',
   imgPath: 'assets/img/'
 }
@@ -70,42 +70,28 @@ gulp.task('js', function () {
 })
 
 ////////////////////////////////////////////////////////////////////////////////
-// DEPLOY on local dev env
+// BUNDLE for deployment to external env
 ////////////////////////////////////////////////////////////////////////////////
 
-gulp.task('deploy', function() {
+gulp.task('bundle', function() {
 
   var files = [
-    '_dist/**/*', 
+    'assets/_dist/**/*', 
     'page-templates/**/*',
-    'src/**/*',
+    'template-parts/**/*', 
     'screenshot.png',
     '*.php',
     '*.css'];
 
-  var destPath = '/Applications/MAMP/local.cfsj/wp-content/themes/austeve-heisenberg-child';
+  var destPath = './_dist/austeve-heisenberg-child';
 
   return gulp.src(files, {base:"."})
         .pipe(gulp.dest(destPath))
         .pipe(notify({
-        message: "✔︎ Deploy task complete",
+        message: "✔︎ Bundle task complete",
         onLast: true
       }));
 });
 
-////////////////////////////////////////////////////////////////////////////////
-// CLEAN on local dev env
-////////////////////////////////////////////////////////////////////////////////
-
-gulp.task('clean', function() {
-
-  var destPath = '/Applications/MAMP/local.cfsj/wp-content/themes/austeve-heisenberg-child';
-
-  return del([
-      destPath
-      ], {force: true});
-
-});
-
 // Full gulp build, mainly used in deployment scripts
-gulp.task('build', ['css', 'js', 'deploy'])
+gulp.task('build', ['css', 'js', 'bundle'])

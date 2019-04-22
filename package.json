@@ -1,7 +1,7 @@
 {
   "name": "heisenberg-child",
-  "description": "Heisenberg's Child ===",
-  "version": "1.0.0",
+  "description": "=== Heisenberg's Child ===",
+  "version": "2.0.0",
   "main": "gulpfile.js",
   "scripts": {
     "dev": "gulp serve",

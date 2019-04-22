@@ -31,7 +31,7 @@ const paths = {
 ////////////////////////////////////////////////////////////////////////////////
 
 gulp.task('css', function () {
-  gulp.src(paths.sassPath + 'app.scss')
+  return gulp.src(paths.sassPath + 'app.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'})
       .on('error', notify.onError(error => `Error: ${error.message}`))
@@ -94,4 +94,4 @@ gulp.task('bundle', function() {
 });
 
 // Full gulp build, mainly used in deployment scripts
-gulp.task('build', ['css', 'js', 'bundle'])
+gulp.task('build', gulp.series( 'css', 'js', 'bundle'));

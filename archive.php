@@ -42,7 +42,7 @@ if ( have_posts() ) :
 		$counter++;
 	endwhile;
 
-	posts_nav_link( );
+	posts_nav_link();
 else :
 
 	echo esc_html( 'Sorry, no posts' );

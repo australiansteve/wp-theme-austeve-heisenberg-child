@@ -209,23 +209,28 @@ add_filter('acf/load_field/name=grant_highlight_color', 'austeve_populate_color_
 function austeve_get_stripped_fund_name($fundName)
 {
 	$strippedName = $fundName;
-	//error_log(strpos(strtolower($fundName), 'the '));
+	error_log(strpos(strtolower($fundName), 'the '));
 	if (strpos(strtolower($fundName), 'the ') === 0)
 	{
-		//error_log("Fund name starts with 'the'");
+		error_log("Fund name starts with 'the'");
 		$strippedName = substr($fundName, 4);
 	}
-	//error_log('Updating stripped_name attribute of fund: '.$strippedName);
+	error_log('Updating stripped_name attribute of fund: '.$strippedName);
 	return $strippedName;
 }
 
-function austeve_set_post_stripped_name($post_id, $post, $update) {
-	//error_log('Fund has been saved: '.$post->post_title);
+function austeve_set_post_stripped_name($post_id) {
+	$post_type = get_post_type($post_id);
+	if ($post_type != 'austeve-funds') {
+		return;
+	}
+	$post = get_post($post_id);
+	error_log('Fund has been saved: '.$post->post_title);
 	$strippedName = austeve_get_stripped_fund_name($post->post_title);
 	update_field('stripped_name', $strippedName, $post_id);
 }
 
-add_action( 'save_post_austeve-funds', 'austeve_set_post_stripped_name', 10,3 );
+add_action('acf/save_post', 'austeve_set_post_stripped_name', 20 );
 
 function austeve_populate_fund_stripped_name( $plugin, $network_activation ) {
 	error_log(print_r($plugin, true));

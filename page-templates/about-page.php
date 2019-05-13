@@ -161,7 +161,7 @@ get_header(); ?>
 ?>
 			<div class="cell small-12" id="legal">
 
-				<h2>Honarary Legal Counsel</h2>
+				<h2>Honorary Legal Counsel</h2>
 <?php
 		$b = 0;
 ?>

@@ -8,6 +8,9 @@ get_header(); ?>
 $colors = array("#bc5298", "#7fb955", "#6abfdb", "#e68f52", "#e4e164");
 
 if ( have_posts() ) :
+?>
+			<h1>Stories</h1>
+<?php
 	$counter = 0;
 	while ( have_posts() ) : 
 		the_post();

@@ -170,6 +170,13 @@ endif;
 		</div>
 	</div><!-- .grid-x -->
 
+	<div class="grid-x" id="copyright">
+		<div class="cell text-center">
+			<a href="https://weavercrawford.com" target="blank">
+				<i class="far fa-copyright"></i> <?php echo date("Y");?> Weaver Crawford Creative
+			</a>
+		</div>
+	</div>
 </footer><!-- #colophon -->
 
 <?php wp_footer(); ?>

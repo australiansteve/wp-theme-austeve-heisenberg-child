@@ -38,7 +38,7 @@ if ($terms)
 			</div>
 			<div class="cell">
 				<div class="action">		
-					<a class="button" href="<?php the_permalink();?>">DONATE NOW</a>
+					<a class="button" href="<?php the_permalink();?>"><?php the_field('funds_button_text', 'option');?></a>
 				</div>
 			</div>
 		</div>

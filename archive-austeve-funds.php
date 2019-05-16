@@ -112,7 +112,7 @@ if (!isset($_GET['fund-category']) && !isset($_GET['fund-name']))
 $fund = get_field('local_default_fund', 'option');	
 if ($fund):				
 ?>
-									<a class="button donate-now" href="<?php echo get_the_permalink($fund);?>">Donate Now</a>
+									<a class="button donate-now" href="<?php echo get_the_permalink($fund);?>"><?php the_field('funds_button_text', 'option');?></a>
 <?php	
 endif;				
 ?>

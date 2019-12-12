@@ -3,7 +3,7 @@ a {
 }
 
 a:hover, a:focus {
-    color: $blue-bright-color;
+	color: $blue-bright-color;
 }
 
 .search-form {
@@ -58,6 +58,11 @@ iframe {
 	border: solid 1px gray;
 }
 
+
+#page-content { 
+	display: grid; /* Added after updating to WP5.3, which threw out some things on the homepage */
+}
+
 /** START RESPONSIVE OEMBED STYLE from https://www.advancedcustomfields.com/resources/oembed **/
 .embed-container { 
 	position: relative; 
@@ -86,10 +91,10 @@ iframe {
 
 @media print
 {    
-    .no-print, .no-print *
-    {
-        display: none !important;
-    }
+	.no-print, .no-print *
+	{
+		display: none !important;
+	}
 
 	.print-only {
 		display: block !important;

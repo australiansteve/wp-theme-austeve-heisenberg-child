@@ -90,4 +90,13 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
 
+// Give Editor users ability to see form submissions
+add_filter( 'ninja_forms_admin_parent_menu_capabilities',   'austeve_nf_subs_capabilities' ); // Parent Menu
+add_filter( 'ninja_forms_admin_all_forms_capabilities',     'austeve_nf_subs_capabilities' ); // Forms Submenu
+add_filter( 'ninja_forms_admin_submissions_capabilities',   'austeve_nf_subs_capabilities' ); // Submissions Submenu
+
+function austeve_nf_subs_capabilities( $cap ) {
+    return 'edit_posts'; // EDIT: User Capability
+}
+
 ?>

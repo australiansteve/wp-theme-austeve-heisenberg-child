@@ -60,6 +60,16 @@
 	}
 }
 
+#popup-modal {
+	transition: opacity 1500ms linear;
+	outline: none;
+}
+
+.reveal-overlay {
+	opacity: 0;
+	transition: opacity 1500ms linear;
+}
+
 /* Medium and up */
 @media screen and (min-width: 40em) {
 

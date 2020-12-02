@@ -16,7 +16,7 @@
 
 <footer id="colophon" class="site-footer">
 
-	<div class="grid-x">
+	<div class="grid-x grid-margin-x">
 
 		<div class="cell small-12 medium-4 footer-left text-center medium-text-left">
 			<?php the_field('footer_left', 'option'); ?>

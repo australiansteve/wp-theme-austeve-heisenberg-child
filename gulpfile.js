@@ -12,6 +12,7 @@ const uglify = require('gulp-uglify')
 const babel = require('gulp-babel')
 const del = require('del')
 const rename = require('gulp-rename')
+const { series } = require('gulp');
 
 ////////////////////////////////////////////////////////////////////////////////
 // Path Configs
@@ -30,7 +31,7 @@ const paths = {
 // CSS
 ////////////////////////////////////////////////////////////////////////////////
 
-gulp.task('css', function () {
+function css(cb) {
   gulp.src(paths.sassPath + 'app.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'})
@@ -41,21 +42,23 @@ gulp.task('css', function () {
     .pipe(size({showFiles: true}))
     .pipe(gulp.dest(paths.destPath + 'css'))
     .pipe(browserSync.stream({match: '**/*.css'}))
-})
+
+    cb();
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // JS
 ////////////////////////////////////////////////////////////////////////////////
 
-gulp.task('js', function () {
-  return true
-})
+function js(cb) {
+  cb();
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // DEPLOY on local dev env
 ////////////////////////////////////////////////////////////////////////////////
 
-gulp.task('deploy', function() {
+function deploy() {
 
   var files = [
     '_dist/**/*', 
@@ -73,7 +76,8 @@ gulp.task('deploy', function() {
         message: "✔︎ Deploy task complete",
         onLast: true
       }));
-});
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // CLEAN on local dev env
@@ -90,4 +94,7 @@ gulp.task('clean', function() {
 });
 
 // Full gulp build, mainly used in deployment scripts
-gulp.task('build', ['css', 'js', 'deploy'])
+exports.css = css;
+exports.js = js;
+exports.deploy = deploy;
+exports.build = series(css, js, deploy);

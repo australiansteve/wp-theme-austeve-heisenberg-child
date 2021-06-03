@@ -44,7 +44,7 @@ get_header(); ?>
 		<div class="cell small-12 medium-6">
 
 			<div id="instagram-feed">
-				<?php echo do_shortcode('[instagram-feed]'); ?> 
+				<?php echo do_shortcode('[instagram-feed buttoncolor=#e80e8b]'); ?> 
 			</div>
 
 		</div>

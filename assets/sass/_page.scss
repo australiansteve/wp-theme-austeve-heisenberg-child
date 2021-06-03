@@ -1,0 +1,36 @@
+body {
+	text-align: center;
+	background: black;
+	background: black;
+	color: $light-color;
+}
+
+#page {
+
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+
+	h1, h2, h3, h4, h5, h6, a {
+		color: $primary-color;
+	}
+
+	button, .button {
+		background: $primary-color;
+		color: $dark-color;
+	}
+
+	#soundcloud-embed {
+		max-width: 600px;
+		margin: 3rem auto;
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+	
+	#page {
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
